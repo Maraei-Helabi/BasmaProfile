@@ -30,54 +30,54 @@ window.addEventListener('scroll', function() {
 	}
 });
 
-// Team Slider Functionality
-const teamSlider = document.querySelector('.team-slider');
+// // Team Slider Functionality
+// const teamSlider = document.querySelector('.team-slider');
 
-// Clone slides for infinite loop effect
-function cloneSlides() {
-	const slides = teamSlider.querySelectorAll('.team-slide:not(.clone)');
-	const isRTL = document.documentElement.dir === 'rtl';
+// // Clone slides for infinite loop effect
+// function cloneSlides() {
+// 	const slides = teamSlider.querySelectorAll('.team-slide:not(.clone)');
+// 	const isRTL = document.documentElement.dir === 'rtl';
 
-	// Clear any existing clones first
-	const existingClones = teamSlider.querySelectorAll('.team-slide.clone');
-	existingClones.forEach((clone) => clone.remove());
+// 	// Clear any existing clones first
+// 	const existingClones = teamSlider.querySelectorAll('.team-slide.clone');
+// 	existingClones.forEach((clone) => clone.remove());
 
-	// Clone slides for both RTL and LTR
-	slides.forEach((slide) => {
-		const clone = slide.cloneNode(true);
-		clone.classList.add('clone');
-		teamSlider.appendChild(clone);
-	});
-}
+// 	// Clone slides for both RTL and LTR
+// 	slides.forEach((slide) => {
+// 		const clone = slide.cloneNode(true);
+// 		clone.classList.add('clone');
+// 		teamSlider.appendChild(clone);
+// 	});
+// }
 
-// Initialize slider
-cloneSlides();
+// // Initialize slider
+// cloneSlides();
 
-// Reinitialize sliders after a short delay to ensure proper RTL setup
-setTimeout(() => {
-	cloneSlides();
-}, 100);
+// // Reinitialize sliders after a short delay to ensure proper RTL setup
+// setTimeout(() => {
+// 	cloneSlides();
+// }, 100);
 
-// Pause animation on hover
-teamSlider.addEventListener('mouseenter', function() {
-	this.style.animationPlayState = 'paused';
-});
+// // Pause animation on hover
+// teamSlider.addEventListener('mouseenter', function() {
+// 	this.style.animationPlayState = 'paused';
+// });
 
-teamSlider.addEventListener('mouseleave', function() {
-	this.style.animationPlayState = 'running';
-});
+// teamSlider.addEventListener('mouseleave', function() {
+// 	this.style.animationPlayState = 'running';
+// });
 
-// Pause animation when hovering over individual team members
-const teamMembers = document.querySelectorAll('.team-member');
-teamMembers.forEach((member) => {
-	member.addEventListener('mouseenter', function() {
-		teamSlider.style.animationPlayState = 'paused';
-	});
+// // Pause animation when hovering over individual team members
+// const teamMembers = document.querySelectorAll('.team-member');
+// teamMembers.forEach((member) => {
+// 	member.addEventListener('mouseenter', function() {
+// 		teamSlider.style.animationPlayState = 'paused';
+// 	});
 
-	member.addEventListener('mouseleave', function() {
-		teamSlider.style.animationPlayState = 'running';
-	});
-});
+// 	member.addEventListener('mouseleave', function() {
+// 		teamSlider.style.animationPlayState = 'running';
+// 	});
+// });
 
 // Vision & Message Section Functionality
 const visionItems = document.querySelectorAll('.vision-item');
