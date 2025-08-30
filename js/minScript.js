@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		type: 'fade',
 		rewind: true,
 		autoplay: true,
-		interval: 5000,
+		interval: 3000,
 		speed: 1200,
 		pauseOnHover: false,
 		pauseOnFocus: false,
