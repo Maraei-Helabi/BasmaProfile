@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Team Slider - AutoScroll Debug</title>
+
+  <!-- Splide CSS + JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+  <!-- AutoScroll extension (نسخة متوافقة) -->
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+
+  <style>
+    /* بسيط لتجربة بدون Bootstrap */
+    body { font-family: system-ui, Arial; padding: 1rem; background:#f7f7f7; }
+    .container { max-width:1200px; margin:0 auto; }
+    .row { display:flex; gap:1.5rem; flex-wrap:wrap; align-items:center; }
+    .col-left { flex: 0 0 33.333%; min-width:260px; }
+    .col-right { flex: 1 1 66.666%; min-width:320px; }
+    .img-fluid { width:100%; height:auto; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,.08); }
+    .card { background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 6px 18px rgba(0,0,0,.06); transition:transform .25s, box-shadow .25s; }
+    .card:hover { transform:translateY(-6px); box-shadow:0 18px 40px rgba(0,0,0,.12); }
+    .card-img { width:100%; height:200px; object-fit:cover; display:block; }
+    .card-body { padding: .9rem; text-align:center; }
+    h2 { margin:.25rem 0 .5rem; }
+    p.lead { color:#666; margin:0 0 1rem; }
+    /* Splide spacing */
+    .team-splide { --gap:1rem; padding: 0.5rem 0; }
+    .splide__slide { padding: 0 6px; box-sizing: border-box; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-left">
+        <img class="img-fluid" src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1000&q=80" alt="Team">
+        <h2>فريق بسمة</h2>
+        <p class="lead">نخبة من المبدعين والمختصين لتحويل رؤيتك إلى حقيقة.</p>
+      </div>
+
+      <div class="col-right">
+        <div class="splide team-splide" aria-label="Team Slider">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <div class="card">
+                  <img class="card-img" src="https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=800&q=80" alt="">
+                  <div class="card-body"><strong>سارة جونسون</strong><div>المهندسة المعمارية الرئيسية</div></div>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="card">
+                  <img class="card-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="">
+                  <div class="card-body"><strong>مايكل تشين</strong><div>المصمم الأول</div></div>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="card">
+                  <img class="card-img" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=800&q=80" alt="">
+                  <div class="card-body"><strong>إيما رودريغيز</strong><div>أخصائية التصميم الداخلي</div></div>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="card">
+                  <img class="card-img" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80" alt="">
+                  <div class="card-body"><strong>ليزا بارك</strong><div>المديرة الإبداعية</div></div>
+                </div>
+              </li>
+              <!-- كرر إذا تبي تمرير أطول -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr style="margin:2rem 0">
+    <small>افتح Console (F12) لتظهر رسائل الفحص (debug).</small>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // خيارات Splide
+      var options = {
+        type      : 'loop',
+        drag      : 'free',
+        focus     : 'center',
+        direction : 'rtl',
+        perPage   : 3,
+        gap       : '1rem',
+        pagination: false,
+        arrows    : true,
+        autoScroll: {
+          speed        : 1.2,
+          pauseOnHover : true,
+          pauseOnFocus : false,
+        },
+        breakpoints: {
+          992: { perPage: 2 },
+          576: { perPage: 1 },
+        },
+      };
+
+      var splide = new Splide('.team-splide', options);
+
+      // --- محاولة تركيب AutoScroll بعد التحقق من أماكن التسجيل المختلفة ---
+      // يحاول إيجاد Registry للإكستنشن في أكثر من مكان (fallbacks)
+      function findExtensions() {
+        const cand = [
+          (typeof window.splide !== 'undefined') ? window.splide.Extensions : null,
+          (typeof window.Splide !== 'undefined') ? window.Splide.Extensions : null,
+          (typeof window.splide !== 'undefined') ? window.splide.extensions : null,
+          (typeof window.Splide !== 'undefined') ? window.Splide.extensions : null,
+          (typeof window.SplideExtensions !== 'undefined') ? window.SplideExtensions : null,
+          (typeof window.splideExtensions !== 'undefined') ? window.splideExtensions : null,
+        ];
+        for (let e of cand) if (e) return e;
+        return null;
+      }
+
+      var ext = findExtensions();
+      if (ext && ext.AutoScroll) {
+        console.info('AutoScroll extension found — mounting via ext.AutoScroll');
+        splide.mount({ AutoScroll: ext.AutoScroll });
+      } else if (typeof window.splide !== 'undefined' && window.splide.Extensions) {
+        console.info('Mounting window.splide.Extensions (fallback)');
+        splide.mount(window.splide.Extensions);
+      } else {
+        console.warn('AutoScroll extension NOT found. Mounting Splide without AutoScroll as fallback.');
+        splide.mount(); // mount but no AutoScroll
+      }
+
+      // إذا تم تركيب AutoScroll، نربط إيقاف/تشغيل عند الهوفر (احتياطي)
+      setTimeout(() => {
+        if (splide.Components && splide.Components.AutoScroll) {
+          const root = splide.root;
+          root.addEventListener('mouseenter', () => splide.Components.AutoScroll.pause());
+          root.addEventListener('mouseleave', () => splide.Components.AutoScroll.play());
+          console.info('AutoScroll component is available and hover handlers attached.');
+        } else {
+          console.warn('splide.Components.AutoScroll not available — AutoScroll غير نشط.');
+        }
+      }, 50);
+
+      // أخيراً: لو حبيت تجهّز mount ثابت (بدل fallback)، استخدم:
+      // splide.mount({ AutoScroll: window.splide.Extensions.AutoScroll });
+    });
+  </script>
+</body>
+</html>
