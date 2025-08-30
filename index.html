@@ -33,6 +33,55 @@
 
     <!-- Custom CSS -->
     <style>
+      /* Hero Section custom styles (only what Bootstrap can't do directly) */
+      .hero-banner {
+        min-height: 600px;
+         height: 100vh;
+      }
+      .hero-title {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        font-weight: 700;
+      }
+      .hero-content {
+        max-width: 800px;
+        top: 40%
+      }
+      .hero-subtitle {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+      }
+      .hero-description {
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.6;
+      }
+      /* Navbar custom styles (only what Bootstrap can't do directly) */
+      .navbar {
+        background-color: rgb(177 187 207 / 58%);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: background-color 0.3s ease;
+      }
+      .navbar-brand {
+        font-family: 'Cairo', sans-serif;
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--text-light) !important;
+        gap: 10px;
+      }
+      .navbar-logo {
+        height: 40px;
+        width: auto;
+        object-fit: contain;
+      }
+      .navbar-nav .nav-link {
+        color: #272c2f !important;
+        font-weight: 500;
+        margin: 0 10px;
+        transition: color 0.3s ease;
+      }
+      .navbar-nav .nav-link:hover {
+        color: var(--primary-color) !important;
+      }
       :root {
         --primary-color: #d2ae32;
         --dark-bg: #26282c;
@@ -47,112 +96,8 @@
         text-align: right;
       }
 
-      /* Arabic Text Support */
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-weight: 600;
-      }
-
-      p,
-      span,
-      a,
-      button {
-        font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      }
-
-      /* Navbar Styles */
-      .navbar {
-        background-color: rgb(177 187 207 / 58%);
-        /* -webkit-backdrop-filter: blur(10px); */
-        /* backdrop-filter: blur(10px); */
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        transition: all 0.3s ease;
-      }
-
-      .navbar-brand {
-        font-family: 'Cairo', sans-serif;
-        font-size: 2rem;
-        font-weight: 800;
-        color: var(--text-light) !important;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .navbar-logo {
-        height: 40px;
-        width: auto;
-        object-fit: contain;
-      }
-
-      .navbar-nav .nav-link {
-        color: #272c2f !important;
-        font-weight: 500;
-        margin: 0 10px;
-        transition: color 0.3s ease;
-      }
-
-      .navbar-nav .nav-link:hover {
-        color: var(--primary-color) !important;
-      }
-
-      .language-selector {
-        display: flex;
-        gap: 10px;
-      }
-
-      .lang-btn {
-        background: transparent;
-        border: 1px solid var(--text-muted);
-        color: var(--text-light);
-        padding: 5px 15px;
-        border-radius: 20px;
-        transition: all 0.3s ease;
-      }
-
-      .lang-btn.active {
-        background: var(--primary-color);
-        border-color: var(--primary-color);
-      }
-
-      /* Hero Banner Styles */
-      .hero-banner {
-        position: relative;
-        height: 100vh;
-        min-height: 600px;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .hero-background {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-      }
-
-      .hero-background img,
-      .hero-background video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
+      /* احتفظنا فقط بالخصائص المخصصة التي لا توفرها Bootstrap مباشرة */
       .hero-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
         background: linear-gradient(
           135deg,
           rgba(210, 174, 50, 0.3) 0%,
@@ -162,91 +107,16 @@
         z-index: 1;
       }
 
-      .hero-content {
-        position: relative;
-        z-index: 2;
-        text-align: center;
-        max-width: 800px;
-        padding: 0 20px;
-      }
-
-      .hero-subtitle {
-        font-family: 'Cairo', sans-serif;
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: var(--text-light);
-        margin-bottom: 20px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-      }
-
-      .hero-title {
-        font-family: 'Cairo', sans-serif;
-        font-size: 3.5rem;
-        font-weight: 700;
-        line-height: 1.2;
-        margin-bottom: 30px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      }
-
-      .hero-description {
-        font-family: 'Cairo', sans-serif;
-        font-size: 1.3rem;
-        color: rgba(255, 255, 255, 0.9);
-        margin-bottom: 40px;
-        line-height: 1.6;
-      }
-
       .cta-button {
-        font-family: 'Cairo', sans-serif;
         background: var(--primary-color);
         color: white;
-        padding: 15px 40px;
-        border: none;
-        border-radius: 50px;
-        font-size: 1.1rem;
-        font-weight: 600;
-        text-decoration: none;
-        display: inline-block;
-        transition: all 0.3s ease;
         box-shadow: 0 4px 15px rgba(210, 174, 50, 0.3);
+        border: none;
       }
-
       .cta-button:hover {
         background: #b89b2a;
-        transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(210, 174, 50, 0.4);
         color: white;
-      }
-
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        .hero-title {
-          font-size: 2.5rem;
-        }
-
-        .hero-description {
-          font-size: 1.1rem;
-        }
-
-        .navbar-brand {
-          font-size: 1.5rem;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .hero-title {
-          font-size: 2rem;
-        }
-
-        .hero-subtitle {
-          font-size: 1rem;
-        }
-
-        .cta-button {
-          padding: 12px 30px;
-          font-size: 1rem;
-        }
       }
 
       /* Team Slider Section Styles */
@@ -3492,7 +3362,7 @@
       <!-- Overlay -->
       <div class="hero-overlay position-absolute w-100 h-100 top-0 start-0"></div>
       <!-- Content -->
-      <div class="hero-content position-relative text-center mx-auto" style="z-index:2;max-width:800px;">
+      <div class="hero-content position-relative text-center mx-auto " style="z-index:2;max-width:800px;">
         <div class="hero-subtitle mb-2" data-aos="fade-down" data-aos-delay="200">
           شركة بسمة
         </div>
