@@ -3481,47 +3481,33 @@
     <!-- Hero Banner Section -->
     <section class="hero-banner" id="home">
       <!-- Background Image/Video -->
-      <div class="hero-background">
-        <!-- You can use either an image or video here -->
-        <!-- Option 1: Image Background -->
+      <div class="hero-background position-absolute w-100 h-100 top-0 start-0">
         <img
           src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
           alt="Modern Architecture"
           id="heroImage"
+          class="w-100 h-100 object-fit-cover"
         />
-
-        <!-- Option 2: Video Background (uncomment to use) -->
-        <!--
-            <video autoplay muted loop id="heroVideo">
-                <source src="your-video.mp4" type="video/mp4">
-                <source src="your-video.webm" type="video/webm">
-                Your browser does not support the video tag.
-            </video>
-            -->
       </div>
-
       <!-- Overlay -->
-      <div class="hero-overlay"></div>
-
+      <div class="hero-overlay position-absolute w-100 h-100 top-0 start-0"></div>
       <!-- Content -->
-      <div class="hero-content floating">
-        <div class="hero-subtitle" data-aos="fade-down" data-aos-delay="200">
+      <div class="hero-content position-relative text-center mx-auto" style="z-index:2;max-width:800px;">
+        <div class="hero-subtitle mb-2" data-aos="fade-down" data-aos-delay="200">
           شركة بسمة
         </div>
-        <h1 class="hero-title" data-aos="fade-up" data-aos-delay="400">
+        <h1 class="hero-title mb-3" data-aos="fade-up" data-aos-delay="400">
           معاً نحقق منزل أحلامك
         </h1>
-        <p class="hero-description" data-aos="fade-up" data-aos-delay="600">
-          حول رؤيتك إلى تميز معماري مع حلولنا التصميمية المبتكرة وحرفيتنا
-          المتقنة.
+        <p class="hero-description mb-4" data-aos="fade-up" data-aos-delay="600">
+          حول رؤيتك إلى تميز معماري مع حلولنا التصميمية المبتكرة وحرفيتنا المتقنة.
         </p>
         <a
           href="#partners"
-          class="cta-button"
+          class="cta-button btn btn-lg rounded-pill px-5 py-3"
           data-aos="fade-up"
           data-aos-delay="800"
-          >عرض الشركاء</a
-        >
+        >عرض الشركاء</a>
       </div>
     </section>
 
