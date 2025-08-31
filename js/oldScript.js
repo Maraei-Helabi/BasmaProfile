@@ -192,10 +192,8 @@ window.addEventListener('scroll', function() {
 				});
 			}
 
-			if (newIndex !== currentIndex && newIndex < totalItems) {
-				currentIndex = newIndex;
-				updateContent(currentIndex);
-			}
+			// لا تغير currentIndex أبداً عند دخول القسم، فقط عند سكرول فعلي عبر عجلة أو سحب أو أسهم أو نقاط
+			// لذلك احذف أي تغيير تلقائي هنا
 		}
 
 		lastScrollTop = scrollTop;
@@ -216,11 +214,15 @@ dots.forEach((dot, index) => {
 // Keyboard navigation
 document.addEventListener('keydown', function(e) {
 	if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
-		currentIndex = (currentIndex + 1) % totalItems;
-		updateContent(currentIndex);
+		if (currentIndex < totalItems - 1) {
+			currentIndex++;
+			updateContent(currentIndex);
+		}
 	} else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-		currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-		updateContent(currentIndex);
+		if (currentIndex > 0) {
+			currentIndex--;
+			updateContent(currentIndex);
+		}
 	}
 });
 
@@ -287,33 +289,25 @@ function handleSwipe() {
 	if (Math.abs(diff) > swipeThreshold) {
 		if (diff > 0) {
 			// Swipe up
-			currentIndex = (currentIndex + 1) % totalItems;
+			if (currentIndex < totalItems - 1) {
+				currentIndex++;
+				updateContent(currentIndex);
+			}
 		} else {
 			// Swipe down
-			currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+			if (currentIndex > 0) {
+				currentIndex--;
+				updateContent(currentIndex);
+			}
 		}
-		updateContent(currentIndex);
 	}
 }
 
 // Scroll to section and show first card when entering section by scroll
-let visionSectionEntered = false;
-window.addEventListener('scroll', function() {
-	const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-	if (!visionSectionEntered && scrollTop + window.innerHeight/2 >= sectionStart && scrollTop <= sectionEnd) {
-		visionSectionEntered = true;
-		// Show first card and center section
-		currentIndex = 0;
-		updateContent(0, true);
-	}
-	// Reset flag if user scrolls away
-	if (visionSectionEntered && (scrollTop + window.innerHeight/2 < sectionStart || scrollTop > sectionEnd)) {
-		visionSectionEntered = false;
-	}
-});
+// تم تعطيل انتقال القسم تلقائياً للسلايد الأول عند دخول القسم بالسكرول
 
 // Initialize first content (without scroll)
-updateContent(0, false);
+// updateContent(0, false);
 
 // Partners Scrolling Functionality
 const partnersScroll = document.querySelector('.partners-scroll');
