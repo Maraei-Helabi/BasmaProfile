@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		pagination: false
 	}).mount();
 });
+// --------------------------------------------------------
 
 // تفعيل Splide.js على سلايدر فريق العمل
 document.addEventListener('DOMContentLoaded', function() {
