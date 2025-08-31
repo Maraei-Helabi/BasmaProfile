@@ -90,8 +90,8 @@ const dots = document.querySelectorAll('.dot');
 let currentIndex = 0;
 const totalItems = visionItems.length;
 
-// Function to update active content
-function updateContent(index) {
+// Function to update active content and keep section centered
+function updateContent(index, scrollToSection = true) {
 	// Remove active class from all items
 	visionItems.forEach((item) => item.classList.remove('active'));
 	messageItems.forEach((item) => item.classList.remove('active'));
@@ -132,6 +132,11 @@ function updateContent(index) {
 			img.style.opacity = '0';
 		}
 	});
+
+	// Keep section centered in viewport when changing cards
+	if (scrollToSection && visionSection) {
+		visionSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+	}
 }
 
 // Scroll-based content change - Fixed position until last item
@@ -223,6 +228,49 @@ document.addEventListener('keydown', function(e) {
 let touchStartY = 0;
 let touchEndY = 0;
 
+// Mouse wheel navigation for vision-message-section (like Splide Mouse Wheel)
+let wheelSleep = 600; // ms
+let lastWheelTime = 0;
+const visionSection = document.querySelector('.vision-message-section');
+if (visionSection) {
+	visionSection.addEventListener('wheel', function(e) {
+		// Only handle wheel if inside section boundaries
+		const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		if (scrollTop < sectionStart || scrollTop > sectionEnd) return;
+
+		const now = Date.now();
+		if (now - lastWheelTime < wheelSleep) {
+			e.preventDefault();
+			return;
+		}
+
+		// Determine direction
+		if (e.deltaY > 0) {
+			// Scroll down: next card
+			if (currentIndex < totalItems - 1) {
+	currentIndex++;
+	updateContent(currentIndex, true);
+	e.preventDefault();
+	lastWheelTime = now;
+			} else {
+				// At last card, allow normal scroll
+				lastWheelTime = 0;
+			}
+		} else if (e.deltaY < 0) {
+			// Scroll up: previous card
+			if (currentIndex > 0) {
+	currentIndex--;
+	updateContent(currentIndex, true);
+	e.preventDefault();
+	lastWheelTime = now;
+			} else {
+				// At first card, allow normal scroll
+				lastWheelTime = 0;
+			}
+		}
+	}, { passive: false });
+}
+
 document.addEventListener('touchstart', function(e) {
 	touchStartY = e.changedTouches[0].screenY;
 });
@@ -248,8 +296,24 @@ function handleSwipe() {
 	}
 }
 
-// Initialize first content
-updateContent(0);
+// Scroll to section and show first card when entering section by scroll
+let visionSectionEntered = false;
+window.addEventListener('scroll', function() {
+	const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	if (!visionSectionEntered && scrollTop + window.innerHeight/2 >= sectionStart && scrollTop <= sectionEnd) {
+		visionSectionEntered = true;
+		// Show first card and center section
+		currentIndex = 0;
+		updateContent(0, true);
+	}
+	// Reset flag if user scrolls away
+	if (visionSectionEntered && (scrollTop + window.innerHeight/2 < sectionStart || scrollTop > sectionEnd)) {
+		visionSectionEntered = false;
+	}
+});
+
+// Initialize first content (without scroll)
+updateContent(0, false);
 
 // Partners Scrolling Functionality
 const partnersScroll = document.querySelector('.partners-scroll');
