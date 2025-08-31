@@ -30,55 +30,6 @@ window.addEventListener('scroll', function() {
 	}
 });
 
-// // Team Slider Functionality
-// const teamSlider = document.querySelector('.team-slider');
-
-// // Clone slides for infinite loop effect
-// function cloneSlides() {
-// 	const slides = teamSlider.querySelectorAll('.team-slide:not(.clone)');
-// 	const isRTL = document.documentElement.dir === 'rtl';
-
-// 	// Clear any existing clones first
-// 	const existingClones = teamSlider.querySelectorAll('.team-slide.clone');
-// 	existingClones.forEach((clone) => clone.remove());
-
-// 	// Clone slides for both RTL and LTR
-// 	slides.forEach((slide) => {
-// 		const clone = slide.cloneNode(true);
-// 		clone.classList.add('clone');
-// 		teamSlider.appendChild(clone);
-// 	});
-// }
-
-// // Initialize slider
-// cloneSlides();
-
-// // Reinitialize sliders after a short delay to ensure proper RTL setup
-// setTimeout(() => {
-// 	cloneSlides();
-// }, 100);
-
-// // Pause animation on hover
-// teamSlider.addEventListener('mouseenter', function() {
-// 	this.style.animationPlayState = 'paused';
-// });
-
-// teamSlider.addEventListener('mouseleave', function() {
-// 	this.style.animationPlayState = 'running';
-// });
-
-// // Pause animation when hovering over individual team members
-// const teamMembers = document.querySelectorAll('.team-member');
-// teamMembers.forEach((member) => {
-// 	member.addEventListener('mouseenter', function() {
-// 		teamSlider.style.animationPlayState = 'paused';
-// 	});
-
-// 	member.addEventListener('mouseleave', function() {
-// 		teamSlider.style.animationPlayState = 'running';
-// 	});
-// });
-
 // Vision & Message Section Functionality
 const visionItems = document.querySelectorAll('.vision-item');
 const messageItems = document.querySelectorAll('.message-item');
@@ -235,42 +186,47 @@ let wheelSleep = 600; // ms
 let lastWheelTime = 0;
 const visionSection = document.querySelector('.vision-message-section');
 if (visionSection) {
-	visionSection.addEventListener('wheel', function(e) {
-		// Only handle wheel if inside section boundaries
-		const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-		if (scrollTop < sectionStart || scrollTop > sectionEnd) return;
+   visionSection.addEventListener('wheel', function(e) {
+	   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	   if (scrollTop < sectionStart || scrollTop > sectionEnd) return;
 
-		const now = Date.now();
-		if (now - lastWheelTime < wheelSleep) {
-			e.preventDefault();
-			return;
-		}
+	   const now = Date.now();
+	   if (now - lastWheelTime < wheelSleep) {
+		   e.preventDefault();
+		   return;
+	   }
 
-		// Determine direction
-		if (e.deltaY > 0) {
-			// Scroll down: next card
-			if (currentIndex < totalItems - 1) {
-	currentIndex++;
-	updateContent(currentIndex, true);
-	e.preventDefault();
-	lastWheelTime = now;
-			} else {
-				// At last card, allow normal scroll
-				lastWheelTime = 0;
-			}
-		} else if (e.deltaY < 0) {
-			// Scroll up: previous card
-			if (currentIndex > 0) {
-	currentIndex--;
-	updateContent(currentIndex, true);
-	e.preventDefault();
-	lastWheelTime = now;
-			} else {
-				// At first card, allow normal scroll
-				lastWheelTime = 0;
-			}
-		}
-	}, { passive: false });
+	   // Lock user inside section until last slide
+	   if (e.deltaY > 0) {
+		   // Scroll down: next card
+		   if (currentIndex < totalItems - 1) {
+			   currentIndex++;
+			   updateContent(currentIndex, true);
+			   e.preventDefault();
+			   lastWheelTime = now;
+		   } else {
+			   // عند آخر سلايد، اسمح بالخروج فقط إذا كان السكرول للأسفل
+			   // لا تمنع السكرول، اتركه طبيعي
+			   lastWheelTime = 0;
+		   }
+	   } else if (e.deltaY < 0) {
+		   // Scroll up: previous card
+		   if (currentIndex > 0) {
+			   currentIndex--;
+			   updateContent(currentIndex, true);
+			   e.preventDefault();
+			   lastWheelTime = now;
+		   } else {
+			   // عند أول سلايد، اسمح بالخروج فقط إذا كان السكرول للأعلى
+			   // لا تمنع السكرول، اتركه طبيعي
+			   lastWheelTime = 0;
+		   }
+	   }
+	   // إذا لم يكن في أول أو آخر سلايد، امنع السكرول خارج القسم
+	   if (currentIndex > 0 && currentIndex < totalItems - 1) {
+		   e.preventDefault();
+	   }
+   }, { passive: false });
 }
 
 document.addEventListener('touchstart', function(e) {
@@ -292,13 +248,13 @@ function handleSwipe() {
 			if (currentIndex < totalItems - 1) {
 				currentIndex++;
 				updateContent(currentIndex);
-			}
+			} // عند آخر سلايد، اسمح بالخروج من القسم بالسحب للأعلى
 		} else {
 			// Swipe down
 			if (currentIndex > 0) {
 				currentIndex--;
 				updateContent(currentIndex);
-			}
+			} // عند أول سلايد، اسمح بالخروج من القسم بالسحب للأسفل
 		}
 	}
 }
