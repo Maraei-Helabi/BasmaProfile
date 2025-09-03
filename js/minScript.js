@@ -1,3 +1,93 @@
+// Projects Vertical Splide Slider Init + Wheel Exit/Entry Logic
+document.addEventListener('DOMContentLoaded', function () {
+	var projectsSection = document.querySelector('.projects-vertical-slider-section');
+	var projectsSplide = document.querySelector('.projects-vertical-splide');
+	if (projectsSplide && projectsSection) {
+		var splide = new Splide(projectsSplide, {
+			direction: 'ttb',
+			height: '100vh',
+			wheel: true,
+			pagination: true,
+			arrows: false,
+			snap: true,
+			drag: true,
+			perPage: 1,
+			perMove: 1,
+			speed: 900,
+			easing: 'cubic-bezier(0.77,0,0.175,1)',
+			waitForTransition: true,
+			classes: {
+				slide: 'splide__slide project-slide',
+			},
+		});
+		splide.mount();
+
+		// Wheel navigation: only exit after user is ALREADY at last/first slide and scrolls again
+		let wheelSleep = 700;
+		let lastWheelTime = 0;
+		let atEdge = null; // 'last' | 'first' | null
+		projectsSection.addEventListener('wheel', function(e) {
+			const now = Date.now();
+			if (now - lastWheelTime < wheelSleep) return;
+			const atFirst = splide.index === 0;
+			const atLast = splide.index === splide.length - 1;
+			if (e.deltaY > 0) {
+				if (atLast) {
+					if (atEdge === 'last') {
+						lastWheelTime = now;
+						let next = projectsSection.nextElementSibling;
+						while (next && next.offsetHeight < 10) next = next.nextElementSibling;
+						if (next) {
+							next.scrollIntoView({behavior:'smooth', block:'start'});
+						}
+						atEdge = null;
+					} else {
+						atEdge = 'last';
+						lastWheelTime = now;
+						// امنع السكرول الافتراضي حتى لا يخرج مباشرة
+						e.preventDefault();
+					}
+				} else {
+					atEdge = null;
+				}
+			} else if (e.deltaY < 0) {
+				if (atFirst) {
+					if (atEdge === 'first') {
+						lastWheelTime = now;
+						let prev = projectsSection.previousElementSibling;
+						while (prev && prev.offsetHeight < 10) prev = prev.previousElementSibling;
+						if (prev) {
+							prev.scrollIntoView({behavior:'smooth', block:'end'});
+						}
+						atEdge = null;
+					} else {
+						atEdge = 'first';
+						lastWheelTime = now;
+						e.preventDefault();
+					}
+				} else {
+					atEdge = null;
+				}
+			}
+		}, {passive:false});
+
+		// إذا دخلت القسم من الأسفل (سكرول لأعلى)، ابدأ من آخر سلايد
+		let lastScrollY = window.scrollY;
+		window.addEventListener('scroll', function() {
+			const rect = projectsSection.getBoundingClientRect();
+			// إذا دخلت القسم من الأسفل (سكرول لأعلى)
+			if (rect.bottom > 0 && rect.top < window.innerHeight && window.scrollY < lastScrollY) {
+				if (rect.bottom > window.innerHeight && rect.top < 10) {
+					// إذا كان السلايدر ظاهر بالكامل تقريباً
+					if (splide.index !== splide.length - 1) {
+						splide.go(splide.length - 1);
+					}
+				}
+			}
+			lastScrollY = window.scrollY;
+		});
+	}
+});
 // تفعيل Splide.js على سلايدر الهيرو
 document.addEventListener('DOMContentLoaded', function() {
 	new Splide('.hero-splide', {

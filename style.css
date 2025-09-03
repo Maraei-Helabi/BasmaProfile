@@ -1,3 +1,100 @@
+/* ==== Projects Vertical Slider Section ==== */
+.projects-vertical-slider-section {
+	width: 100vw;
+	height: 100vh;
+	min-height: 100vh;
+	position: relative;
+	z-index: 10;
+	overflow: hidden;
+}
+.projects-vertical-splide,
+.projects-vertical-splide .splide__track,
+.projects-vertical-splide .splide__list {
+	width: 100vw;
+	height: 100vh;
+	min-height: 100vh;
+}
+.project-slide {
+	width: 100vw;
+	height: 100vh;
+	min-height: 100vh;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+	position: relative;
+	transition: background 0.7s cubic-bezier(0.77,0,0.175,1);
+}
+.project-slide::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(to top, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.1) 100%);
+	z-index: 1;
+}
+.slide-content {
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: flex-end;
+	padding: 0 5vw 7vh 0;
+	box-sizing: border-box;
+}
+.slide-info {
+	text-align: right;
+	max-width: 500px;
+	margin-bottom: 2vh;
+}
+.slide-title {
+	font-size: 2.8rem;
+	color: #fff;
+	font-weight: bold;
+	margin-bottom: 1.2rem;
+	text-shadow: 0 4px 24px rgba(0,0,0,0.5);
+	letter-spacing: 1px;
+}
+.slide-description {
+	font-size: 1.3rem;
+	color: #f3f3f3;
+	line-height: 1.7;
+	text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+	background: rgba(0,0,0,0.25);
+	border-radius: 10px;
+	padding: 0.7rem 1.2rem;
+	display: inline-block;
+}
+.projects-vertical-splide .splide__pagination {
+	right: 2vw;
+	left: auto;
+	top: 50%;
+	transform: translateY(-50%);
+	flex-direction: column;
+}
+.projects-vertical-splide .splide__pagination__page {
+	width: 12px;
+	height: 12px;
+	margin: 8px 0;
+	background: #fff;
+	opacity: 0.5;
+	border: 2px solid #fff;
+	transition: opacity 0.3s;
+}
+.projects-vertical-splide .splide__pagination__page.is-active {
+	opacity: 1;
+	background: var(--main-color, #d2ae32);
+	border-color: var(--main-color, #d2ae32);
+}
+@media (max-width: 768px) {
+	.slide-title { font-size: 1.7rem; }
+	.slide-description { font-size: 1rem; }
+	.slide-info { max-width: 90vw; }
+	.slide-content { padding: 0 2vw 4vh 0; }
+}
 /* Hero Section custom styles (only what Bootstrap can't do directly) */
 .hero-banner {
 	min-height: 600px;
