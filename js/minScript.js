@@ -20,6 +20,34 @@ document.addEventListener('DOMContentLoaded', function () {
 				slide: 'splide__slide project-slide',
 			},
 		});
+				splide.on('move', function(newIndex) {
+			// عند تغيير السلايد، غيّر خلفية السكشن حسب data-image
+			var slides = projectsSplide.querySelectorAll('.project-slide');
+			var activeSlide = slides[newIndex];
+			if (activeSlide) {
+				var bg = activeSlide.dataset.image;
+				if (bg) {
+					projectsSection.style.backgroundImage = 'url("' + bg + '")';
+					projectsSection.style.backgroundSize = 'cover';
+					projectsSection.style.backgroundPosition = 'center';
+					projectsSection.style.backgroundRepeat = 'no-repeat';
+				}
+			}
+		});
+		// عند التحميل الأول، عيّن الخلفية
+		splide.on('mounted', function() {
+			var slides = projectsSplide.querySelectorAll('.project-slide');
+			var activeSlide = slides[0];
+			if (activeSlide) {
+				var bg = activeSlide.dataset.image;
+				if (bg) {
+					projectsSection.style.backgroundImage = 'url("' + bg + '")';
+					projectsSection.style.backgroundSize = 'cover';
+					projectsSection.style.backgroundPosition = 'center';
+					projectsSection.style.backgroundRepeat = 'no-repeat';
+				}
+			}
+		});
 		splide.mount();
 
 		// Wheel navigation: only exit after user is ALREADY at last/first slide and scrolls again
