@@ -16,14 +16,17 @@ document.addEventListener('DOMContentLoaded', function () {
 	let current = 0;
 	ScrollTrigger.create({
 		trigger: section,
-		start: 'top top',
+		start: 'center center', // يبدأ التفاعل عندما يكون القسم في منتصف الشاشة
+		// end يجب أن يكون (عدد الكروت - 1) × ارتفاع القسم، حتى لا يتمدد pin أكثر من اللازم
 		end: () => `+=${section.offsetHeight * (cards.length - 1)}`,
 		pin: true,
+		pinSpacing: true,
 		scrub: 1,
 		anticipatePin: 1,
 		onUpdate: self => {
-			const progress = self.progress;
-			const idx = Math.round(progress * (cards.length - 1));
+			// توزيع التقدم بالتساوي على الكروت
+			const total = cards.length - 1;
+			const idx = Math.min(total, Math.max(0, Math.round(self.progress * total)));
 			if (idx !== current) {
 				cards.forEach((c, i) => c.classList.toggle('active', i === idx));
 				images.forEach((img, i) => img.classList.toggle('active', i === idx));
