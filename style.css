@@ -1,6 +1,9 @@
 /* ==== Capsules Section (Why Capsules®? Inspired) ==== */
+.pin-spacer{
+	width: 100% !important;
+}
 .capsules-section {
-	width: 100vw;
+	width: 100%;
 	min-height: 100vh;
 	background: #18120e;
 	display: flex;
@@ -12,8 +15,8 @@
 	z-index: 10;
 }
 .capsules-wrapper {
-	width: 100vw;
-	max-width: 1200px;
+	width: 100%;
+	max-width: 100%;
 	min-height: 600px;
 	display: flex;
 	flex-direction: row;
