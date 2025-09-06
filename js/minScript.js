@@ -1,3 +1,37 @@
+// ==== Capsules Section (Why Capsules®? Inspired, GSAP ScrollTrigger) ====
+document.addEventListener('DOMContentLoaded', function () {
+	if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+	const section = document.querySelector('.capsules-section');
+	if (!section) return;
+	const cards = Array.from(section.querySelectorAll('.capsules-card'));
+	const images = Array.from(section.querySelectorAll('.capsules-image'));
+	if (cards.length < 2 || images.length < 2) return;
+
+	// إظهار أول كارد وصورة
+	cards[0].classList.add('active');
+	images[0].classList.add('active');
+
+	// إعداد ScrollTrigger
+	gsap.registerPlugin(ScrollTrigger);
+	let current = 0;
+	ScrollTrigger.create({
+		trigger: section,
+		start: 'top top',
+		end: () => `+=${section.offsetHeight * (cards.length - 1)}`,
+		pin: true,
+		scrub: 1,
+		anticipatePin: 1,
+		onUpdate: self => {
+			const progress = self.progress;
+			const idx = Math.round(progress * (cards.length - 1));
+			if (idx !== current) {
+				cards.forEach((c, i) => c.classList.toggle('active', i === idx));
+				images.forEach((img, i) => img.classList.toggle('active', i === idx));
+				current = idx;
+			}
+		}
+	});
+});
 // Projects Vertical Splide Slider Init + Wheel Exit/Entry Logic
 document.addEventListener('DOMContentLoaded', function () {
 	var projectsSection = document.querySelector('.projects-vertical-slider-section');

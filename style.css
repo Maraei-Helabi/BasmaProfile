@@ -1,3 +1,149 @@
+/* ==== Capsules Section (Why Capsules®? Inspired) ==== */
+.capsules-section {
+	width: 100vw;
+	min-height: 100vh;
+	background: #18120e;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+	padding: 0;
+	z-index: 10;
+}
+.capsules-wrapper {
+	width: 100vw;
+	max-width: 1200px;
+	min-height: 600px;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	justify-content: center;
+	gap: 40px;
+	position: relative;
+}
+.capsules-content {
+	flex: 1 1 0;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: center;
+	position: relative;
+	z-index: 2;
+	min-width: 340px;
+	max-width: 480px;
+	padding: 0 24px;
+}
+.capsules-card {
+	background: #3a2a1a;
+	border-radius: 48px;
+	box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+	color: #fff;
+	margin-bottom: 32px;
+	padding: 48px 36px 36px 36px;
+	min-height: 340px;
+	max-width: 480px;
+	width: 100%;
+	opacity: 0;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	transition: opacity 0.7s cubic-bezier(0.77,0,0.175,1), transform 0.7s cubic-bezier(0.77,0,0.175,1);
+	transform: translateY(40px) scale(0.98);
+}
+.capsules-card.active {
+	opacity: 1;
+	pointer-events: auto;
+	transform: translateY(0) scale(1);
+	z-index: 2;
+}
+.capsules-card-inner {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+.capsules-title {
+	font-size: 2.2rem;
+	font-weight: 800;
+	color: #e6cfa7;
+	margin-bottom: 8px;
+	text-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+.capsules-desc {
+	font-size: 1.15rem;
+	color: #fff;
+	line-height: 1.7;
+	margin-bottom: 18px;
+}
+.capsules-stepper {
+	display: flex;
+	gap: 10px;
+	margin-top: 18px;
+}
+.capsules-step {
+	border: 2px solid #e6cfa7;
+	color: #e6cfa7;
+	background: transparent;
+	border-radius: 50%;
+	width: 38px;
+	height: 38px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.1rem;
+	font-weight: 700;
+	opacity: 0.3;
+	transition: background 0.3s, color 0.3s, opacity 0.3s;
+}
+.capsules-step.active {
+	background: #e6cfa7;
+	color: #3a2a1a;
+	opacity: 1;
+}
+.capsules-images {
+	flex: 1 1 0;
+	min-width: 340px;
+	max-width: 600px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	z-index: 1;
+}
+.capsules-image {
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 48px;
+	opacity: 0;
+	transform: scale(1.05);
+	transition: opacity 0.7s cubic-bezier(0.77,0,0.175,1), transform 0.7s cubic-bezier(0.77,0,0.175,1);
+	box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+}
+.capsules-image.active {
+	opacity: 1;
+	transform: scale(1);
+	z-index: 2;
+}
+@media (max-width: 900px) {
+	.capsules-wrapper { flex-direction: column; gap: 0; min-height: 0; }
+	.capsules-content, .capsules-images { max-width: 98vw; min-width: 0; }
+	.capsules-card { max-width: 98vw; }
+	.capsules-images { min-height: 220px; height: 220px; }
+}
+@media (max-width: 600px) {
+	.capsules-section { min-height: 0; }
+	.capsules-card { padding: 24px 10px 18px 10px; border-radius: 24px; }
+	.capsules-title { font-size: 1.1rem; }
+	.capsules-desc { font-size: 0.95rem; }
+	.capsules-step { width: 28px; height: 28px; font-size: 0.95rem; }
+	.capsules-images { min-height: 120px; height: 120px; }
+	.capsules-image { border-radius: 24px; }
+}
 /* ==== Projects Vertical Slider Section ==== */
 .projects-vertical-slider-section {
 	width: 100%;
