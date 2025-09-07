@@ -498,3 +498,55 @@ function handleSwipe() {
 // Initialize first content (without scroll)
 // updateContent(0, false);
 }
+
+// --- Discover Section (GSAP Horizontal Scroll) ---
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+    console.error('GSAP or ScrollTrigger is not loaded.');
+    return;
+  }
+
+  const discoverSection = document.querySelector('.discover-section');
+  if (!discoverSection) return;
+
+  const track = discoverSection.querySelector('.discover-track');
+  const cards = gsap.utils.toArray(track.querySelectorAll('.discover-card'));
+
+  // Get the total width to scroll
+  const scrollWidth = track.offsetWidth - window.innerWidth;
+
+  // Create the horizontal scroll animation
+  const tween = gsap.to(track, {
+    x: -scrollWidth,
+    ease: 'none', // Linear movement
+  });
+
+  // Create the ScrollTrigger
+  ScrollTrigger.create({
+    trigger: '.discover-track-container',
+    start: 'top top',
+    end: () => `+=${scrollWidth}`,
+    pin: true,
+    animation: tween,
+    scrub: 1, // Smooth scrubbing
+    invalidateOnRefresh: true, // Recalculate on resize
+  });
+
+  // Parallax effect for images inside each card
+  cards.forEach(card => {
+    const image = card.querySelector('.discover-card-image');
+    if (image) {
+      gsap.to(image, {
+        xPercent: -10, // Move image to the left
+        ease: 'none',
+        scrollTrigger: {
+          trigger: card,
+          containerAnimation: tween, // Link to the main horizontal scroll animation
+          start: 'left right',
+          end: 'right left',
+          scrub: true,
+        },
+      });
+    }
+  });
+});

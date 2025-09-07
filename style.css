@@ -293,6 +293,17 @@
 	color: rgba(255, 255, 255, 0.9);
 	line-height: 1.6;
 }
+.hero-splide img,
+.hero-splide video {
+	width: 100% !important;
+	height: 100% !important;
+	object-fit: cover !important;
+}
+.hero-splide,
+.hero-splide .splide__track,
+.hero-splide .splide__list,
+.hero-splide .splide__slide {
+	height: 100vh !important;}
 /* Navbar custom styles (only what Bootstrap can't do directly) */
 .navbar {
 	background-color: rgb(177 187 207 / 58%);
@@ -378,7 +389,7 @@ body {
 	font-weight: 700;
 	color: var(--text-light);
 	margin-bottom: 20px;
-	background: linear-gradient(135deg, var(--primary-color), #b89b2a);
+	background: linear-gradient(135deg, #d2ae32, #b89b2a);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
@@ -2045,7 +2056,7 @@ html {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	transition: transform 0.3s ease;
 }
 
 .image-card:hover .image-container img {
@@ -2941,6 +2952,8 @@ html {
 	font-size: 0.8rem;
 }
 
+
+
 .news-more-btn {
 	background-color: #6c757d;
 	color: #ffc107;
@@ -3168,7 +3181,7 @@ html {
 	}
 }
 
-/* Responsive styles for company works section */
+/* Responsive adjustments for company works section */
 @media (max-width: 768px) {
 	.company-works-section {
 		padding: 60px 0;
@@ -3418,57 +3431,169 @@ html {
 	}
 }
 
-/* By Maraei */
-/* Splide Hero Slider Fix */
-.hero-splide,
-.hero-splide .splide__track,
-.hero-splide .splide__list,
-.hero-splide .splide__slide {
-	height: 100vh !important;
+/* --- Discover Section (GSAP Horizontal Scroll) --- */
+.discover-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: #f4efe7;
+  overflow: hidden;
+  position: relative;
 }
-.hero-splide img,
-.hero-splide video {
-	width: 100% !important;
-	height: 100% !important;
-	object-fit: cover !important;
+
+.discover-section .discover-header {
+  margin-bottom: 80px;
 }
-/* .hero-splide,
-            .hero-splide .splide__track,
-            .hero-splide .splide__list {
-                height: 100vh !important;
-                min-height: 100vh;
-                width: 100vw;
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-            }
 
-            .hero-splide .splide__slide {
-                height: 100vh !important;
-                width: 100vw !important;
-                min-height: 100vh;
-                min-width: 100vw;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background: #222;
-            }
+.discover-section .faq-title {
+  color: #333;
+}
 
-            .hero-splide .splide__slide.is-active {
-                display: flex !important;
-                z-index: 2;
-            }
+.discover-section .projects-subtitle {
+  color: #7a6f5b;
+}
 
-            .slider-bg-media,
-            .hero-splide .splide__slide img,
-            .hero-splide .splide__slide video {
-                width: 100vw !important;
-                height: 100vh !important;
-                object-fit: cover;
-                display: block;
-                background: #222;
-                pointer-events: none;
-                user-select: none;
-            } */
+.discover-track-container {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.discover-track {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  align-items: center;
+  gap: 4vw;
+  padding: 0 10vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.discover-card {
+  width: 75vw;
+  max-width: 1200px;
+  height: calc(100vh - 100px);
+  max-height: 800px;
+  flex-shrink: 0;
+}
+
+.discover-card-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 60px;
+  overflow: hidden;
+}
+
+.discover-card-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.discover-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  /* GSAP will animate this scale */
+  scale: 1.15;
+}
+
+.discover-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  padding: 50px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.discover-card-header h3 {
+  font-size: 3.5rem;
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.discover-card-level {
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 99px;
+  padding: 8px 20px;
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.discover-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.discover-card-footer p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 50%;
+  margin: 0;
+}
+
+.discover-card-pagination {
+  display: flex;
+  gap: 10px;
+}
+
+.discover-card-pagination span {
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 99px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+.discover-card-pagination span:first-child {
+  border-color: #e6d3b3;
+  color: #e6d3b3;
+}
+
+.discover-card-pagination span:last-child {
+  opacity: 0.3;
+}
+
+@media (max-width: 992px) {
+  .discover-card {
+    width: 85vw;
+    height: calc(100vh - 150px);
+  }
+  .discover-card-overlay {
+    padding: 40px;
+  }
+  .discover-card-header h3 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .discover-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .discover-card-footer p {
+    max-width: 100%;
+  }
+}
