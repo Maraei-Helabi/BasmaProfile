@@ -2058,7 +2058,7 @@ html {
 .two-images-subtitle {
 	font-family: 'Cairo', sans-serif;
 	font-size: 1.2rem;
-	color: var(--text-muted);
+	color: var(--text-light);
 	max-width: 1080px;
 	margin: 0 auto;
 }
@@ -3404,9 +3404,13 @@ html {
 .discover-section {
 	padding-top: 100px;
 	padding-bottom: 100px;
-	background-color: #f4efe7;
+	/* background-color: #f4efe7; */
 	overflow: hidden;
 	position: relative;
+    background-image: url(/img/pattern/pattern-building-gold.png);
+    background-position: center;
+    background-size: contain;
+    background-attachment: fixed;
 }
 
 .discover-section .discover-header {
@@ -3437,6 +3441,7 @@ html {
 	position: absolute;
 	left: 0;
 	top: 0;
+	margin-top: 40px;
 }
 
 .discover-card {
