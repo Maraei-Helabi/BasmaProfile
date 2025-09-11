@@ -139,9 +139,10 @@
 }
 @media (max-width: 900px) {
 	.capsules-wrapper {
-		flex-direction: column;
-		gap: 0;
-		min-height: 0;
+        flex-direction: column-reverse;
+        gap: 8px;
+        min-height: 100%;
+        padding-top: 80px;
 	}
 	.capsules-content,
 	.capsules-images {
