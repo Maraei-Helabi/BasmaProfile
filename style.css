@@ -2443,7 +2443,10 @@ html {
 }
 
 /* Responsive Design for FAQ Section */
-@media (max-width: 1200px) {
+@media (max-width: 992px) {
+	.faq-content {
+    min-height: 200px;
+}
 	.faq-container {
 		grid-template-columns: 1fr;
 		gap: 40px;
@@ -2492,14 +2495,39 @@ html {
 	}
 
 	.faq-cards {
-		flex-direction: column;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 10px;
 	}
 
 	.faq-card {
+		flex-basis: calc(50% - 5px);
+		flex-direction: row;
+		text-align: right;
+		gap: 15px;
+		padding: 15px;
+		min-height: 70px;
 		max-width: 100%;
-		flex-direction: column;
-		text-align: center;
-		gap: 10px;
+	}
+
+	.faq-card.active {
+		transform: translateX(0) scale(1.05);
+	}
+
+	.faq-card:hover {
+		transform: translateX(0) scale(1.05);
+	}
+
+	.faq-card.active::after {
+		display: none;
+	}
+
+	.faq-card h4 {
+		font-size: 1rem;
+	}
+
+	.faq-card p {
+		display: none;
 	}
 }
 
@@ -2521,6 +2549,7 @@ html {
 	}
 
 	.faq-card {
+		flex-basis: 100%;
 		padding: 20px;
 	}
 
@@ -2733,52 +2762,6 @@ html {
 }
 
 /* Footer Responsive Design */
-@media (max-width: 1200px) {
-	.footer-content {
-		grid-template-columns: 1fr 1fr;
-		gap: 30px;
-	}
-}
-
-@media (max-width: 768px) {
-	.footer-section {
-		padding: 60px 0 0 0;
-	}
-
-	.footer-content {
-		grid-template-columns: 1fr;
-		gap: 30px;
-		text-align: center;
-	}
-
-	.footer-company .footer-logo {
-		justify-content: center;
-	}
-
-	.social-links {
-		justify-content: center;
-	}
-
-	.footer-bottom-content {
-		flex-direction: column;
-		text-align: center;
-	}
-}
-
-@media (max-width: 576px) {
-	.footer-section {
-		padding: 50px 0 0 0;
-	}
-
-	.footer-content {
-		gap: 25px;
-	}
-
-	.footer-bottom-links {
-		flex-direction: column;
-		gap: 10px;
-	}
-}
 
 /* News Section Styles */
 .news-section {
@@ -3665,12 +3648,15 @@ html {
 
 /*  */
 @media (max-width: 1200px) {
-	.vision-message-section{
+	.footer-content {
+		grid-template-columns: 1fr 1fr;
+		gap: 30px;
+	}
+	.vision-message-section {
 		padding: 0;
 	}
-	.vision-message-section .container-fluid{
+	.vision-message-section .container-fluid {
 		padding-top: 80px;
-
 	}
 	.vision-container {
 		grid-template-columns: 1fr;
@@ -3713,14 +3699,58 @@ html {
 		height: 230px;
 	}
 }
-@media (max-width: 500px) {
-		.vision-message-section .container-fluid{
+@media (max-width: 992px) {
+	.news-content {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+@media (max-width: 768px) {
+	.footer-section {
+		padding: 60px 0 0 0;
+	}
+
+	.footer-content {
+		grid-template-columns: 1fr;
+		gap: 30px;
+		text-align: center;
+	}
+
+	.footer-company .footer-logo {
+		justify-content: center;
+	}
+
+	.social-links {
+		justify-content: center;
+	}
+
+	.footer-bottom-content {
+		flex-direction: column;
+		text-align: center;
+	}
+}
+
+@media (max-width: 576px) {
+	.footer-section {
+		padding: 50px 0 0 0;
+	}
+
+	.footer-content {
+		gap: 25px;
+	}
+
+	.footer-bottom-links {
+		flex-direction: column;
+		gap: 10px;
+	}
+	.vision-message-section .container-fluid {
 		padding-top: 0px;
 	}
 	.vision-container {
 		padding-top: 30px;
 	}
-		.vision-item p,
+	.vision-item p,
 	.message-item p {
 		line-height: 1.5;
 	}
