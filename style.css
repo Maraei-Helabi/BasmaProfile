@@ -1,8 +1,47 @@
-.pt-70{
+:root {
+	--primary-color: #d2ae32;
+	--dark-bg: #26282c;
+	--section-bg: #272c2f;
+	--text-light: #ffffff;
+	--text-muted: #6c757d;
+	--glass-border: rgb(154 154 154 / 20%);
+	--yellow-color: #facc15;
+}
+
+body {
+	font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background-color: var(--dark-bg);
+	color: var(--text-light);
+	text-align: right;
+}
+
+.pt-70 {
 	padding-top: 70px;
 }
-.pb-70{
+.pb-70 {
 	padding-bottom: 70px;
+}
+.overlaySection {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	background: #26282cad;
+}
+.patternTop {
+    position: absolute;
+    width: 100%;
+    top: -50px;
+    height: 50px;
+    z-index: 10;
+}
+.patternBottom {
+	position: absolute;
+	width: 100%;
+	bottom: -50px;
+	transform: rotate(180deg);
+	height: 50px;
+	z-index: 10;
 }
 /* ==== Capsules Section (Why Capsules®? Inspired) ==== */
 .pin-spacer {
@@ -11,14 +50,15 @@
 .capsules-section {
 	width: 100%;
 	min-height: 100vh;
-	background: var(--dark-bg);
+	background: var(--section-bg);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	position: relative;
-	overflow: hidden;
+	/* overflow: hidden; */
 	padding: 0;
 	z-index: 10;
+	margin: 50px 0 !important;
 }
 .capsules-wrapper {
 	width: 100%;
@@ -45,9 +85,9 @@
 }
 .capsules-card {
 	background: url("img/pattern/pattern-building.png");
-	    background-position: center;
-    background-size: contain;
-    background-color: var(--bs-dark-text-emphasis);
+	background-position: center;
+	background-size: contain;
+	background-color: var(--bs-dark-text-emphasis);
 	border-radius: 48px;
 	box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
 	color: #fff;
@@ -148,10 +188,10 @@
 }
 @media (max-width: 900px) {
 	.capsules-wrapper {
-        flex-direction: column-reverse;
-        gap: 8px;
-        min-height: 100%;
-        padding-top: 80px;
+		flex-direction: column-reverse;
+		gap: 8px;
+		min-height: 100%;
+		padding-top: 80px;
 	}
 	.capsules-content,
 	.capsules-images {
@@ -378,21 +418,6 @@
 }
 .navbar-nav .nav-link:hover {
 	color: var(--primary-color) !important;
-}
-:root {
-	--primary-color: #d2ae32;
-	--dark-bg: #26282c;
-	--text-light: #ffffff;
-	--text-muted: #6c757d;
-	--glass-border: rgb(154 154 154 / 20%);
-	--yellow-color: #facc15;
-}
-
-body {
-	font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	background-color: var(--dark-bg);
-	color: var(--text-light);
-	text-align: right;
 }
 
 /* احتفظنا فقط بالخصائص المخصصة التي لا توفرها Bootstrap مباشرة */
@@ -1187,11 +1212,12 @@ body {
 
 /* Projects Section Styles */
 .projects-section {
-	background: var(--dark-bg);
-	padding: 100px 0;
+	background: var(--section-bg);
+	padding: 70px 0;
 	position: relative;
 	width: 100%;
 	max-width: 100%;
+	margin: 50px 0;
 }
 
 .projects-section .container-fluid {
@@ -2455,8 +2481,8 @@ html {
 /* Responsive Design for FAQ Section */
 @media (max-width: 992px) {
 	.faq-content {
-    min-height: 200px;
-}
+		min-height: 200px;
+	}
 	.faq-container {
 		grid-template-columns: 1fr;
 		gap: 40px;
@@ -2775,10 +2801,16 @@ html {
 
 /* News Section Styles */
 .news-section {
-	padding: 90px 0;
+	padding: 70px 0;
 	background-color: #f8f9fa;
 }
-
+.Team {
+    background-image: url(/img/pattern/pattern-black.png);
+    background-position: center;
+    background-size: auto;
+    background-attachment: fixed;
+    position: relative;
+}
 .news-title {
 	font-size: 2.5rem;
 	font-weight: 700;
@@ -3385,9 +3417,11 @@ html {
 	.panel-description {
 		width: 85%;
 	}
-	.event-panel:hover, .event-panel:focus, .event-panel.active {
-    flex: auto;
-}
+	.event-panel:hover,
+	.event-panel:focus,
+	.event-panel.active {
+		flex: auto;
+	}
 }
 
 @media (max-width: 576px) {

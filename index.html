@@ -249,7 +249,8 @@
   <!-- End Hero Section -->
 
   <!-- Two Images  works Section -->
-  <section class="discover-section" id="discover">
+  <section class="discover-section relative" id="discover">
+    <div class="overlaySection"></div>
     <div class="container-fluid px-0">
       <div class="two-images-header text-center mb-0">
         <div class="section-header d-inline-block px-4 py-2 mb-3" data-aos="fade-down" data-aos-delay="200">
@@ -560,14 +561,19 @@
   </section>
 
   <!-- Projects Section -->
-  <section class="projects-section" id="projects">
+  <section class="projects-section relative" id="projects">
+    <img class="patternTop" src="img/pattern/bg-contact-us.png" alt="">
+    <img class="patternBottom" src="img/pattern/bg-contact-us.png" alt="">
     <div class="container-fluid">
-      <div class="projects-header text-center mb-5">
-        <h2 class="faq-title" data-aos="fade-down" data-aos-delay="200">
-          مشاريعنا
-        </h2>
-        <p class="projects-subtitle" data-aos="fade-up" data-aos-delay="400">
-          اكتشف أحدث روائعنا المعمارية
+      <div class="two-images-header text-center mb-5">
+        <div class="section-header d-inline-block px-4 py-2 mb-3" data-aos="fade-down" data-aos-delay="200">
+          <span class="line-left"></span>
+          <span class="text fs-4">مشاريعنا</span>
+          <span class="line-right"></span>
+        </div>
+        <p class="two-images-subtitle" data-aos="fade-up" data-aos-delay="400">
+          اكتشف مجموعة من مشاريعنا المميزة التي تعكس تميزنا في التصميم
+          المعماري والتنفيذ
         </p>
       </div>
 
@@ -669,278 +675,562 @@
     </div>
   </section>
 
-  <!-- Team Slider Section -->
-  <div class="container-fluid">
-    <div class="team-section-header text-center mb-5">
-      <h2 class="team-section-title" data-aos="fade-down" data-aos-delay="200">
-        فريق بسمة
-      </h2>
-      <p class="team-section-subtitle" data-aos="fade-up" data-aos-delay="400">
-        تعرف على المواهب المتميزة التي تجعل أحلامك حقيقة
-      </p>
+  <!-- Projects Vertical Slider Section -->
+  <div class="pt-70 two-images-header text-center mb-5">
+    <div class="section-header d-inline-block px-4 py-2 mb-3" data-aos="fade-down" data-aos-delay="200">
+      <span class="line-left"></span>
+      <span class="text fs-4">قطاعات الأعمال</span>
+      <span class="line-right"></span>
     </div>
-    <div class="row gap-5">
-      <div class="col-12 col-lg-4">
-        <img class="img-fluid"
-          src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1000&q=80"
-          alt="Team">
-        <h2>فريق بسمة</h2>
-        <p class="lead">نخبة من المبدعين والمختصين لتحويل رؤيتك إلى حقيقة.</p>
+    <p class="two-images-subtitle" data-aos="fade-up" data-aos-delay="400">
+      اكتشف مجموعة من مشاريعنا المميزة التي تعكس تميزنا في التصميم
+      المعماري والتنفيذ
+    </p>
+  </div>
+  <section class="pb-70 projects-vertical-slider-section" id="projects-vertical-slider">
+    <div class="splide projects-vertical-splide">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide project-slide"
+            data-image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2070&q=80">
+            <!-- <img class="slide-image" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2070&q=80" alt=""> -->
+            <div class="slide-content">
+              <div class="slide-info">
+                <h2 class="slide-title">مشروع فيلا حديثة</h2>
+                <p class="slide-description">تصميم فيلا عصرية تجمع بين الفخامة والراحة مع أحدث التقنيات الذكية.</p>
+              </div>
+            </div>
+          </li>
+          <li class="splide__slide project-slide"
+            data-image="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2053&q=80">
+            <!-- <img class="slide-image" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2053&q=80" alt=""> -->
+            <div class="slide-content">
+              <div class="slide-info">
+                <h2 class="slide-title">منتجع سياحي فاخر</h2>
+                <p class="slide-description">منتجع متكامل الخدمات وسط الطبيعة مع إطلالات خلابة وتجربة استثنائية
+                  للزوار.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="splide__slide project-slide"
+            data-image="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2070&q=80">
+            <!-- <img class="slide-image" src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2070&q=80" alt=""> -->
+            <div class="slide-content">
+              <div class="slide-info">
+                <h2 class="slide-title">برج مكاتب تجارية</h2>
+                <p class="slide-description">برج مكاتب بتصميم مستدام ومساحات عمل مرنة تلبي احتياجات الشركات الحديثة.
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
+    </div>
+  </section>
 
-      <div class="col-12 col-lg-7">
-        <div class="splide team-splide" aria-label="Team Slider">
-          <div class="splide__track">
-            <ul class="splide__list">
-              <li class="splide__slide">
-                <div class="team-slide" data-aos="fade-up" data-aos-delay="200">
-                  <div class="team-member">
-                    <div class="member-image">
-                      <img
-                        src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
-                        alt="Team Member 1" />
-                      <div class="social-overlay">
-                        <div class="social-links">
-                          <a href="#" class="social-link" aria-label="LinkedIn">
-                            <i class="bi bi-linkedin"></i>
-                          </a>
-                          <a href="#" class="social-link" aria-label="Instagram">
-                            <i class="bi bi-instagram"></i>
-                          </a>
-                          <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="bi bi-twitter-x"></i>
-                          </a>
-                          <a href="#" class="social-link" aria-label="Email">
-                            <i class="bi bi-envelope"></i>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="member-info">
-                      <h3>سارة جونسون</h3>
-                      <p>المهندسة المعمارية الرئيسية</p>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="splide__slide">
-                <div class="team-slide" data-aos="fade-up" data-aos-delay="300">
-                  <div class="team-member">
-                    <div class="member-image">
-                      <img
-                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
-                        alt="Team Member 2" />
-                      <div class="social-overlay">
-                        <div class="social-links">
-                          <a href="#" class="social-link" aria-label="LinkedIn">
-                            <i class="bi bi-linkedin"></i>
-                          </a>
-                          <a href="#" class="social-link" aria-label="Instagram">
-                            <i class="bi bi-instagram"></i>
-                          </a>
-                          <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="bi bi-twitter-x"></i>
-                          </a>
-                          <a href="#" class="social-link" aria-label="Email">
-                            <i class="bi bi-envelope"></i>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="member-info">
-                      <h3>مايكل تشين</h3>
-                      <p>المصمم الأول</p>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="splide__slide">
-                <div class="team-slide" data-aos="fade-up" data-aos-delay="400">
-                  <div class="team-member">
-                    <div class="member-image">
-                      <img
-                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-                        alt="Team Member 3" />
-                      <div class="social-overlay">
-                        <div class="social-links">
-                          <a href="#" class="social-link" aria-label="LinkedIn">
-                            <i class="bi bi-linkedin"></i>
-                          </a>
-                          <a href="#" class="social-link" aria-label="Instagram">
-                            <i class="bi bi-instagram"></i>
-                          </a>
-                          <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="bi bi-twitter-x"></i>
-                          </a>
-                          <a href="#" class="social-link" aria-label="Email">
-                            <i class="bi bi-envelope"></i>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="member-info">
-                      <h3>إيما رودريغيز</h3>
-                      <p>أخصائية التصميم الداخلي</p>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <li class="splide__slide">
-                <div class="team-slide" data-aos="fade-up" data-aos-delay="500">
-                  <div class="team-member">
-                    <div class="member-image">
-                      <img
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&animated"
-                        alt="Team Member 4" />
-                      <div class="social-overlay">
-                        <div class="social-links">
-                          <a href="#" class="social-link" aria-label="LinkedIn">
-                            <i class="bi bi-linkedin"></i>
-                          </a>
-                          <a href="#" class="social-link" aria-label="Instagram">
-                            <i class="bi bi-instagram"></i>
-                          </a>
-                          <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="bi bi-twitter-x"></i>
-                          </a>
-                          <a href="#" class="social-link" aria-label="Email">
-                            <i class="bi bi-envelope"></i>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="member-info">
-                      <h3>ديفيد طومسون</h3>
-                      <p>مدير المشروع</p>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="splide__slide">
-                <div class="team-slide" data-aos="fade-up" data-aos-delay="600">
-                  <div class="team-member">
-                    <div class="member-image">
-                      <img
-                        src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
-                        alt="Team Member 5" />
-                      <div class="social-overlay">
-                        <div class="social-links">
-                          <a href="#" class="social-link" aria-label="LinkedIn">
-                            <i class="bi bi-linkedin"></i>
-                          </a>
-                          <a href="#" class="social-link" aria-label="Instagram">
-                            <i class="bi bi-instagram"></i>
-                          </a>
-                          <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="bi bi-twitter-x"></i>
-                          </a>
-                          <a href="#" class="social-link" aria-label="Email">
-                            <i class="bi bi-envelope"></i>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="member-info">
-                      <h3>ليزا بارك</h3>
-                      <p>المديرة الإبداعية</p>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-            </ul>
+  <!-- الفعاليات Section -->
+  <section class="events-section pt-70 pb-70" id="events">
+    <div class="container-fluid">
+      <div class="two-images-header text-center mb-5">
+        <div class="section-header d-inline-block px-4 py-2 mb-3" data-aos="fade-down" data-aos-delay="200">
+          <span class="line-left"></span>
+          <span class="text fs-4">الفعاليات</span>
+          <span class="line-right"></span>
+        </div>
+        <p class="two-images-subtitle" data-aos="fade-up" data-aos-delay="400">
+          اكتشف مجموعة من مشاريعنا المميزة التي تعكس تميزنا في التصميم
+          المعماري والتنفيذ
+        </p>
+      </div>
+      <div class="events-triptych">
+        <div class="event-panel commercial-panel" data-aos="fade-right" data-aos-delay="200">
+          <div class="panel-content">
+            <div class="panel-image">
+              <img
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                alt="Commercial Events" />
+            </div>
+            <div class="panel-overlay">
+              <div>
+                <h3 class="panel-title">
+                  وفد يزور مؤسسة العون
+                </h3>
+                <p class="panel-description">
+                  وفد من برنامج "العُون" للتنمية والتطوير، قام بزيارة
+                  مؤسسة "العُون" للتنمية والتطوير في المملكة العربية
+                  السعودية، حيث شارك في حفل تكريم وards
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-
-  <!-- Partners Section -->
-  <section class="partners-section" id="partners">
-    <div class="container">
-      <div class="partners-header text-center mb-5">
-        <h2 class="partners-title" data-aos="fade-down" data-aos-delay="200">
-          شركاء النجاح
-        </h2>
-      </div>
-
-      <div class="partners-scroll">
-        <div class="partner-logo" data-aos="zoom-in" data-aos-delay="200">
-          <img
-            src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80"
-            alt="Partner 1" />
+        <div class="event-panel residential-panel" data-aos="fade-up" data-aos-delay="400">
+          <div class="panel-content">
+            <div class="panel-image">
+              <img
+                src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80"
+                alt="Residential Events" />
+            </div>
+            <div class="panel-overlay">
+              <div>
+                <h3 class="panel-title">Residential</h3>
+                <p class="panel-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="partner-logo" data-aos="zoom-in" data-aos-delay="300">
-          <img
-            src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80"
-            alt="Partner 2" />
-        </div>
-
-        <div class="partner-logo" data-aos="zoom-in" data-aos-delay="400">
-          <img
-            src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80"
-            alt="Partner 3" />
-        </div>
-
-        <div class="partner-logo" data-aos="zoom-in" data-aos-delay="500">
-          <img
-            src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80"
-            alt="Partner 4" />
-        </div>
-
-        <div class="partner-logo" data-aos="zoom-in" data-aos-delay="600">
-          <img
-            src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80"
-            alt="Partner 5" />
-        </div>
-
-        <div class="partner-logo" data-aos="zoom-in" data-aos-delay="700">
-          <img
-            src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80"
-            alt="Partner 6" />
-        </div>
-
-        <div class="partner-logo" data-aos="zoom-in" data-aos-delay="800">
-          <img
-            src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80"
-            alt="Partner 7" />
-        </div>
-
-        <div class="partner-logo" data-aos="zoom-in" data-aos-delay="900">
-          <img src="https://images.unsplash.com/1000x1000/?logo" alt="Partner 8" />
-        </div>
-
-        <div class="partner-logo" data-aos="zoom-in" data-aos-delay="1000">
-          <img src="https://images.unsplash.com/1000x1000/?business" alt="Partner 9" />
-        </div>
-
-        <div class="partner-logo" data-aos="zoom-in" data-aos-delay="1100">
-          <img src="https://images.unsplash.com/1000x1000/?corporate" alt="Partner 10" />
-        </div>
-
-        <div class="partner-logo" data-aos="zoom-in" data-aos-delay="1200">
-          <img src="https://images.unsplash.com/1000x1000/?technology" alt="Partner 11" />
-        </div>
-
-        <div class="partner-logo" data-aos="zoom-in" data-aos-delay="1300">
-          <img src="https://images.unsplash.com/1000x1000/?innovation" alt="Partner 12" />
+        <div class="event-panel airbnb-panel" data-aos="fade-left" data-aos-delay="600">
+          <div class="panel-content">
+            <div class="panel-image">
+              <img
+                src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80"
+                alt="Airbnb Events" />
+            </div>
+            <div class="panel-overlay">
+              <div class="">
+                <h3 class="panel-title">Airbnb</h3>
+                <p class="panel-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Why Capsules®? Inspired Section -->
+  <section class="capsules-section" id="capsules-section">
+    <img class="patternTop" src="img/pattern/bg-contact-us.png" alt="">
+    <img class="patternBottom" src="img/pattern/bg-contact-us.png" alt="">
+    <div class="capsules-wrapper">
+      <div class="capsules-content">
+        <div class="capsules-card" data-index="0">
+          <div class="capsules-card-inner">
+            <h2 class="capsules-title">استمتع بالإطلالة البانورامية</h2>
+            <div class="capsules-desc">نافذة زجاجية واسعة تمنحك رؤية بانورامية للطبيعة الخلابة من كل زاوية.</div>
+            <div class="capsules-stepper">
+              <span class="capsules-step active">01</span>
+              <span class="capsules-step">02</span>
+              <span class="capsules-step">03</span>
+            </div>
+          </div>
+        </div>
+        <div class="capsules-card" data-index="1">
+          <div class="capsules-card-inner">
+            <h2 class="capsules-title">صوت السكون والخصوصية</h2>
+            <div class="capsules-desc">ابتعد عن صخب المدينة واستمتع بالهدوء التام في ملاذك الخاص وسط الصحراء.</div>
+            <div class="capsules-stepper">
+              <span class="capsules-step">01</span>
+              <span class="capsules-step active">02</span>
+              <span class="capsules-step">03</span>
+            </div>
+          </div>
+        </div>
+        <div class="capsules-card" data-index="2">
+          <div class="capsules-card-inner">
+            <h2 class="capsules-title">استرخِ في الجاكوزي الخشبي</h2>
+            <div class="capsules-desc">دع الفقاعات والدفء الطبيعي ينقلك إلى عالم من الاسترخاء والراحة المطلقة.</div>
+            <div class="capsules-stepper">
+              <span class="capsules-step">01</span>
+              <span class="capsules-step">02</span>
+              <span class="capsules-step active">03</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="capsules-images">
+        <img class="capsules-image" data-index="0"
+          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80"
+          alt="بانوراما" />
+        <img class="capsules-image" data-index="1"
+          src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=900&q=80"
+          alt="هدوء" />
+        <img class="capsules-image" data-index="2"
+          src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=80"
+          alt="جاكوزي" />
+      </div>
+    </div>
+  </section>
+
+  <!-- News Section -->
+  <section class="news-section" id="news">
+    <div class="container-fluid">
+      <div class="two-images-header text-center mb-5">
+        <div class="section-header d-inline-block px-4 py-2 mb-3" data-aos="fade-down" data-aos-delay="200">
+          <span class="line-left"></span>
+          <span class="text fs-4">الأخبار</span>
+          <span class="line-right"></span>
+        </div>
+        <p class="two-images-subtitle text-dark" data-aos="fade-up" data-aos-delay="400">
+          اكتشف مجموعة من مشاريعنا المميزة التي تعكس تميزنا في التصميم
+          المعماري والتنفيذ
+        </p>
+      </div>
+
+      <div class="news-content">
+        <!-- Right Column - Main Article -->
+        <div class="news-right-column" data-aos="fade-up" data-aos-delay="200">
+          <article class="news-article main">
+            <div class="article-image">
+              <img
+                src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                alt="Person Working at Desk" />
+            </div>
+            <div class="article-content">
+              <h3 class="article-title">
+                توقيع إتفاقية تعاون وشراكة خلال منتدى الألكسو للأعمال
+                والشراكات المنعقد في جمهورية تونس
+              </h3>
+              <div class="article-meta">
+                <span class="article-date">
+                  <i class="bi bi-calendar3"></i>
+                  04/04/2024
+                </span>
+              </div>
+              <p class="article-description">
+                هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما
+                سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع
+                الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم
+                إيبسوم لأنها تعطي توزيعاَ طبيعياَ -إلى حد ما- للأحرف عوضاً
+              </p>
+              <div class="projects-cta text-center mt-5">
+                <a href="#contact" class="projects-btn">عرض جميع المشاريع</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Left Column - Smaller Articles -->
+        <div class="news-left-column" data-aos="fade-down" data-aos-delay="400">
+          <!-- Article 1 -->
+          <article class="news-article small">
+            <div class="article-image">
+              <img
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                alt="Modern Building Facade" />
+            </div>
+            <div class="article-content">
+              <h3 class="article-title">
+                توقيع إتفاقية تعاون وشراكة خلال منتدى الألكسو للأعمال
+              </h3>
+              <div class="article-meta">
+                <span class="article-date">
+                  <i class="bi bi-calendar3"></i>
+                  04/04/2024
+                </span>
+              </div>
+              <p class="article-description">
+                توقيع اتفاقية تعاون جديدة مع شركاء استراتيجيين لتعزيز حضور
+                الشركة في السوق المحلي والدولي. تشمل الاتفاقية مشاريع مشتركة
+                في مجال التطوير العقاري والبنية التحتية، مع التركيز على
+                الاستدامة والابتكار التكنولوجي.
+              </p>
+              <div class="article-actions">
+                <button class="btn-more-details">المزيد من التفاصيل</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="news-article small">
+            <div class="article-image">
+              <img
+                src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                alt="Desk with Plants" />
+            </div>
+            <div class="article-content">
+              <h3 class="article-title">افتتاح مشروع جديد في الرياض</h3>
+              <div class="article-meta">
+                <span class="article-date">
+                  <i class="bi bi-calendar3"></i>
+                  02/04/2024
+                </span>
+              </div>
+              <p class="article-description">
+                افتتاح مشروع سكني جديد في الرياض بتصميم عصري ومستدام يلبي
+                احتياجات العائلات السعودية. المشروع يتضمن 500 وحدة سكنية مع
+                مرافق ترفيهية وخدمات متكاملة، ويتميز بتقنيات الطاقة الخضراء
+                والتصميم الذكي.
+              </p>
+              <div class="article-actions">
+                <button class="btn-more-details">المزيد من التفاصيل</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="news-article small">
+            <div class="article-image">
+              <img
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                alt="Glass Building Panels" />
+            </div>
+            <div class="article-content">
+              <h3 class="article-title">
+                حصول الشركة على جائزة التميز المعماري
+              </h3>
+              <div class="article-meta">
+                <span class="article-date">
+                  <i class="bi bi-calendar3"></i>
+                  30/03/2024
+                </span>
+              </div>
+              <p class="article-description">
+                حصول الشركة على جائزة التميز المعماري لعام 2024 تقديراً
+                لجهودها في تطوير مشاريع مستدامة ومبتكرة. الجائزة تثمن التزام
+                الشركة بالمعايير البيئية العالية والتصميم الإبداعي الذي يجمع
+                بين الجمال والوظيفة.
+              </p>
+              <div class="article-actions">
+                <button class="btn-more-details">المزيد من التفاصيل</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="projects-cta text-center mt-5">
+        <a href="#contact" class="projects-btn">عرض جميع</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Slider Section -->
+  <section class="Team pt-70 pb-70">
+    <div class="overlaySection"></div>
+
+    <div class="container-fluid">
+      <div class="two-images-header text-center mb-5">
+        <div class="section-header d-inline-block px-4 py-2 mb-3" data-aos="fade-down" data-aos-delay="200">
+          <span class="line-left"></span>
+          <span class="text fs-4">فريق بسمة</span>
+          <span class="line-right"></span>
+        </div>
+        <p class="two-images-subtitle" data-aos="fade-up" data-aos-delay="400">
+          اكتشف مجموعة من مشاريعنا المميزة التي تعكس تميزنا في التصميم
+          المعماري والتنفيذ
+        </p>
+      </div>
+      <div class="row gap-5">
+        <div class="col-12 col-lg-4 z-1">
+                              <div class="team-member">
+                      <div class="member-image">
+                        <img
+                          src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                          alt="Team Member 1" />
+                        <div class="social-overlay">
+                          <div class="social-links">
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                              <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                              <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                              <i class="bi bi-twitter-x"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Email">
+                              <i class="bi bi-envelope"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="member-info">
+                        <h3>فريق بسمة</h3>
+                        <p class="lead">نخبة من المبدعين والمختصين لتحويل رؤيتك إلى حقيقة.</p>
+                      </div>
+                    </div>
+        </div>
+
+        <div class="col-12 col-lg-7">
+          <div class="splide team-splide" aria-label="Team Slider">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <div class="team-slide" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-member">
+                      <div class="member-image">
+                        <img
+                          src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                          alt="Team Member 1" />
+                        <div class="social-overlay">
+                          <div class="social-links">
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                              <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                              <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                              <i class="bi bi-twitter-x"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Email">
+                              <i class="bi bi-envelope"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="member-info">
+                        <h3>سارة جونسون</h3>
+                        <p>المهندسة المعمارية الرئيسية</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="team-slide" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-member">
+                      <div class="member-image">
+                        <img
+                          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                          alt="Team Member 2" />
+                        <div class="social-overlay">
+                          <div class="social-links">
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                              <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                              <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                              <i class="bi bi-twitter-x"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Email">
+                              <i class="bi bi-envelope"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="member-info">
+                        <h3>مايكل تشين</h3>
+                        <p>المصمم الأول</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="team-slide" data-aos="fade-up" data-aos-delay="400">
+                    <div class="team-member">
+                      <div class="member-image">
+                        <img
+                          src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                          alt="Team Member 3" />
+                        <div class="social-overlay">
+                          <div class="social-links">
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                              <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                              <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                              <i class="bi bi-twitter-x"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Email">
+                              <i class="bi bi-envelope"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="member-info">
+                        <h3>إيما رودريغيز</h3>
+                        <p>أخصائية التصميم الداخلي</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="splide__slide">
+                  <div class="team-slide" data-aos="fade-up" data-aos-delay="500">
+                    <div class="team-member">
+                      <div class="member-image">
+                        <img
+                          src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&animated"
+                          alt="Team Member 4" />
+                        <div class="social-overlay">
+                          <div class="social-links">
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                              <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                              <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                              <i class="bi bi-twitter-x"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Email">
+                              <i class="bi bi-envelope"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="member-info">
+                        <h3>ديفيد طومسون</h3>
+                        <p>مدير المشروع</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="splide__slide">
+                  <div class="team-slide" data-aos="fade-up" data-aos-delay="600">
+                    <div class="team-member">
+                      <div class="member-image">
+                        <img
+                          src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+                          alt="Team Member 5" />
+                        <div class="social-overlay">
+                          <div class="social-links">
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                              <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                              <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                              <i class="bi bi-twitter-x"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Email">
+                              <i class="bi bi-envelope"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="member-info">
+                        <h3>ليزا بارك</h3>
+                        <p>المديرة الإبداعية</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <!-- FAQ Section -->
   <section class="faq-section" id="faq">
     <div class="container-fluid">
-      <div class="faq-header text-center mb-5">
-        <h2 class="faq-title" data-aos="fade-down" data-aos-delay="200">
-          الأسئلة الشائعة
-        </h2>
-        <p class="faq-subtitle" data-aos="fade-up" data-aos-delay="400">
-          إجابات على أكثر الأسئلة شيوعاً حول خدماتنا ومشاريعنا
+      <div class="two-images-header text-center mb-5">
+        <div class="section-header d-inline-block px-4 py-2 mb-3" data-aos="fade-down" data-aos-delay="200">
+          <span class="line-left"></span>
+          <span class="text fs-4">الأسئلة الشائعة</span>
+          <span class="line-right"></span>
+        </div>
+        <p class="two-images-subtitle" data-aos="fade-up" data-aos-delay="400">
+          اكتشف مجموعة من مشاريعنا المميزة التي تعكس تميزنا في التصميم
+          المعماري والتنفيذ
         </p>
       </div>
 
@@ -1040,326 +1330,82 @@
     </div>
   </section>
 
-  <!-- News Section -->
-  <section class="news-section" id="news">
-    <div class="container-fluid">
-      <div class="news-header text-center mb-5">
-        <h2 class="faq-title" data-aos="fade-down" data-aos-delay="200">
-          آخر الأخبار
-        </h2>
-        <p class="projects-subtitle" data-aos="fade-up" data-aos-delay="400">
-          اقرأ أحدث الأخبار والتحديثات
-        </p>
-      </div>
-
-      <div class="news-content">
-        <!-- Right Column - Main Article -->
-        <div class="news-right-column" data-aos="fade-up" data-aos-delay="200">
-          <article class="news-article main">
-            <div class="article-image">
-              <img
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
-                alt="Person Working at Desk" />
-            </div>
-            <div class="article-content">
-              <h3 class="article-title">
-                توقيع إتفاقية تعاون وشراكة خلال منتدى الألكسو للأعمال
-                والشراكات المنعقد في جمهورية تونس
-              </h3>
-              <div class="article-meta">
-                <span class="article-date">
-                  <i class="bi bi-calendar3"></i>
-                  04/04/2024
-                </span>
-              </div>
-              <p class="article-description">
-                هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما
-                سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع
-                الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم
-                إيبسوم لأنها تعطي توزيعاَ طبيعياَ -إلى حد ما- للأحرف عوضاً
-              </p>
-              <div class="article-actions">
-                <button class="btn-more-details">المزيد من التفاصيل</button>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- Left Column - Smaller Articles -->
-        <div class="news-left-column" data-aos="fade-down" data-aos-delay="400">
-          <!-- Article 1 -->
-          <article class="news-article small">
-            <div class="article-image">
-              <img
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                alt="Modern Building Facade" />
-            </div>
-            <div class="article-content">
-              <h3 class="article-title">
-                توقيع إتفاقية تعاون وشراكة خلال منتدى الألكسو للأعمال
-              </h3>
-              <div class="article-meta">
-                <span class="article-date">
-                  <i class="bi bi-calendar3"></i>
-                  04/04/2024
-                </span>
-              </div>
-              <p class="article-description">
-                توقيع اتفاقية تعاون جديدة مع شركاء استراتيجيين لتعزيز حضور
-                الشركة في السوق المحلي والدولي. تشمل الاتفاقية مشاريع مشتركة
-                في مجال التطوير العقاري والبنية التحتية، مع التركيز على
-                الاستدامة والابتكار التكنولوجي.
-              </p>
-              <div class="article-actions">
-                <button class="btn-more-details">المزيد من التفاصيل</button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Article 2 -->
-          <article class="news-article small">
-            <div class="article-image">
-              <img
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
-                alt="Desk with Plants" />
-            </div>
-            <div class="article-content">
-              <h3 class="article-title">افتتاح مشروع جديد في الرياض</h3>
-              <div class="article-meta">
-                <span class="article-date">
-                  <i class="bi bi-calendar3"></i>
-                  02/04/2024
-                </span>
-              </div>
-              <p class="article-description">
-                افتتاح مشروع سكني جديد في الرياض بتصميم عصري ومستدام يلبي
-                احتياجات العائلات السعودية. المشروع يتضمن 500 وحدة سكنية مع
-                مرافق ترفيهية وخدمات متكاملة، ويتميز بتقنيات الطاقة الخضراء
-                والتصميم الذكي.
-              </p>
-              <div class="article-actions">
-                <button class="btn-more-details">المزيد من التفاصيل</button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Article 3 -->
-          <article class="news-article small">
-            <div class="article-image">
-              <img
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                alt="Glass Building Panels" />
-            </div>
-            <div class="article-content">
-              <h3 class="article-title">
-                حصول الشركة على جائزة التميز المعماري
-              </h3>
-              <div class="article-meta">
-                <span class="article-date">
-                  <i class="bi bi-calendar3"></i>
-                  30/03/2024
-                </span>
-              </div>
-              <p class="article-description">
-                حصول الشركة على جائزة التميز المعماري لعام 2024 تقديراً
-                لجهودها في تطوير مشاريع مستدامة ومبتكرة. الجائزة تثمن التزام
-                الشركة بالمعايير البيئية العالية والتصميم الإبداعي الذي يجمع
-                بين الجمال والوظيفة.
-              </p>
-              <div class="article-actions">
-                <button class="btn-more-details">المزيد من التفاصيل</button>
-              </div>
-            </div>
-          </article>
+  <!-- Partners Section -->
+  <section class="partners-section" id="partners">
+    <div class="container">
+      <div class="two-images-header text-center mb-0">
+        <div class="section-header d-inline-block px-4 py-2 mb-3" data-aos="fade-down" data-aos-delay="200">
+          <span class="line-left"></span>
+          <span class="text fs-4">شركاء النجاح</span>
+          <span class="line-right"></span>
         </div>
       </div>
 
-      <div class="news-cta text-center mt-5">
-        <button class="news-more-btn">المزيد</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Capsules®? Inspired Section -->
-  <section class="capsules-section" id="capsules-section">
-    <div class="capsules-wrapper">
-      <div class="capsules-content">
-        <div class="capsules-card" data-index="0">
-          <div class="capsules-card-inner">
-            <h2 class="capsules-title">استمتع بالإطلالة البانورامية</h2>
-            <div class="capsules-desc">نافذة زجاجية واسعة تمنحك رؤية بانورامية للطبيعة الخلابة من كل زاوية.</div>
-            <div class="capsules-stepper">
-              <span class="capsules-step active">01</span>
-              <span class="capsules-step">02</span>
-              <span class="capsules-step">03</span>
-            </div>
-          </div>
-        </div>
-        <div class="capsules-card" data-index="1">
-          <div class="capsules-card-inner">
-            <h2 class="capsules-title">صوت السكون والخصوصية</h2>
-            <div class="capsules-desc">ابتعد عن صخب المدينة واستمتع بالهدوء التام في ملاذك الخاص وسط الصحراء.</div>
-            <div class="capsules-stepper">
-              <span class="capsules-step">01</span>
-              <span class="capsules-step active">02</span>
-              <span class="capsules-step">03</span>
-            </div>
-          </div>
-        </div>
-        <div class="capsules-card" data-index="2">
-          <div class="capsules-card-inner">
-            <h2 class="capsules-title">استرخِ في الجاكوزي الخشبي</h2>
-            <div class="capsules-desc">دع الفقاعات والدفء الطبيعي ينقلك إلى عالم من الاسترخاء والراحة المطلقة.</div>
-            <div class="capsules-stepper">
-              <span class="capsules-step">01</span>
-              <span class="capsules-step">02</span>
-              <span class="capsules-step active">03</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="capsules-images">
-        <img class="capsules-image" data-index="0"
-          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80"
-          alt="بانوراما" />
-        <img class="capsules-image" data-index="1"
-          src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=900&q=80"
-          alt="هدوء" />
-        <img class="capsules-image" data-index="2"
-          src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=80"
-          alt="جاكوزي" />
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Projects Vertical Slider Section -->
-    <div class="pt-70 two-images-header text-center mb-5">
-      <div class="section-header d-inline-block px-4 py-2 mb-3" data-aos="fade-down" data-aos-delay="200">
-        <span class="line-left"></span>
-        <span class="text fs-4">قطاعات الأعمال</span>
-        <span class="line-right"></span>
-      </div>
-      <p class="two-images-subtitle" data-aos="fade-up" data-aos-delay="400">
-        اكتشف مجموعة من مشاريعنا المميزة التي تعكس تميزنا في التصميم
-        المعماري والتنفيذ
-      </p>
-    </div>
-    <section class="pb-70 projects-vertical-slider-section" id="projects-vertical-slider">
-      <div class="splide projects-vertical-splide">
-        <div class="splide__track">
-          <ul class="splide__list">
-            <li class="splide__slide project-slide"
-              data-image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2070&q=80">
-              <!-- <img class="slide-image" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2070&q=80" alt=""> -->
-              <div class="slide-content">
-                <div class="slide-info">
-                  <h2 class="slide-title">مشروع فيلا حديثة</h2>
-                  <p class="slide-description">تصميم فيلا عصرية تجمع بين الفخامة والراحة مع أحدث التقنيات الذكية.</p>
-                </div>
-              </div>
-            </li>
-            <li class="splide__slide project-slide"
-              data-image="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2053&q=80">
-              <!-- <img class="slide-image" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2053&q=80" alt=""> -->
-              <div class="slide-content">
-                <div class="slide-info">
-                  <h2 class="slide-title">منتجع سياحي فاخر</h2>
-                  <p class="slide-description">منتجع متكامل الخدمات وسط الطبيعة مع إطلالات خلابة وتجربة استثنائية
-                    للزوار.
-                  </p>
-                </div>
-              </div>
-            </li>
-            <li class="splide__slide project-slide"
-              data-image="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2070&q=80">
-              <!-- <img class="slide-image" src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2070&q=80" alt=""> -->
-              <div class="slide-content">
-                <div class="slide-info">
-                  <h2 class="slide-title">برج مكاتب تجارية</h2>
-                  <p class="slide-description">برج مكاتب بتصميم مستدام ومساحات عمل مرنة تلبي احتياجات الشركات الحديثة.
-                  </p>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-  <!-- الفعاليات Section -->
-  <section class="events-section pt-70 pb-70" id="events">
-    <div class="container-fluid">
-      <div class="events-header text-center mb-3">
-        <h2 class="faq-title" data-aos="fade-down" data-aos-delay="200">
-          الفعاليات
-        </h2>
-        <p class="projects-subtitle" data-aos="fade-up" data-aos-delay="400">
-          اكتشف فعالياتنا المميزة في مختلف المجالات
-        </p>
-      </div>
-      <div class="events-triptych">
-        <div class="event-panel commercial-panel" data-aos="fade-right" data-aos-delay="200">
-          <div class="panel-content">
-            <div class="panel-image">
-              <img
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                alt="Commercial Events" />
-            </div>
-            <div class="panel-overlay">
-              <div>
-                <h3 class="panel-title">
-                  وفد يزور مؤسسة العون
-                </h3>
-                <p class="panel-description">
-                  وفد من برنامج "العُون" للتنمية والتطوير، قام بزيارة
-                  مؤسسة "العُون" للتنمية والتطوير في المملكة العربية
-                  السعودية، حيث شارك في حفل تكريم وards
-                </p>
-              </div>
-            </div>
-          </div>
+      <div class="partners-scroll">
+        <div class="partner-logo" data-aos="zoom-in" data-aos-delay="200">
+          <img
+            src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80"
+            alt="Partner 1" />
         </div>
 
-        <div class="event-panel residential-panel" data-aos="fade-up" data-aos-delay="400">
-          <div class="panel-content">
-            <div class="panel-image">
-              <img
-                src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80"
-                alt="Residential Events" />
-            </div>
-            <div class="panel-overlay">
-              <div>
-                <h3 class="panel-title">Residential</h3>
-                <p class="panel-description">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-              </div>
-            </div>
-          </div>
+        <div class="partner-logo" data-aos="zoom-in" data-aos-delay="300">
+          <img
+            src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80"
+            alt="Partner 2" />
         </div>
 
-        <div class="event-panel airbnb-panel" data-aos="fade-left" data-aos-delay="600">
-          <div class="panel-content">
-            <div class="panel-image">
-              <img
-                src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80"
-                alt="Airbnb Events" />
-            </div>
-            <div class="panel-overlay">
-              <div class="">
-                <h3 class="panel-title">Airbnb</h3>
-                <p class="panel-description">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-              </div>
-            </div>
-          </div>
+        <div class="partner-logo" data-aos="zoom-in" data-aos-delay="400">
+          <img
+            src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80"
+            alt="Partner 3" />
+        </div>
+
+        <div class="partner-logo" data-aos="zoom-in" data-aos-delay="500">
+          <img
+            src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80"
+            alt="Partner 4" />
+        </div>
+
+        <div class="partner-logo" data-aos="zoom-in" data-aos-delay="600">
+          <img
+            src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80"
+            alt="Partner 5" />
+        </div>
+
+        <div class="partner-logo" data-aos="zoom-in" data-aos-delay="700">
+          <img
+            src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80"
+            alt="Partner 6" />
+        </div>
+
+        <div class="partner-logo" data-aos="zoom-in" data-aos-delay="800">
+          <img
+            src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80"
+            alt="Partner 7" />
+        </div>
+
+        <div class="partner-logo" data-aos="zoom-in" data-aos-delay="900">
+          <img src="https://images.unsplash.com/1000x1000/?logo" alt="Partner 8" />
+        </div>
+
+        <div class="partner-logo" data-aos="zoom-in" data-aos-delay="1000">
+          <img src="https://images.unsplash.com/1000x1000/?business" alt="Partner 9" />
+        </div>
+
+        <div class="partner-logo" data-aos="zoom-in" data-aos-delay="1100">
+          <img src="https://images.unsplash.com/1000x1000/?corporate" alt="Partner 10" />
+        </div>
+
+        <div class="partner-logo" data-aos="zoom-in" data-aos-delay="1200">
+          <img src="https://images.unsplash.com/1000x1000/?technology" alt="Partner 11" />
+        </div>
+
+        <div class="partner-logo" data-aos="zoom-in" data-aos-delay="1300">
+          <img src="https://images.unsplash.com/1000x1000/?innovation" alt="Partner 12" />
         </div>
       </div>
     </div>
   </section>
-
 
   <!-- Footer Section -->
   <footer class="footer-section">
