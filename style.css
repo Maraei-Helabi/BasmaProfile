@@ -682,7 +682,7 @@ body {
 /* Left Side - Vision Content */
 .vision-content {
 	position: relative;
-	height: 600px;
+	min-height: 600px;
 	overflow: hidden;
 }
 
@@ -884,7 +884,7 @@ body {
 /* Right Side - Message Content */
 .message-content {
 	position: relative;
-	height: 600px;
+	min-height: 600px;
 	overflow: hidden;
 }
 
@@ -3407,10 +3407,10 @@ html {
 	/* background-color: #f4efe7; */
 	overflow: hidden;
 	position: relative;
-    background-image: url(/img/pattern/pattern-building-gold.png);
-    background-position: center;
-    background-size: contain;
-    background-attachment: fixed;
+	background-image: url(/img/pattern/pattern-building-gold.png);
+	background-position: center;
+	background-size: contain;
+	background-attachment: fixed;
 }
 
 .discover-section .discover-header {
@@ -3661,4 +3661,67 @@ html {
 .section-header span.text {
 	position: relative;
 	z-index: 3;
+}
+
+/*  */
+@media (max-width: 1200px) {
+	.vision-message-section{
+		padding: 0;
+	}
+	.vision-message-section .container-fluid{
+		padding-top: 80px;
+
+	}
+	.vision-container {
+		grid-template-columns: 1fr;
+		gap: 0px;
+		padding-top: 80px;
+	}
+	.vision-item h2,
+	.message-item h2 {
+		font-size: 1.5rem;
+		margin-bottom: 5px;
+	}
+	.vision-item p,
+	.message-item p {
+		font-size: 0.9rem;
+		line-height: 1;
+		margin-bottom: 15px;
+	}
+	.vision-features {
+		gap: 8px;
+	}
+	.feature {
+		gap: 10px;
+		padding: 5px 8px;
+	}
+	.feature i {
+		font-size: 0.9rem;
+	}
+	.vision-content,
+	.message-content {
+		min-height: 240px;
+	}
+	.stat {
+		padding: 5px;
+	}
+	.center-circle {
+		gap: 5px;
+	}
+	.circle-container {
+		width: 230px;
+		height: 230px;
+	}
+}
+@media (max-width: 500px) {
+		.vision-message-section .container-fluid{
+		padding-top: 0px;
+	}
+	.vision-container {
+		padding-top: 30px;
+	}
+		.vision-item p,
+	.message-item p {
+		line-height: 1.5;
+	}
 }
