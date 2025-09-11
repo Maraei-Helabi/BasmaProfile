@@ -1,158 +1,3 @@
-// ==== Capsules Section (Why Capsules®? Inspired, GSAP ScrollTrigger) ====
-document.addEventListener('DOMContentLoaded', function () {
-	if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
-	const section = document.querySelector('.capsules-section');
-	if (!section) return;
-	const cards = Array.from(section.querySelectorAll('.capsules-card'));
-	const images = Array.from(section.querySelectorAll('.capsules-image'));
-	if (cards.length < 2 || images.length < 2) return;
-
-	// إظهار أول كارد وصورة
-	cards[0].classList.add('active');
-	images[0].classList.add('active');
-
-	// إعداد ScrollTrigger
-	gsap.registerPlugin(ScrollTrigger);
-	let current = 0;
-	ScrollTrigger.create({
-		trigger: section,
-		start: 'center center', // يبدأ التفاعل عندما يكون القسم في منتصف الشاشة
-		// end يجب أن يكون (عدد الكروت - 1) × ارتفاع القسم، حتى لا يتمدد pin أكثر من اللازم
-		end: () => `+=${section.offsetHeight * (cards.length - 1)}`,
-		pin: true,
-		pinSpacing: true,
-		scrub: 1,
-		anticipatePin: 1,
-		onUpdate: self => {
-			// توزيع التقدم بالتساوي على الكروت
-			const total = cards.length - 1;
-			const idx = Math.min(total, Math.max(0, Math.round(self.progress * total)));
-			if (idx !== current) {
-				cards.forEach((c, i) => c.classList.toggle('active', i === idx));
-				images.forEach((img, i) => img.classList.toggle('active', i === idx));
-				current = idx;
-			}
-		}
-	});
-});
-// Projects Vertical Splide Slider Init + Wheel Exit/Entry Logic
-document.addEventListener('DOMContentLoaded', function () {
-	var projectsSection = document.querySelector('.projects-vertical-slider-section');
-	var projectsSplide = document.querySelector('.projects-vertical-splide');
-	if (projectsSplide && projectsSection) {
-		var splide = new Splide(projectsSplide, {
-			direction: 'ttb',
-			height: '100vh',
-			wheel: true,
-			pagination: true,
-			arrows: false,
-			snap: true,
-			drag: true,
-			perPage: 1,
-			perMove: 1,
-			speed: 900,
-			easing: 'cubic-bezier(0.77,0,0.175,1)',
-			waitForTransition: true,
-			classes: {
-				slide: 'splide__slide project-slide',
-			},
-		});
-				splide.on('move', function(newIndex) {
-			// عند تغيير السلايد، غيّر خلفية السكشن حسب data-image
-			var slides = projectsSplide.querySelectorAll('.project-slide');
-			var activeSlide = slides[newIndex];
-			if (activeSlide) {
-				var bg = activeSlide.dataset.image;
-				if (bg) {
-					projectsSection.style.backgroundImage = 'url("' + bg + '")';
-					projectsSection.style.backgroundSize = 'cover';
-					projectsSection.style.backgroundPosition = 'center';
-					projectsSection.style.backgroundRepeat = 'no-repeat';
-				}
-			}
-		});
-		// عند التحميل الأول، عيّن الخلفية
-		splide.on('mounted', function() {
-			var slides = projectsSplide.querySelectorAll('.project-slide');
-			var activeSlide = slides[0];
-			if (activeSlide) {
-				var bg = activeSlide.dataset.image;
-				if (bg) {
-					projectsSection.style.backgroundImage = 'url("' + bg + '")';
-					projectsSection.style.backgroundSize = 'cover';
-					projectsSection.style.backgroundPosition = 'center';
-					projectsSection.style.backgroundRepeat = 'no-repeat';
-				}
-			}
-		});
-		splide.mount();
-
-		// Wheel navigation: only exit after user is ALREADY at last/first slide and scrolls again
-		let wheelSleep = 700;
-		let lastWheelTime = 0;
-		let atEdge = null; // 'last' | 'first' | null
-		projectsSection.addEventListener('wheel', function(e) {
-			const now = Date.now();
-			if (now - lastWheelTime < wheelSleep) return;
-			const atFirst = splide.index === 0;
-			const atLast = splide.index === splide.length - 1;
-			if (e.deltaY > 0) {
-				if (atLast) {
-					if (atEdge === 'last') {
-						lastWheelTime = now;
-						let next = projectsSection.nextElementSibling;
-						while (next && next.offsetHeight < 10) next = next.nextElementSibling;
-						if (next) {
-							next.scrollIntoView({behavior:'smooth', block:'start'});
-						}
-						atEdge = null;
-					} else {
-						atEdge = 'last';
-						lastWheelTime = now;
-						// امنع السكرول الافتراضي حتى لا يخرج مباشرة
-						e.preventDefault();
-					}
-				} else {
-					atEdge = null;
-				}
-			} else if (e.deltaY < 0) {
-				if (atFirst) {
-					if (atEdge === 'first') {
-						lastWheelTime = now;
-						let prev = projectsSection.previousElementSibling;
-						while (prev && prev.offsetHeight < 10) prev = prev.previousElementSibling;
-						if (prev) {
-							prev.scrollIntoView({behavior:'smooth', block:'end'});
-						}
-						atEdge = null;
-					} else {
-						atEdge = 'first';
-						lastWheelTime = now;
-						e.preventDefault();
-					}
-				} else {
-					atEdge = null;
-				}
-			}
-		}, {passive:false});
-
-		// إذا دخلت القسم من الأسفل (سكرول لأعلى)، ابدأ من آخر سلايد
-		let lastScrollY = window.scrollY;
-		window.addEventListener('scroll', function() {
-			const rect = projectsSection.getBoundingClientRect();
-			// إذا دخلت القسم من الأسفل (سكرول لأعلى)
-			if (rect.bottom > 0 && rect.top < window.innerHeight && window.scrollY < lastScrollY) {
-				if (rect.bottom > window.innerHeight && rect.top < 10) {
-					// إذا كان السلايدر ظاهر بالكامل تقريباً
-					if (splide.index !== splide.length - 1) {
-						splide.go(splide.length - 1);
-					}
-				}
-			}
-			lastScrollY = window.scrollY;
-		});
-	}
-});
 // تفعيل Splide.js على سلايدر الهيرو
 document.addEventListener('DOMContentLoaded', function() {
 	new Splide('.hero-splide', {
@@ -167,84 +12,63 @@ document.addEventListener('DOMContentLoaded', function() {
 		pagination: false
 	}).mount();
 });
-// --------------------------------------------------------
+// works --- Discover Section (GSAP Horizontal Scroll) ---
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+    console.error('GSAP or ScrollTrigger is not loaded.');
+    return;
+  }
 
-// تفعيل Splide.js على سلايدر فريق العمل
-document.addEventListener('DOMContentLoaded', function() {
-	// خيارات Splide
-	var options = {
-		type: 'loop',
-		drag: 'free',
-		focus: 'center',
-		direction: 'rtl',
-		perPage: 3,
-		gap: '1rem',
-		pagination: false,
-		arrows: false,
-		autoScroll: {
-			speed: 1.2,
-			pauseOnHover: true,
-			pauseOnFocus: false
-		},
-		breakpoints: {
-			1300: { perPage: 2 },
-			696: { perPage: 2 },
-			370: { perPage: 1 }
-		}
-	};
+  const discoverSection = document.querySelector('.discover-section');
+  if (!discoverSection) return;
 
-	var splide = new Splide('.team-splide', options);
+  const track = discoverSection.querySelector('.discover-track');
+  const cards = gsap.utils.toArray(track.querySelectorAll('.discover-card'));
 
-	// --- محاولة تركيب AutoScroll بعد التحقق من أماكن التسجيل المختلفة ---
-	// يحاول إيجاد Registry للإكستنشن في أكثر من مكان (fallbacks)
-	function findExtensions() {
-		const cand = [
-			typeof window.splide !== 'undefined' ? window.splide.Extensions : null,
-			typeof window.Splide !== 'undefined' ? window.Splide.Extensions : null,
-			typeof window.splide !== 'undefined' ? window.splide.extensions : null,
-			typeof window.Splide !== 'undefined' ? window.Splide.extensions : null,
-			typeof window.SplideExtensions !== 'undefined' ? window.SplideExtensions : null,
-			typeof window.splideExtensions !== 'undefined' ? window.splideExtensions : null
-		];
-		for (let e of cand) if (e) return e;
-		return null;
-	}
+  // Get the total width to scroll
+  const scrollWidth = track.offsetWidth - window.innerWidth;
 
-	var ext = findExtensions();
-	if (ext && ext.AutoScroll) {
-		console.info('AutoScroll extension found — mounting via ext.AutoScroll');
-		splide.mount({ AutoScroll: ext.AutoScroll });
-	} else if (typeof window.splide !== 'undefined' && window.splide.Extensions) {
-		console.info('Mounting window.splide.Extensions (fallback)');
-		splide.mount(window.splide.Extensions);
-	} else {
-		console.warn(
-			'AutoScroll extension NOT found. Mounting Splide without AutoScroll as fallback.'
-		);
-		splide.mount(); // mount but no AutoScroll
-	}
+  // Create the horizontal scroll animation
+  const tween = gsap.to(track, {
+    x: -scrollWidth,
+    ease: 'none', // Linear movement
+  });
 
-	// إذا تم تركيب AutoScroll، نربط إيقاف/تشغيل عند الهوفر (احتياطي)
-	setTimeout(() => {
-		if (splide.Components && splide.Components.AutoScroll) {
-			const root = splide.root;
-			root.addEventListener('mouseenter', () => splide.Components.AutoScroll.pause());
-			root.addEventListener('mouseleave', () => splide.Components.AutoScroll.play());
-			console.info('AutoScroll component is available and hover handlers attached.');
-		} else {
-			console.warn('splide.Components.AutoScroll not available — AutoScroll غير نشط.');
-		}
-	}, 50);
+  // Create the ScrollTrigger
+  ScrollTrigger.create({
+    trigger: '.discover-track-container',
+    start: 'top top',
+    end: () => `+=${scrollWidth}`,
+    pin: true,
+    animation: tween,
+    scrub: 1, // Smooth scrubbing
+    invalidateOnRefresh: true, // Recalculate on resize
+  });
 
-	// أخيراً: لو حبيت تجهّز mount ثابت (بدل fallback)، استخدم:
-	// splide.mount({ AutoScroll: window.splide.Extensions.AutoScroll });
+  // Parallax effect for images inside each card
+  cards.forEach(card => {
+    const image = card.querySelector('.discover-card-image');
+    if (image) {
+      gsap.to(image, {
+        xPercent: -10, // Move image to the left
+        ease: 'none',
+        scrollTrigger: {
+          trigger: card,
+          containerAnimation: tween, // Link to the main horizontal scroll animation
+          start: 'left right',
+          end: 'right left',
+          scrub: true,
+        },
+      });
+    }
+  });
 });
-
-// --------------------------------------------------------
+// -- massges
 // Massge section
 
 // Vision & Message Section Functionality
-const visionItems = document.querySelectorAll('.vision-item');
+document.addEventListener('DOMContentLoaded', () => {
+	const visionItems = document.querySelectorAll('.vision-item');
 const messageItems = document.querySelectorAll('.message-item');
 const centerImage = document.getElementById('centerImage');
 const circleProgress = document.getElementById('circleProgress');
@@ -499,54 +323,234 @@ function handleSwipe() {
 // updateContent(0, false);
 }
 
-// --- Discover Section (GSAP Horizontal Scroll) ---
-document.addEventListener('DOMContentLoaded', () => {
-  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-    console.error('GSAP or ScrollTrigger is not loaded.');
-    return;
-  }
+})
+// ==== Capsules Section (Why Capsules®? Inspired, GSAP ScrollTrigger) ====
+document.addEventListener('DOMContentLoaded', function () {
+	if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+	const section = document.querySelector('.capsules-section');
+	if (!section) return;
+	const cards = Array.from(section.querySelectorAll('.capsules-card'));
+	const images = Array.from(section.querySelectorAll('.capsules-image'));
+	if (cards.length < 2 || images.length < 2) return;
 
-  const discoverSection = document.querySelector('.discover-section');
-  if (!discoverSection) return;
+	// إظهار أول كارد وصورة
+	cards[0].classList.add('active');
+	images[0].classList.add('active');
 
-  const track = discoverSection.querySelector('.discover-track');
-  const cards = gsap.utils.toArray(track.querySelectorAll('.discover-card'));
-
-  // Get the total width to scroll
-  const scrollWidth = track.offsetWidth - window.innerWidth;
-
-  // Create the horizontal scroll animation
-  const tween = gsap.to(track, {
-    x: -scrollWidth,
-    ease: 'none', // Linear movement
-  });
-
-  // Create the ScrollTrigger
-  ScrollTrigger.create({
-    trigger: '.discover-track-container',
-    start: 'top top',
-    end: () => `+=${scrollWidth}`,
-    pin: true,
-    animation: tween,
-    scrub: 1, // Smooth scrubbing
-    invalidateOnRefresh: true, // Recalculate on resize
-  });
-
-  // Parallax effect for images inside each card
-  cards.forEach(card => {
-    const image = card.querySelector('.discover-card-image');
-    if (image) {
-      gsap.to(image, {
-        xPercent: -10, // Move image to the left
-        ease: 'none',
-        scrollTrigger: {
-          trigger: card,
-          containerAnimation: tween, // Link to the main horizontal scroll animation
-          start: 'left right',
-          end: 'right left',
-          scrub: true,
-        },
-      });
-    }
-  });
+	// إعداد ScrollTrigger
+	gsap.registerPlugin(ScrollTrigger);
+	let current = 0;
+	ScrollTrigger.create({
+		trigger: section,
+		start: 'center center', // يبدأ التفاعل عندما يكون القسم في منتصف الشاشة
+		// end يجب أن يكون (عدد الكروت - 1) × ارتفاع القسم، حتى لا يتمدد pin أكثر من اللازم
+		end: () => `+=${section.offsetHeight * (cards.length - 1)}`,
+		pin: true,
+		pinSpacing: true,
+		scrub: 1,
+		anticipatePin: 1,
+		onUpdate: self => {
+			// توزيع التقدم بالتساوي على الكروت
+			const total = cards.length - 1;
+			const idx = Math.min(total, Math.max(0, Math.round(self.progress * total)));
+			if (idx !== current) {
+				cards.forEach((c, i) => c.classList.toggle('active', i === idx));
+				images.forEach((img, i) => img.classList.toggle('active', i === idx));
+				current = idx;
+			}
+		}
+	});
 });
+// Projects Vertical Splide Slider Init + Wheel Exit/Entry Logic
+document.addEventListener('DOMContentLoaded', function () {
+	var projectsSection = document.querySelector('.projects-vertical-slider-section');
+	var projectsSplide = document.querySelector('.projects-vertical-splide');
+	if (projectsSplide && projectsSection) {
+		var splide = new Splide(projectsSplide, {
+			direction: 'ttb',
+			height: '100vh',
+			wheel: true,
+			pagination: true,
+			arrows: false,
+			snap: true,
+			drag: true,
+			perPage: 1,
+			perMove: 1,
+			speed: 900,
+			easing: 'cubic-bezier(0.77,0,0.175,1)',
+			waitForTransition: true,
+			classes: {
+				slide: 'splide__slide project-slide',
+			},
+		});
+				splide.on('move', function(newIndex) {
+			// عند تغيير السلايد، غيّر خلفية السكشن حسب data-image
+			var slides = projectsSplide.querySelectorAll('.project-slide');
+			var activeSlide = slides[newIndex];
+			if (activeSlide) {
+				var bg = activeSlide.dataset.image;
+				if (bg) {
+					projectsSection.style.backgroundImage = 'url("' + bg + '")';
+					projectsSection.style.backgroundSize = 'cover';
+					projectsSection.style.backgroundPosition = 'center';
+					projectsSection.style.backgroundRepeat = 'no-repeat';
+				}
+			}
+		});
+		// عند التحميل الأول، عيّن الخلفية
+		splide.on('mounted', function() {
+			var slides = projectsSplide.querySelectorAll('.project-slide');
+			var activeSlide = slides[0];
+			if (activeSlide) {
+				var bg = activeSlide.dataset.image;
+				if (bg) {
+					projectsSection.style.backgroundImage = 'url("' + bg + '")';
+					projectsSection.style.backgroundSize = 'cover';
+					projectsSection.style.backgroundPosition = 'center';
+					projectsSection.style.backgroundRepeat = 'no-repeat';
+				}
+			}
+		});
+		splide.mount();
+
+		// Wheel navigation: only exit after user is ALREADY at last/first slide and scrolls again
+		let wheelSleep = 700;
+		let lastWheelTime = 0;
+		let atEdge = null; // 'last' | 'first' | null
+		projectsSection.addEventListener('wheel', function(e) {
+			const now = Date.now();
+			if (now - lastWheelTime < wheelSleep) return;
+			const atFirst = splide.index === 0;
+			const atLast = splide.index === splide.length - 1;
+			if (e.deltaY > 0) {
+				if (atLast) {
+					if (atEdge === 'last') {
+						lastWheelTime = now;
+						let next = projectsSection.nextElementSibling;
+						while (next && next.offsetHeight < 10) next = next.nextElementSibling;
+						if (next) {
+							next.scrollIntoView({behavior:'smooth', block:'start'});
+						}
+						atEdge = null;
+					} else {
+						atEdge = 'last';
+						lastWheelTime = now;
+						// امنع السكرول الافتراضي حتى لا يخرج مباشرة
+						e.preventDefault();
+					}
+				} else {
+					atEdge = null;
+				}
+			} else if (e.deltaY < 0) {
+				if (atFirst) {
+					if (atEdge === 'first') {
+						lastWheelTime = now;
+						let prev = projectsSection.previousElementSibling;
+						while (prev && prev.offsetHeight < 10) prev = prev.previousElementSibling;
+						if (prev) {
+							prev.scrollIntoView({behavior:'smooth', block:'end'});
+						}
+						atEdge = null;
+					} else {
+						atEdge = 'first';
+						lastWheelTime = now;
+						e.preventDefault();
+					}
+				} else {
+					atEdge = null;
+				}
+			}
+		}, {passive:false});
+
+		// إذا دخلت القسم من الأسفل (سكرول لأعلى)، ابدأ من آخر سلايد
+		let lastScrollY = window.scrollY;
+		window.addEventListener('scroll', function() {
+			const rect = projectsSection.getBoundingClientRect();
+			// إذا دخلت القسم من الأسفل (سكرول لأعلى)
+			if (rect.bottom > 0 && rect.top < window.innerHeight && window.scrollY < lastScrollY) {
+				if (rect.bottom > window.innerHeight && rect.top < 10) {
+					// إذا كان السلايدر ظاهر بالكامل تقريباً
+					if (splide.index !== splide.length - 1) {
+						splide.go(splide.length - 1);
+					}
+				}
+			}
+			lastScrollY = window.scrollY;
+		});
+	}
+});
+// --------------------------------------------------------
+
+// تفعيل Splide.js على سلايدر فريق العمل
+document.addEventListener('DOMContentLoaded', function() {
+	// خيارات Splide
+	var options = {
+		type: 'loop',
+		drag: 'free',
+		focus: 'center',
+		direction: 'rtl',
+		perPage: 3,
+		gap: '1rem',
+		pagination: false,
+		arrows: false,
+		autoScroll: {
+			speed: 1.2,
+			pauseOnHover: true,
+			pauseOnFocus: false
+		},
+		breakpoints: {
+			1300: { perPage: 2 },
+			696: { perPage: 2 },
+			370: { perPage: 1 }
+		}
+	};
+
+	var splide = new Splide('.team-splide', options);
+
+	// --- محاولة تركيب AutoScroll بعد التحقق من أماكن التسجيل المختلفة ---
+	// يحاول إيجاد Registry للإكستنشن في أكثر من مكان (fallbacks)
+	function findExtensions() {
+		const cand = [
+			typeof window.splide !== 'undefined' ? window.splide.Extensions : null,
+			typeof window.Splide !== 'undefined' ? window.Splide.Extensions : null,
+			typeof window.splide !== 'undefined' ? window.splide.extensions : null,
+			typeof window.Splide !== 'undefined' ? window.Splide.extensions : null,
+			typeof window.SplideExtensions !== 'undefined' ? window.SplideExtensions : null,
+			typeof window.splideExtensions !== 'undefined' ? window.splideExtensions : null
+		];
+		for (let e of cand) if (e) return e;
+		return null;
+	}
+
+	var ext = findExtensions();
+	if (ext && ext.AutoScroll) {
+		console.info('AutoScroll extension found — mounting via ext.AutoScroll');
+		splide.mount({ AutoScroll: ext.AutoScroll });
+	} else if (typeof window.splide !== 'undefined' && window.splide.Extensions) {
+		console.info('Mounting window.splide.Extensions (fallback)');
+		splide.mount(window.splide.Extensions);
+	} else {
+		console.warn(
+			'AutoScroll extension NOT found. Mounting Splide without AutoScroll as fallback.'
+		);
+		splide.mount(); // mount but no AutoScroll
+	}
+
+	// إذا تم تركيب AutoScroll، نربط إيقاف/تشغيل عند الهوفر (احتياطي)
+	setTimeout(() => {
+		if (splide.Components && splide.Components.AutoScroll) {
+			const root = splide.root;
+			root.addEventListener('mouseenter', () => splide.Components.AutoScroll.pause());
+			root.addEventListener('mouseleave', () => splide.Components.AutoScroll.play());
+			console.info('AutoScroll component is available and hover handlers attached.');
+		} else {
+			console.warn('splide.Components.AutoScroll not available — AutoScroll غير نشط.');
+		}
+	}, 50);
+
+	// أخيراً: لو حبيت تجهّز mount ثابت (بدل fallback)، استخدم:
+	// splide.mount({ AutoScroll: window.splide.Extensions.AutoScroll });
+});
+
+
+
