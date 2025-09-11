@@ -29,11 +29,11 @@ body {
 	background: #26282cad;
 }
 .patternTop {
-    position: absolute;
-    width: 100%;
-    top: -50px;
-    height: 50px;
-    z-index: 10;
+	position: absolute;
+	width: 100%;
+	top: -50px;
+	height: 50px;
+	z-index: 10;
 }
 .patternBottom {
 	position: absolute;
@@ -1162,7 +1162,65 @@ body {
 .partner-logo:hover img {
 	transform: scale(1.1);
 }
+/* From Uiverse.io by Cevorob */
+.logoSec {
+	position: relative;
+	height: 50px;
+	padding: 0 30px;
+	border: 2px solid #000;
+	background: #e8e8e8;
+	user-select: none;
+	white-space: nowrap;
+	transition: all .05s linear;
+	font-family: inherit;
+}
 
+.logoSec:before,
+.logoSec:after {
+	content: "";
+	position: absolute;
+	background: #e8e8e8;
+	transition: all .2s linear;
+}
+
+.logoSec:before {
+	width: calc(100% + 6px);
+	height: calc(100% - 16px);
+	top: 8px;
+	left: -3px;
+}
+
+.logoSec:after {
+	width: calc(100% - 16px);
+	height: calc(100% + 6px);
+	top: -3px;
+	left: 8px;
+}
+
+.logoSec:hover {
+	cursor: crosshair;
+}
+
+.logoSec:active {
+	transform: scale(0.95);
+}
+
+.logoSec:hover:before {
+	height: calc(100% - 32px);
+	top: 16px;
+}
+
+.logoSec:hover:after {
+	width: calc(100% - 32px);
+	left: 16px;
+}
+
+.logoSec span {
+	font-size: 1.5rem;
+	z-index: 3;
+	position: relative;
+	font-weight: 600;
+}
 /* Partners Scrolling Animation */
 @keyframes scrollPartners {
 	0% {
@@ -2807,11 +2865,11 @@ html {
 	background-color: #f8f9fa;
 }
 .Team {
-    background-image: url(/img/pattern/pattern-black.png);
-    background-position: center;
-    background-size: auto;
-    background-attachment: fixed;
-    position: relative;
+	background-image: url(/img/pattern/pattern-black.png);
+	background-position: center;
+	background-size: auto;
+	background-attachment: fixed;
+	position: relative;
 }
 .news-title {
 	font-size: 2.5rem;
