@@ -3354,23 +3354,30 @@ html {
 	}
 
 	.event-panel {
-		min-height: 400px;
-		height: 400px;
+		height: 250px; /* Set a base height for collapsed panels */
+		flex-grow: 1;
+		flex-basis: auto;
+		transition: height 0.8s cubic-bezier(0.77, 0, 0.175, 1); /* Animate height change */
 	}
-	.event-panel:hover,
-	.event-panel:focus,
-	.event-panel.active {
-		flex: 1 1 100%;
-		z-index: 2;
-		transform: scale(1.01);
-	}
+
 	.events-triptych:hover .event-panel:not(:hover) {
+		height: 150px; /* Height for other panels when one is hovered */
 		filter: blur(1px) grayscale(0.2) brightness(0.9);
 		opacity: 0.8;
-		flex: 1 1 0%;
-		z-index: 1;
-		transform: scale(0.98);
 	}
+
+	.event-panel:hover {
+		/* height: 450px;  */
+		filter: none;
+		opacity: 1;
+	}
+
+	.panel-description {
+		width: 85%;
+	}
+	.event-panel:hover, .event-panel:focus, .event-panel.active {
+    flex: auto;
+}
 }
 
 @media (max-width: 576px) {
