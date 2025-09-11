@@ -1,3 +1,9 @@
+.pt-70{
+	padding-top: 70px;
+}
+.pb-70{
+	padding-bottom: 70px;
+}
 /* ==== Capsules Section (Why Capsules®? Inspired) ==== */
 .pin-spacer {
 	width: 100% !important;
@@ -5,7 +11,7 @@
 .capsules-section {
 	width: 100%;
 	min-height: 100vh;
-	background: #18120e;
+	background: var(--dark-bg);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -38,7 +44,10 @@
 	padding: 0 24px;
 }
 .capsules-card {
-	background: #3a2a1a;
+	background: url("img/pattern/pattern-building.png");
+	    background-position: center;
+    background-size: contain;
+    background-color: var(--bs-dark-text-emphasis);
 	border-radius: 48px;
 	box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
 	color: #fff;
@@ -71,7 +80,7 @@
 .capsules-title {
 	font-size: 2.2rem;
 	font-weight: 800;
-	color: #e6cfa7;
+	color: var(--primary-color);
 	margin-bottom: 8px;
 	text-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
 }
@@ -87,8 +96,8 @@
 	margin-top: 18px;
 }
 .capsules-step {
-	border: 2px solid #e6cfa7;
-	color: #e6cfa7;
+	border: 2px solid var(--primary-color);
+	color: var(--primary-color);
 	background: transparent;
 	border-radius: 50%;
 	width: 38px;
@@ -102,8 +111,8 @@
 	transition: background 0.3s, color 0.3s, opacity 0.3s;
 }
 .capsules-step.active {
-	background: #e6cfa7;
-	color: #3a2a1a;
+	background: var(--primary-color);
+	color: black;
 	opacity: 1;
 }
 .capsules-images {
@@ -3393,8 +3402,8 @@ html {
 
 /* --- Discover Section (GSAP Horizontal Scroll) --- */
 .discover-section {
-	padding-top: 100px;
-	padding-bottom: 100px;
+	padding-top: 70px;
+	padding-bottom: 70px;
 	/* background-color: #f4efe7; */
 	overflow: hidden;
 	position: relative;
@@ -3481,7 +3490,7 @@ html {
 	flex-direction: column;
 	justify-content: space-between;
 	color: #fff;
-	background: rgba(0, 0, 0, 0.1);
+	background: rgb(0 0 0 / 54%);
 }
 
 .discover-card-header h3 {
@@ -3492,7 +3501,8 @@ html {
 }
 
 .discover-card-level {
-	border: 2px solid rgba(255, 255, 255, 0.8);
+	border: 2px solid var(--primary-color);
+	color: var(--primary-color);
 	border-radius: 99px;
 	padding: 8px 20px;
 	display: inline-block;
@@ -3520,7 +3530,7 @@ html {
 }
 
 .discover-card-pagination span {
-	border: 2px solid rgba(255, 255, 255, 0.8);
+	border: 2px solid var(--primary-color);
 	border-radius: 99px;
 	width: 50px;
 	height: 50px;
@@ -3528,11 +3538,12 @@ html {
 	justify-content: center;
 	align-items: center;
 	font-weight: 600;
+	color: var(--primary-color);
 }
 
 .discover-card-pagination span:first-child {
-	border-color: #e6d3b3;
-	color: #e6d3b3;
+	border-color: var(--primary-color);
+	color: var(--primary-color);
 }
 
 .discover-card-pagination span:last-child {
