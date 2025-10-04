@@ -553,4 +553,41 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+	// === إحصائيات: أنميشن عداد عند ظهور القسم ===
+	document.addEventListener('DOMContentLoaded', function() {
+		function animateCount(el, target, duration = 1800) {
+			let start = 0;
+			let startTime = null;
+			target = +target;
+			function step(timestamp) {
+				if (!startTime) startTime = timestamp;
+				const progress = Math.min((timestamp - startTime) / duration, 1);
+				el.textContent = Math.floor(progress * (target - start) + start);
+				if (progress < 1) {
+					requestAnimationFrame(step);
+				} else {
+					el.textContent = target;
+				}
+			}
+			requestAnimationFrame(step);
+		}
+
+		let statsAnimated = false;
+		function handleStatsAnimation() {
+			if (statsAnimated) return;
+			const section = document.getElementById('stats-section');
+			if (!section) return;
+			const rect = section.getBoundingClientRect();
+			if (rect.top < window.innerHeight && rect.bottom > 0) {
+				statsAnimated = true;
+				section.querySelectorAll('.stat-number').forEach(num => {
+					animateCount(num, num.getAttribute('data-target'));
+				});
+			}
+		}
+		window.addEventListener('scroll', handleStatsAnimation);
+		handleStatsAnimation();
+	});
+
+
 
