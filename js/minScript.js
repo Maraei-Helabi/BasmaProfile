@@ -1,3 +1,19 @@
+// تفعيل Splide على قسم ماذا قالوا عنا
+document.addEventListener('DOMContentLoaded', function () {
+	var testimonialsSplide = document.querySelector('.testimonials-splide');
+	if (testimonialsSplide) {
+		new Splide(testimonialsSplide, {
+			type: 'loop',
+			perPage: 1,
+			gap: '24px',
+			autoplay: true,
+			interval: 4000,
+			pagination: true,
+			arrows: true,
+			direction: 'rtl',
+		}).mount();
+	}
+});
 // تفعيل Splide.js على سلايدر الهيرو
 document.addEventListener('DOMContentLoaded', function() {
 	new Splide('.hero-splide', {
