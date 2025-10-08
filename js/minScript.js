@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 });
 // تفعيل Splide.js على سلايدر الهيرو
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 	new Splide('.hero-splide', {
 		type: 'fade',
 		rewind: true,
@@ -30,314 +30,338 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 // works --- Discover Section (GSAP Horizontal Scroll) ---
 document.addEventListener('DOMContentLoaded', () => {
-  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-    console.error('GSAP or ScrollTrigger is not loaded.');
-    return;
-  }
+	if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+		console.error('GSAP or ScrollTrigger is not loaded.');
+		return;
+	}
 
-  const discoverSection = document.querySelector('.discover-section');
-  if (!discoverSection) return;
+	const discoverSection = document.querySelector('.discover-section');
+	if (!discoverSection) return;
 
-  const track = discoverSection.querySelector('.discover-track');
-  const cards = gsap.utils.toArray(track.querySelectorAll('.discover-card'));
+	const track = discoverSection.querySelector('.discover-track');
+	const cards = gsap.utils.toArray(track.querySelectorAll('.discover-card'));
 
-  // Get the total width to scroll
-  const scrollWidth = track.offsetWidth - window.innerWidth;
+	// Get the total width to scroll
+	const scrollWidth = track.offsetWidth - window.innerWidth;
 
-  // Create the horizontal scroll animation
-  const tween = gsap.to(track, {
-    x: -scrollWidth,
-    ease: 'none', // Linear movement
-  });
+	// Create the horizontal scroll animation
+	const tween = gsap.to(track, {
+		x: -scrollWidth,
+		ease: 'none', // Linear movement
+	});
 
-  // Create the ScrollTrigger
-  ScrollTrigger.create({
-    trigger: '.discover-track-container',
-    start: 'top top',
-    end: () => `+=${scrollWidth}`,
-    pin: true,
-    animation: tween,
-    scrub: 1, // Smooth scrubbing
-    invalidateOnRefresh: true, // Recalculate on resize
-  });
+	// Create the ScrollTrigger
+	ScrollTrigger.create({
+		trigger: '.discover-track-container',
+		start: 'top top',
+		end: () => `+=${scrollWidth}`,
+		pin: true,
+		animation: tween,
+		scrub: 1, // Smooth scrubbing
+		invalidateOnRefresh: true, // Recalculate on resize
+	});
 
-  // Parallax effect for images inside each card
-  cards.forEach(card => {
-    const image = card.querySelector('.discover-card-image');
-    if (image) {
-      gsap.to(image, {
-        xPercent: -10, // Move image to the left
-        ease: 'none',
-        scrollTrigger: {
-          trigger: card,
-          containerAnimation: tween, // Link to the main horizontal scroll animation
-          start: 'left right',
-          end: 'right left',
-          scrub: true,
-        },
-      });
-    }
-  });
+	// Parallax effect for images inside each card
+	cards.forEach(card => {
+		const image = card.querySelector('.discover-card-image');
+		if (image) {
+			gsap.to(image, {
+				xPercent: -10, // Move image to the left
+				ease: 'none',
+				scrollTrigger: {
+					trigger: card,
+					containerAnimation: tween, // Link to the main horizontal scroll animation
+					start: 'left right',
+					end: 'right left',
+					scrub: true,
+				},
+			});
+		}
+	});
 });
+
+// testimonials
+document.addEventListener('DOMContentLoaded', function () {
+	new Splide('.testimonials-splide', {
+		type: 'loop',
+		perPage: 2,
+		perMove: 1,
+		gap: '1.5rem',
+		autoplay: false,
+		interval: 4000,
+		pauseOnHover: true,
+		pauseOnFocus: false,
+		direction: 'rtl', // مضاف لتوافق اللغة العربية
+		breakpoints: {
+			992: {
+				perPage: 1,
+				gap: '0.5rem',
+				padding: '0',
+			},
+		},
+	}).mount();
+});
+
+
 // -- massges
 // Massge section
 
 // Vision & Message Section Functionality
 document.addEventListener('DOMContentLoaded', () => {
 	const visionItems = document.querySelectorAll('.vision-item');
-const messageItems = document.querySelectorAll('.message-item');
-const centerImage = document.getElementById('centerImage');
-const circleProgress = document.getElementById('circleProgress');
-const backgroundImages = document.querySelectorAll('.vision-background img');
-const dots = document.querySelectorAll('.dot');
+	const messageItems = document.querySelectorAll('.message-item');
+	const centerImage = document.getElementById('centerImage');
+	const circleProgress = document.getElementById('circleProgress');
+	const backgroundImages = document.querySelectorAll('.vision-background img');
+	const dots = document.querySelectorAll('.dot');
 
-// إذا لم تتوفر العناصر الأساسية، لا تنفذ أي كود خاص بالقسم
-if (
-	visionItems?.length &&
-	messageItems?.length &&
-	centerImage &&
-	circleProgress &&
-	backgroundImages?.length &&
-	dots?.length &&
-	document.querySelector('.vision-message-section')
-) {
+	// إذا لم تتوفر العناصر الأساسية، لا تنفذ أي كود خاص بالقسم
+	if (
+		visionItems?.length &&
+		messageItems?.length &&
+		centerImage &&
+		circleProgress &&
+		backgroundImages?.length &&
+		dots?.length &&
+		document.querySelector('.vision-message-section')
+	) {
 
-let currentIndex = 0;
-const totalItems = visionItems.length;
+		let currentIndex = 0;
+		const totalItems = visionItems.length;
 
-// Function to update active content and keep section centered
-function updateContent(index, scrollToSection = true) {
-   // Remove active class from all items
-   visionItems?.forEach?.((item) => item.classList.remove('active'));
-   messageItems?.forEach?.((item) => item.classList.remove('active'));
-   dots?.forEach?.((dot) => dot.classList.remove('active'));
+		// Function to update active content and keep section centered
+		function updateContent(index, scrollToSection = true) {
+			// Remove active class from all items
+			visionItems?.forEach?.((item) => item.classList.remove('active'));
+			messageItems?.forEach?.((item) => item.classList.remove('active'));
+			dots?.forEach?.((dot) => dot.classList.remove('active'));
 
-   // Add active class to current items
-   visionItems?.[index]?.classList?.add('active');
-   messageItems?.[index]?.classList?.add('active');
-   dots?.[index]?.classList?.add('active');
+			// Add active class to current items
+			visionItems?.[index]?.classList?.add('active');
+			messageItems?.[index]?.classList?.add('active');
+			dots?.[index]?.classList?.add('active');
 
-   // Update center image
-   const newImage = visionItems?.[index]?.getAttribute?.('data-image');
-   if (centerImage && newImage) centerImage.src = newImage;
+			// Update center image
+			const newImage = visionItems?.[index]?.getAttribute?.('data-image');
+			if (centerImage && newImage) centerImage.src = newImage;
 
-   // Add fade effect to image
-   if (centerImage) {
-	   centerImage.style.opacity = '0';
-	   setTimeout(() => {
-		   centerImage.style.opacity = '1';
-	   }, 100);
-   }
+			// Add fade effect to image
+			if (centerImage) {
+				centerImage.style.opacity = '0';
+				setTimeout(() => {
+					centerImage.style.opacity = '1';
+				}, 100);
+			}
 
-   // Update progress circle based on index and RTL direction
-   const progressDegrees = index / (totalItems - 1) * 360;
-   const isRTL = document.documentElement.dir === 'rtl';
-
-   if (circleProgress) {
-	   if (isRTL) {
-		   // For RTL, flip the circle progress direction
-		   circleProgress.style.transform = `rotate(${progressDegrees - 45}deg) scaleX(-1)`;
-	   } else {
-		   // For LTR, use normal direction
-		   circleProgress.style.transform = `rotate(${progressDegrees - 45}deg)`;
-	   }
-   }
-
-   // Update background image immediately
-   backgroundImages?.forEach?.((img, i) => {
-	   if (i === index) {
-		   img.style.opacity = '0.3';
-	   } else {
-		   img.style.opacity = '0';
-	   }
-   });
-
-   // Keep section centered in viewport when changing cards
-   if (scrollToSection && visionSection) {
-	   visionSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
-   }
-}
-
-// Scroll-based content change - Fixed position until last item
-let scrollTimeout;
-let lastScrollTop = 0;
-let sectionStart = 0;
-let sectionEnd = 0;
-
-// Get section boundaries
-function getSectionBoundaries() {
-   const section = document.querySelector('.vision-message-section');
-   if (section) {
-	   sectionStart = section.offsetTop;
-	   sectionEnd = sectionStart + section.offsetHeight;
-   }
-}
-
-// Initialize section boundaries
-getSectionBoundaries();
-
-window.addEventListener('scroll', function() {
-	clearTimeout(scrollTimeout);
-
-	scrollTimeout = setTimeout(function() {
-		const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-		// Only change content when within the section boundaries
-		if (scrollTop >= sectionStart && scrollTop <= sectionEnd) {
-			const sectionProgress = (scrollTop - sectionStart) / (sectionEnd - sectionStart);
-			const newIndex = Math.floor(sectionProgress * totalItems);
-
-			// Update progress circle based on RTL direction
-			const progressDegrees = sectionProgress * 360;
+			// Update progress circle based on index and RTL direction
+			const progressDegrees = index / (totalItems - 1) * 360;
 			const isRTL = document.documentElement.dir === 'rtl';
 
-			if (isRTL) {
-				// For RTL, flip the circle progress direction
-				circleProgress.style.transform = `rotate(${progressDegrees - 45}deg) scaleX(-1)`;
-			} else {
-				// For LTR, use normal direction
-				circleProgress.style.transform = `rotate(${progressDegrees - 45}deg)`;
+			if (circleProgress) {
+				if (isRTL) {
+					// For RTL, flip the circle progress direction
+					circleProgress.style.transform = `rotate(${progressDegrees - 45}deg) scaleX(-1)`;
+				} else {
+					// For LTR, use normal direction
+					circleProgress.style.transform = `rotate(${progressDegrees - 45}deg)`;
+				}
 			}
 
-			// Update background image during scroll - only change when content changes
-			const currentBgIndex = Math.floor(sectionProgress * totalItems);
-			if (currentBgIndex !== currentIndex && currentBgIndex < totalItems) {
-				backgroundImages.forEach((img, i) => {
-					if (i === currentBgIndex) {
-						img.style.opacity = '0.3';
-					} else {
-						img.style.opacity = '0';
-					}
-				});
-			}
+			// Update background image immediately
+			backgroundImages?.forEach?.((img, i) => {
+				if (i === index) {
+					img.style.opacity = '0.3';
+				} else {
+					img.style.opacity = '0';
+				}
+			});
 
-			// لا تغير currentIndex أبداً عند دخول القسم، فقط عند سكرول فعلي عبر عجلة أو سحب أو أسهم أو نقاط
-			// لذلك احذف أي تغيير تلقائي هنا
+			// Keep section centered in viewport when changing cards
+			if (scrollToSection && visionSection) {
+				visionSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+			}
 		}
 
-		lastScrollTop = scrollTop;
-	}, 100);
-});
+		// Scroll-based content change - Fixed position until last item
+		let scrollTimeout;
+		let lastScrollTop = 0;
+		let sectionStart = 0;
+		let sectionEnd = 0;
 
-// Recalculate boundaries on window resize
-window.addEventListener('resize', getSectionBoundaries);
+		// Get section boundaries
+		function getSectionBoundaries() {
+			const section = document.querySelector('.vision-message-section');
+			if (section) {
+				sectionStart = section.offsetTop;
+				sectionEnd = sectionStart + section.offsetHeight;
+			}
+		}
 
-// Click on dots to navigate
-dots?.forEach?.((dot, index) => {
-   dot?.addEventListener?.('click', function() {
-	   currentIndex = index;
-	   updateContent(currentIndex);
-   });
-});
+		// Initialize section boundaries
+		getSectionBoundaries();
 
-// Keyboard navigation
-document.addEventListener('keydown', function(e) {
-   if (!visionItems?.length) return;
-   if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
-	   if (currentIndex < totalItems - 1) {
-		   currentIndex++;
-		   updateContent(currentIndex);
-	   }
-   } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-	   if (currentIndex > 0) {
-		   currentIndex--;
-		   updateContent(currentIndex);
-	   }
-   }
-});
+		window.addEventListener('scroll', function () {
+			clearTimeout(scrollTimeout);
 
-// Touch/swipe support for mobile
-let touchStartY = 0;
-let touchEndY = 0;
+			scrollTimeout = setTimeout(function () {
+				const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-// Mouse wheel navigation for vision-message-section (like Splide Mouse Wheel)
-let wheelSleep = 600; // ms
-let lastWheelTime = 0;
-const visionSection = document.querySelector('.vision-message-section');
-if (visionSection) {
-   visionSection.addEventListener(
-	   'wheel',
-	   function(e) {
-		   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-		   if (scrollTop < sectionStart || scrollTop > sectionEnd) return;
+				// Only change content when within the section boundaries
+				if (scrollTop >= sectionStart && scrollTop <= sectionEnd) {
+					const sectionProgress = (scrollTop - sectionStart) / (sectionEnd - sectionStart);
+					const newIndex = Math.floor(sectionProgress * totalItems);
 
-		   const now = Date.now();
-		   if (now - lastWheelTime < wheelSleep) {
-			   e.preventDefault();
-			   return;
-		   }
+					// Update progress circle based on RTL direction
+					const progressDegrees = sectionProgress * 360;
+					const isRTL = document.documentElement.dir === 'rtl';
 
-		   // Lock user inside section until last slide
-		   if (e.deltaY > 0) {
-			   // Scroll down: next card
-			   if (currentIndex < totalItems - 1) {
-				   currentIndex++;
-				   updateContent(currentIndex, true);
-				   e.preventDefault();
-				   lastWheelTime = now;
-			   } else {
-				   // عند آخر سلايد، اسمح بالخروج فقط إذا كان السكرول للأسفل
-				   // لا تمنع السكرول، اتركه طبيعي
-				   lastWheelTime = 0;
-			   }
-		   } else if (e.deltaY < 0) {
-			   // Scroll up: previous card
-			   if (currentIndex > 0) {
-				   currentIndex--;
-				   updateContent(currentIndex, true);
-				   e.preventDefault();
-				   lastWheelTime = now;
-			   } else {
-				   // عند أول سلايد، اسمح بالخروج فقط إذا كان السكرول للأعلى
-				   // لا تمنع السكرول، اتركه طبيعي
-				   lastWheelTime = 0;
-			   }
-		   }
-		   // إذا لم يكن في أول أو آخر سلايد، امنع السكرول خارج القسم
-		   if (currentIndex > 0 && currentIndex < totalItems - 1) {
-			   e.preventDefault();
-		   }
-	   },
-	   { passive: false }
-   );
-}
+					if (isRTL) {
+						// For RTL, flip the circle progress direction
+						circleProgress.style.transform = `rotate(${progressDegrees - 45}deg) scaleX(-1)`;
+					} else {
+						// For LTR, use normal direction
+						circleProgress.style.transform = `rotate(${progressDegrees - 45}deg)`;
+					}
 
-document.addEventListener('touchstart', function(e) {
-   touchStartY = e.changedTouches?.[0]?.screenY ?? 0;
-});
+					// Update background image during scroll - only change when content changes
+					const currentBgIndex = Math.floor(sectionProgress * totalItems);
+					if (currentBgIndex !== currentIndex && currentBgIndex < totalItems) {
+						backgroundImages.forEach((img, i) => {
+							if (i === currentBgIndex) {
+								img.style.opacity = '0.3';
+							} else {
+								img.style.opacity = '0';
+							}
+						});
+					}
 
-document.addEventListener('touchend', function(e) {
-   touchEndY = e.changedTouches?.[0]?.screenY ?? 0;
-   handleSwipe();
-});
+					// لا تغير currentIndex أبداً عند دخول القسم، فقط عند سكرول فعلي عبر عجلة أو سحب أو أسهم أو نقاط
+					// لذلك احذف أي تغيير تلقائي هنا
+				}
 
-function handleSwipe() {
-   const swipeThreshold = 50;
-   const diff = touchStartY - touchEndY;
+				lastScrollTop = scrollTop;
+			}, 100);
+		});
 
-   if (Math.abs(diff) > swipeThreshold) {
-	   if (diff > 0) {
-		   // Swipe up
-		   if (currentIndex < totalItems - 1) {
-			   currentIndex++;
-			   updateContent(currentIndex);
-		   } // عند آخر سلايد، اسمح بالخروج من القسم بالسحب للأعلى
-	   } else {
-		   // Swipe down
-		   if (currentIndex > 0) {
-			   currentIndex--;
-			   updateContent(currentIndex);
-		   } // عند أول سلايد، اسمح بالخروج من القسم بالسحب للأسفل
-	   }
-   }
-}
+		// Recalculate boundaries on window resize
+		window.addEventListener('resize', getSectionBoundaries);
 
-// Scroll to section and show first card when entering section by scroll
-// تم تعطيل انتقال القسم تلقائياً للسلايد الأول عند دخول القسم بالسكرول
+		// Click on dots to navigate
+		dots?.forEach?.((dot, index) => {
+			dot?.addEventListener?.('click', function () {
+				currentIndex = index;
+				updateContent(currentIndex);
+			});
+		});
 
-// Initialize first content (without scroll)
-// updateContent(0, false);
-}
+		// Keyboard navigation
+		document.addEventListener('keydown', function (e) {
+			if (!visionItems?.length) return;
+			if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+				if (currentIndex < totalItems - 1) {
+					currentIndex++;
+					updateContent(currentIndex);
+				}
+			} else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+				if (currentIndex > 0) {
+					currentIndex--;
+					updateContent(currentIndex);
+				}
+			}
+		});
+
+		// Touch/swipe support for mobile
+		let touchStartY = 0;
+		let touchEndY = 0;
+
+		// Mouse wheel navigation for vision-message-section (like Splide Mouse Wheel)
+		let wheelSleep = 600; // ms
+		let lastWheelTime = 0;
+		const visionSection = document.querySelector('.vision-message-section');
+		if (visionSection) {
+			visionSection.addEventListener(
+				'wheel',
+				function (e) {
+					const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+					if (scrollTop < sectionStart || scrollTop > sectionEnd) return;
+
+					const now = Date.now();
+					if (now - lastWheelTime < wheelSleep) {
+						e.preventDefault();
+						return;
+					}
+
+					// Lock user inside section until last slide
+					if (e.deltaY > 0) {
+						// Scroll down: next card
+						if (currentIndex < totalItems - 1) {
+							currentIndex++;
+							updateContent(currentIndex, true);
+							e.preventDefault();
+							lastWheelTime = now;
+						} else {
+							// عند آخر سلايد، اسمح بالخروج فقط إذا كان السكرول للأسفل
+							// لا تمنع السكرول، اتركه طبيعي
+							lastWheelTime = 0;
+						}
+					} else if (e.deltaY < 0) {
+						// Scroll up: previous card
+						if (currentIndex > 0) {
+							currentIndex--;
+							updateContent(currentIndex, true);
+							e.preventDefault();
+							lastWheelTime = now;
+						} else {
+							// عند أول سلايد، اسمح بالخروج فقط إذا كان السكرول للأعلى
+							// لا تمنع السكرول، اتركه طبيعي
+							lastWheelTime = 0;
+						}
+					}
+					// إذا لم يكن في أول أو آخر سلايد، امنع السكرول خارج القسم
+					if (currentIndex > 0 && currentIndex < totalItems - 1) {
+						e.preventDefault();
+					}
+				},
+				{ passive: false }
+			);
+		}
+
+		document.addEventListener('touchstart', function (e) {
+			touchStartY = e.changedTouches?.[0]?.screenY ?? 0;
+		});
+
+		document.addEventListener('touchend', function (e) {
+			touchEndY = e.changedTouches?.[0]?.screenY ?? 0;
+			handleSwipe();
+		});
+
+		function handleSwipe() {
+			const swipeThreshold = 50;
+			const diff = touchStartY - touchEndY;
+
+			if (Math.abs(diff) > swipeThreshold) {
+				if (diff > 0) {
+					// Swipe up
+					if (currentIndex < totalItems - 1) {
+						currentIndex++;
+						updateContent(currentIndex);
+					} // عند آخر سلايد، اسمح بالخروج من القسم بالسحب للأعلى
+				} else {
+					// Swipe down
+					if (currentIndex > 0) {
+						currentIndex--;
+						updateContent(currentIndex);
+					} // عند أول سلايد، اسمح بالخروج من القسم بالسحب للأسفل
+				}
+			}
+		}
+
+		// Scroll to section and show first card when entering section by scroll
+		// تم تعطيل انتقال القسم تلقائياً للسلايد الأول عند دخول القسم بالسكرول
+
+		// Initialize first content (without scroll)
+		// updateContent(0, false);
+	}
 
 })
 // ==== Capsules Section (Why Capsules®? Inspired, GSAP ScrollTrigger) ====
@@ -399,7 +423,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				slide: 'splide__slide project-slide',
 			},
 		});
-				splide.on('move', function(newIndex) {
+		splide.on('move', function (newIndex) {
 			// عند تغيير السلايد، غيّر خلفية السكشن حسب data-image
 			var slides = projectsSplide.querySelectorAll('.project-slide');
 			var activeSlide = slides[newIndex];
@@ -414,7 +438,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			}
 		});
 		// عند التحميل الأول، عيّن الخلفية
-		splide.on('mounted', function() {
+		splide.on('mounted', function () {
 			var slides = projectsSplide.querySelectorAll('.project-slide');
 			var activeSlide = slides[0];
 			if (activeSlide) {
@@ -433,7 +457,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		let wheelSleep = 700;
 		let lastWheelTime = 0;
 		let atEdge = null; // 'last' | 'first' | null
-		projectsSection.addEventListener('wheel', function(e) {
+		projectsSection.addEventListener('wheel', function (e) {
 			const now = Date.now();
 			if (now - lastWheelTime < wheelSleep) return;
 			const atFirst = splide.index === 0;
@@ -445,7 +469,7 @@ document.addEventListener('DOMContentLoaded', function () {
 						let next = projectsSection.nextElementSibling;
 						while (next && next.offsetHeight < 10) next = next.nextElementSibling;
 						if (next) {
-							next.scrollIntoView({behavior:'smooth', block:'start'});
+							next.scrollIntoView({ behavior: 'smooth', block: 'start' });
 						}
 						atEdge = null;
 					} else {
@@ -464,7 +488,7 @@ document.addEventListener('DOMContentLoaded', function () {
 						let prev = projectsSection.previousElementSibling;
 						while (prev && prev.offsetHeight < 10) prev = prev.previousElementSibling;
 						if (prev) {
-							prev.scrollIntoView({behavior:'smooth', block:'end'});
+							prev.scrollIntoView({ behavior: 'smooth', block: 'end' });
 						}
 						atEdge = null;
 					} else {
@@ -476,11 +500,11 @@ document.addEventListener('DOMContentLoaded', function () {
 					atEdge = null;
 				}
 			}
-		}, {passive:false});
+		}, { passive: false });
 
 		// إذا دخلت القسم من الأسفل (سكرول لأعلى)، ابدأ من آخر سلايد
 		let lastScrollY = window.scrollY;
-		window.addEventListener('scroll', function() {
+		window.addEventListener('scroll', function () {
 			const rect = projectsSection.getBoundingClientRect();
 			// إذا دخلت القسم من الأسفل (سكرول لأعلى)
 			if (rect.bottom > 0 && rect.top < window.innerHeight && window.scrollY < lastScrollY) {
@@ -498,7 +522,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // --------------------------------------------------------
 
 // تفعيل Splide.js على سلايدر فريق العمل
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 	// خيارات Splide
 	var options = {
 		type: 'loop',
@@ -569,41 +593,41 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-	// === إحصائيات: أنميشن عداد عند ظهور القسم ===
-	document.addEventListener('DOMContentLoaded', function() {
-		function animateCount(el, target, duration = 1800) {
-			let start = 0;
-			let startTime = null;
-			target = +target;
-			function step(timestamp) {
-				if (!startTime) startTime = timestamp;
-				const progress = Math.min((timestamp - startTime) / duration, 1);
-				el.textContent = Math.floor(progress * (target - start) + start);
-				if (progress < 1) {
-					requestAnimationFrame(step);
-				} else {
-					el.textContent = target;
-				}
+// === إحصائيات: أنميشن عداد عند ظهور القسم ===
+document.addEventListener('DOMContentLoaded', function () {
+	function animateCount(el, target, duration = 1800) {
+		let start = 0;
+		let startTime = null;
+		target = +target;
+		function step(timestamp) {
+			if (!startTime) startTime = timestamp;
+			const progress = Math.min((timestamp - startTime) / duration, 1);
+			el.textContent = Math.floor(progress * (target - start) + start);
+			if (progress < 1) {
+				requestAnimationFrame(step);
+			} else {
+				el.textContent = target;
 			}
-			requestAnimationFrame(step);
 		}
+		requestAnimationFrame(step);
+	}
 
-		let statsAnimated = false;
-		function handleStatsAnimation() {
-			if (statsAnimated) return;
-			const section = document.getElementById('stats-section');
-			if (!section) return;
-			const rect = section.getBoundingClientRect();
-			if (rect.top < window.innerHeight && rect.bottom > 0) {
-				statsAnimated = true;
-				section.querySelectorAll('.stat-number').forEach(num => {
-					animateCount(num, num.getAttribute('data-target'));
-				});
-			}
+	let statsAnimated = false;
+	function handleStatsAnimation() {
+		if (statsAnimated) return;
+		const section = document.getElementById('stats-section');
+		if (!section) return;
+		const rect = section.getBoundingClientRect();
+		if (rect.top < window.innerHeight && rect.bottom > 0) {
+			statsAnimated = true;
+			section.querySelectorAll('.stat-number').forEach(num => {
+				animateCount(num, num.getAttribute('data-target'));
+			});
 		}
-		window.addEventListener('scroll', handleStatsAnimation);
-		handleStatsAnimation();
-	});
+	}
+	window.addEventListener('scroll', handleStatsAnimation);
+	handleStatsAnimation();
+});
 
 
 
