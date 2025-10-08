@@ -3482,6 +3482,9 @@ html {
 	.event-panel.active {
 		flex: auto;
 	}
+	.events-triptych:has(.panel-text:hover) .event-panel:not(:has(.panel-text:hover)){
+		flex: auto;
+	}
 }
 
 @media (max-width: 576px) {
