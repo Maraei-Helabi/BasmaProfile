@@ -3333,23 +3333,23 @@ html {
 	opacity: .8;
 	margin-top: 30px;
 }
-.event-panel:hover .panel-description {
-	display: block;
+.event-panel:has(.panel-text:hover) .panel-description {
+    display: block;
 }
-.event-panel:hover,
-.event-panel:focus,
+.event-panel:has(.panel-text:hover),
+.event-panel:has(.panel-title:focus),
 .event-panel.active {
-	flex: 10 1 100%;
-	z-index: 2;
-	transform: scale(1.01);
+    flex: 10 1 100%;
+    z-index: 2;
+    transform: scale(1.01);
 }
 
-.events-triptych:hover .event-panel:not(:hover) {
-	flex: 1 1 0%;
-	filter: blur(2px) grayscale(0.3) brightness(0.8);
-	z-index: 1;
-	transform: scale(0.98);
-	opacity: 0.7;
+.events-triptych:has(.panel-text:hover) .event-panel:not(:has(.panel-text:hover)) {
+    flex: 1 1 0%;
+    filter: blur(2px) grayscale(0.3) brightness(0.8);
+    z-index: 1;
+    transform: scale(0.98);
+    opacity: 0.7;
 }
 
 .events-triptych .event-panel {
@@ -3431,7 +3431,7 @@ html {
 	transition: width 0.3s ease;
 }
 
-.event-panel:hover .panel-title::after {
+.panel-text:hover .panel-title::after {
 	width: 100%;
 	opacity: 1;
 }
@@ -3444,7 +3444,7 @@ html {
 	transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-.event-panel:hover .panel-image img {
+.event-panel:has(.panel-text:hover) .panel-image img {
 	transition: all 1.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
@@ -3468,7 +3468,7 @@ html {
 		opacity: 0.8;
 	}
 
-	.event-panel:hover {
+	.event-panel:has(.panel-text:hover) {
 		/* height: 450px;  */
 		filter: none;
 		opacity: 1;
@@ -3477,8 +3477,8 @@ html {
 	.panel-description {
 		width: 85%;
 	}
-	.event-panel:hover,
-	.event-panel:focus,
+	.event-panel:has(.panel-text:hover),
+	.event-panel:has(.panel-title:focus),
 	.event-panel.active {
 		flex: auto;
 	}
