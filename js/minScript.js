@@ -61,23 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		invalidateOnRefresh: true, // Recalculate on resize
 	});
 
-	// Parallax effect for images inside each card
-	cards.forEach(card => {
-		const image = card.querySelector('.discover-card-image');
-		if (image) {
-			gsap.to(image, {
-				xPercent: -10, // Move image to the left
-				ease: 'none',
-				scrollTrigger: {
-					trigger: card,
-					containerAnimation: tween, // Link to the main horizontal scroll animation
-					start: 'left right',
-					end: 'right left',
-					scrub: true,
-				},
-			});
-		}
-	});
 });
 
 // testimonials
