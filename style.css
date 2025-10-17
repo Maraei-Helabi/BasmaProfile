@@ -3095,7 +3095,15 @@ html {
 	padding: 6px 12px;
 	font-size: 0.8rem;
 }
-
+@media (max-width: 768px){
+	.news-article.small{
+		flex-direction: column;
+	}
+	.news-article.small .article-image{
+		width: 100%;
+		/* height: auto; */
+	}
+}
 /* Company Works Section Styles */
 .company-works-section {
 	background: var(--dark-bg);
@@ -3968,12 +3976,14 @@ html {
 
 @media (max-width: 480px) {
 	.stats-row {
-		flex-direction: column;
-		gap: 18px;
+		display: grid;
+		        grid-template-columns: repeat(2, 1fr);
+		gap: 10px;
 		align-items: center;
 	}
 	.stat-card {
-		padding: 24px 8px 18px 8px;
+		min-width: auto;
+		padding: 20px 8px 14px;
 	}
 }
 /*  */
