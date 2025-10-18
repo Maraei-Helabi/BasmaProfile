@@ -1132,8 +1132,8 @@ body {
 
 .partner-logo {
 	flex-shrink: 0;
-	width: 200px;
-	height: 120px;
+	width: 150px !important;
+	height: 150px !important;
 	/* background: #ffffff; */
 	border: 1px solid #d3d3d3;
 	/* border-radius: 10px; */
@@ -1253,8 +1253,8 @@ body {
 	}
 
 	.partner-logo {
-		width: 150px;
-		height: 90px;
+		width: 100px !important;
+		height: 100px !important;
 	}
 }
 
@@ -2914,7 +2914,7 @@ html {
 }
 .news-article.main {
 	    position: relative;
-    min-height: 400px;
+    height: 100%;
 	overflow: hidden;
 }
 .news-article.main .article-image {
@@ -4043,6 +4043,9 @@ html {
 	.news-content {
 		display: flex;
 		flex-direction: column;
+	}
+	.news-article.main{
+		height: 250px;
 	}
 }
 
