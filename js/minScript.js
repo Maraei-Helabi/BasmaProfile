@@ -678,4 +678,67 @@ document.addEventListener('DOMContentLoaded', function () {
 			}
 		}).mount();
 	}
+
+	// Video Modal Functionality
+	const videoModal = document.getElementById('videoModal');
+	const videoIframe = document.getElementById('videoIframe');
+	const videoLinks = document.querySelectorAll('.media-icon-video');
+	const videoCards = document.querySelectorAll('.video-card');
+
+	// Function to get YouTube embed URL
+	function getYouTubeEmbedUrl(url) {
+		let videoId = '';
+		
+		// Handle different YouTube URL formats
+		if (url.includes('youtube.com/watch?v=')) {
+			videoId = url.split('v=')[1].split('&')[0];
+		} else if (url.includes('youtu.be/')) {
+			videoId = url.split('youtu.be/')[1].split('?')[0];
+		} else if (url.includes('youtube.com/embed/')) {
+			videoId = url.split('embed/')[1].split('?')[0];
+		}
+		
+		return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+	}
+
+	// Function to open video modal
+	function openVideoModal(videoUrl) {
+		const embedUrl = getYouTubeEmbedUrl(videoUrl);
+		videoIframe.src = embedUrl;
+		const modal = new bootstrap.Modal(videoModal);
+		modal.show();
+	}
+
+	// Add click event to all video links (play button in icons)
+	videoLinks.forEach(link => {
+		link.addEventListener('click', function(e) {
+			e.preventDefault();
+			e.stopPropagation();
+			const videoUrl = this.getAttribute('href');
+			openVideoModal(videoUrl);
+		});
+	});
+
+	// Add click event to video cards (click anywhere on the card)
+	videoCards.forEach(card => {
+		card.addEventListener('click', function(e) {
+			// Don't trigger if clicking on the link icon
+			if (!e.target.closest('.media-icon-link')) {
+				const videoUrl = this.getAttribute('data-video-url');
+				if (videoUrl) {
+					openVideoModal(videoUrl);
+				}
+			}
+		});
+		
+		// Add pointer cursor to video cards
+		card.style.cursor = 'pointer';
+	});
+
+	// Clear video when modal is closed
+	if (videoModal) {
+		videoModal.addEventListener('hidden.bs.modal', function () {
+			videoIframe.src = '';
+		});
+	}
 });
