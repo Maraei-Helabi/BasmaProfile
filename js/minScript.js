@@ -629,3 +629,53 @@ document.addEventListener('DOMContentLoaded', function () {
 // 	}).mount();
 // });
 
+// === Media Gallery Splide Sliders ===
+document.addEventListener('DOMContentLoaded', function () {
+	// Photos Slider
+	const photosSlider = document.querySelector('#mediaPhotosSlider');
+	if (photosSlider) {
+		new Splide('#mediaPhotosSlider', {
+			type: 'loop',
+			perPage: 4,
+			perMove: 1,
+			gap: '20px',
+			padding: '10px',
+			direction: 'rtl',
+			pagination: false,
+			arrows: true,
+			autoplay: false,
+			speed: 800,
+			easing: 'cubic-bezier(0.25, 1, 0.5, 1)',
+			breakpoints: {
+				1400: { perPage: 3 },
+				992: { perPage: 2 },
+				768: { perPage: 2 },
+				576: { perPage: 1 }
+			}
+		}).mount();
+	}
+
+	// Videos Slider
+	const videosSlider = document.querySelector('#mediaVideosSlider');
+	if (videosSlider) {
+		new Splide('#mediaVideosSlider', {
+			type: 'loop',
+			perPage: 4,
+			perMove: 1,
+			gap: '20px',
+			padding: '10px',
+			direction: 'rtl',
+			pagination: false,
+			arrows: true,
+			autoplay: false,
+			speed: 800,
+			easing: 'cubic-bezier(0.25, 1, 0.5, 1)',
+			breakpoints: {
+				1400: { perPage: 3 },
+				992: { perPage: 2 },
+				768: { perPage: 2 },
+				576: { perPage: 1 }
+			}
+		}).mount();
+	}
+});
