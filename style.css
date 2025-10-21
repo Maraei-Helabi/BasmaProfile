@@ -2136,7 +2136,9 @@ html {
 }
 
 .two-images-header {
-	margin-bottom: 80px;
+	margin-bottom: 40px;
+	position: relative;
+	z-index: 10;
 }
 
 .two-images-title {
@@ -3359,6 +3361,10 @@ html {
 	margin: auto;
 	opacity: .8;
 	margin-top: 30px;
+	text-align: center;
+}
+.panel-text {
+    width: 100%;
 }
 .event-panel:has(.panel-text:hover) .panel-description {
     display: block;
@@ -3527,14 +3533,15 @@ html {
 /* --- Discover Section (GSAP Horizontal Scroll) --- */
 .discover-section {
 	padding-top: 70px;
-	padding-bottom: 70px;
-	/* background-color: #f4efe7; */
-	overflow: hidden;
+	padding-bottom: 0;
+	overflow: visible;
 	position: relative;
 	background-image: url(/img/pattern/pattern-building-gold.png);
 	background-position: center;
 	background-size: contain;
 	background-attachment: fixed;
+	z-index: 1;
+	min-height: 100vh;
 }
 
 .discover-section .discover-header {
@@ -3553,27 +3560,33 @@ html {
 	height: 100vh;
 	width: 100%;
 	position: relative;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
 }
 
 .discover-track {
 	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
 	width: max-content;
 	height: 100%;
 	align-items: center;
 	gap: 4vw;
-	padding: 0 10vw;
+	padding: 0 5vw;
+	will-change: transform;
 	position: absolute;
 	left: 0;
-	top: 0;
-	margin-top: 40px;
 }
 
 .discover-card {
 	width: 75vw;
 	max-width: 1200px;
-	height: calc(100vh - 100px);
-	max-height: 800px;
+	height: calc(100vh - 200px);
+	max-height: 700px;
 	flex-shrink: 0;
+	position: relative;
 }
 
 .discover-card-content {
@@ -3582,6 +3595,7 @@ html {
 	height: 100%;
 	border-radius: 60px;
 	overflow: hidden;
+	box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -3658,9 +3672,19 @@ html {
 }
 
 @media (max-width: 992px) {
+	.discover-section {
+		padding-top: 50px;
+	}
+	
+	.discover-track {
+		padding: 0 3vw;
+		gap: 3vw;
+	}
+	
 	.discover-card {
 		width: 85vw;
-		height: calc(100vh - 150px);
+		height: calc(100vh - 180px);
+		max-height: 600px;
 	}
 	.discover-card-overlay {
 		padding: 40px;
@@ -3671,6 +3695,25 @@ html {
 }
 
 @media (max-width: 768px) {
+	.discover-track {
+		padding: 0 2vw;
+		gap: 5vw;
+	}
+	
+	.discover-card {
+		width: 90vw;
+		height: calc(100vh - 200px);
+		max-height: 500px;
+	}
+	
+	.discover-card-overlay {
+		padding: 30px 25px;
+	}
+	
+	.discover-card-header h3 {
+		font-size: 2rem;
+	}
+	
 	.discover-card-footer {
 		flex-direction: column;
 		align-items: flex-start;
@@ -3678,6 +3721,7 @@ html {
 	}
 	.discover-card-footer p {
 		max-width: 100%;
+		font-size: 1rem;
 	}
 }
 
@@ -3775,6 +3819,8 @@ html {
 .stats-section {
 	background: var(--dark-bg);
 	padding: 64px 0;
+	position: relative;
+	z-index: 2;
 }
 .stats-row {
 	display: flex;
@@ -3963,6 +4009,10 @@ html {
       height: 30px;
       fill: #fff;
     }
+
+	.discover-track-container {
+    height: 630px !important;
+}
 
     /* إصلاح اختفاء السلايدر في الشاشات الصغيرة جدًا */
     @media (max-width: 992px) {
