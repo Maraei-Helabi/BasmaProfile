@@ -4037,6 +4037,12 @@ html {
         min-width: auto;
         padding: 20px 8px 14px;
     }
+    .team-slide{
+        width: 170px !important;
+    }
+    .team-slide .member-image{
+        height: 250px !important;
+    }
 }
 /*  */
 @media (max-width: 1200px) {
