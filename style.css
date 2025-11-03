@@ -3105,6 +3105,12 @@ html {
         width: 100%;
         /* height: auto; */
     }
+    .news-article.main .article-title {
+        font-size: 1.1rem;
+    }
+    .news-article.main .article-description {
+        font-size: 0.9rem;
+    }
 }
 /* Company Works Section Styles */
 .company-works-section {
