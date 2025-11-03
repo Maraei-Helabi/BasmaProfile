@@ -2641,11 +2641,16 @@ html {
     .faq-item {
         padding: 25px 20px;
     }
-
-    .faq-question {
-        font-size: 1.6rem;
+    .faq-content {
+        min-height: 260px;
     }
-
+    .faq-question {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+    .faq-answer{
+        font-size: 0.9rem;
+    }
     .faq-card {
         flex-basis: 100%;
         padding: 20px;
