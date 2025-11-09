@@ -494,6 +494,7 @@ body {
 .team-slide {
     flex-shrink: 0;
     width: 300px;
+    height: 100%;
 }
 
 .team-member {
@@ -501,6 +502,7 @@ body {
     border-radius: 15px;
     overflow: hidden;
     transition: transform 0.3s ease;
+    height: 100%;
 }
 
 .team-member:hover {
@@ -580,6 +582,7 @@ body {
     -webkit-backdrop-filter: blur(10px);
     border-radius: 0 0 15px 15px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    height: -webkit-fill-available;
 }
 
 .member-info h3 {
