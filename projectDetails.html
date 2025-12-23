@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <!-- Splide.js CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تفاصيل المشروع - شركة بسمة للتجارة والتطوير العقاري</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/icon.png" />
+    <link rel="apple-touch-icon" href="img/icon.png" />
+
+    <!-- Google Fonts - Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- AOS JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <!-- Brand -->
+        <a
+          class="navbar-brand"
+          href="#"
+          data-aos="fade-right"
+          data-aos-delay="100"
+        >
+          <img src="img/logo.png" alt="BASMA Logo" class="navbar-logo" />
+        </a>
+
+        <!-- Toggle Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <div
+          class="collapse navbar-collapse"
+          id="navbarNav"
+          data-aos="fade-left"
+          data-aos-delay="300"
+        >
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">الرئيسية</a>
+            </li>
+
+            <!-- About Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                aria-expanded="false"
+              >
+                من نحن
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#about">
+                    <i class="bi bi-handshake"></i>
+                    نبذة عن الشركة
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#vision">
+                    <i class="bi bi-eye"></i>
+                    الرؤية والرسالة والأهداف
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#ourTeam">
+                    <i class="bi bi-people"></i>
+                    فريق العمل
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Services Dropdown -->
+            <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false">
+              قطاعات الأعمال
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="#two-images">
+                  <i class="bi bi-building"></i>
+                  العقار
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#projects">
+                  <i class="bi bi-grid-3x3-gap"></i>
+                  إدارة الأصول
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#company-works">
+                  <i class="bi bi-briefcase"></i>
+                  تحارة التجزئة
+                </a>
+              </li>
+              <li></li>
+              <li>
+                <a class="dropdown-item" href="#news">
+                  <i class="bi bi-newspaper"></i>
+                  الرعاية الصحية
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#events">
+                  <i class="bi bi-calendar-event"></i>
+                  التعليم
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#events">
+                  <i class="bi bi-calendar-event"></i>
+                  الضيافة
+                </a>
+              </li>
+            </ul>
+          </li> -->
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                aria-expanded="false"
+              >
+                اعمالنا
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-building"></i>
+                    ابراج بن محفوظ
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-grid-3x3-gap"></i>
+                    مجمع القصر التجاري
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-briefcase"></i>
+                    حاضنة الاعمال
+                  </a>
+                </li>
+                <li></li>
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-newspaper"></i>
+                    القاعات
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-calendar-event"></i>
+                    الضيافة
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-calendar-event"></i>
+                    أعمال أخرى
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-calendar-event"></i>
+                    المساهمة المجتمعية
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#events">الفعاليات</a>
+            </li>
+
+            <!-- Support Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                aria-expanded="false"
+              >
+                الوسائط
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#faq">
+                    <i class="bi bi-question-circle"></i>
+                    معرض الصور
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#contact">
+                    <i class="bi bi-envelope"></i>
+                    معرض الفيديو
+                  </a>
+                </li>
+                <!-- <li>
+                <a class="dropdown-item" href="#support">
+                  <i class="bi bi-chat-dots"></i>
+                  الاصدارات
+                </a>
+              </li> -->
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#news">الأخبار</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#home">تواصل معنا</a>
+            </li>
+          </ul>
+
+          <!-- Language Toggle -->
+          <div class="language-toggle">
+            <button class="lang-btn" data-lang="en" aria-label="English">
+              <span class="lang-text">English</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Project Details Section -->
+    <section class="project-details-section pt-120 pb-70">
+      <div class="container">
+        <!-- Back Button -->
+        <div class="mb-4" data-aos="fade-right" data-aos-delay="100">
+          <a href="index.html#projects" class="back-btn">
+            <i class="bi bi-arrow-right"></i>
+            العودة إلى المشاريع
+          </a>
+        </div>
+
+        <!-- Project Header -->
+        <div
+          class="project-details-header mb-5"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <h1 class="project-details-title" id="projectTitle">فيلا حديثة</h1>
+          <p class="project-details-subtitle" id="projectSubtitle">
+            مشروع معماري فاخر يجمع بين الأناقة والحداثة
+          </p>
+        </div>
+
+        <!-- Main Image -->
+        <div
+          class="project-main-image mb-5"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <img
+            id="projectMainImage"
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Project Main Image"
+            class="img-fluid rounded"
+          />
+        </div>
+
+        <!-- Project Info Grid -->
+        <div class="row mb-5">
+          <!-- Left Column - Project Details -->
+          <div class="col-12 col-lg-8">
+            <div
+              class="project-content"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <h2 class="section-title mb-4">عن المشروع</h2>
+              <div id="projectDescription" class="project-description">
+                <p>
+                  مشروع فيلا حديثة يتميز بتصميم معماري عصري يجمع بين الأناقة
+                  والوظيفية. تم تصميم هذا المشروع بعناية فائقة ليوفر مساحات
+                  معيشة مريحة ومبتكرة، مع التركيز على الاستدامة والكفاءة في
+                  استخدام الطاقة.
+                </p>
+                <p>
+                  يشمل المشروع تصميم داخلي وخارجي متكامل، مع استخدام مواد عالية
+                  الجودة وتقنيات بناء حديثة. تم تخصيص كل مساحة بعناية لتحقيق
+                  أقصى استفادة من الإضاءة الطبيعية والتهوية.
+                </p>
+              </div>
+
+              <!-- Project Features -->
+              <div class="project-features mt-5">
+                <h3 class="section-subtitle mb-4">مميزات المشروع</h3>
+                <div class="row">
+                  <div class="col-12 col-md-6 mb-3">
+                    <div class="feature-box">
+                      <i class="bi bi-check-circle-fill feature-icon"></i>
+                      <span>تصميم معماري عصري ومبتكر</span>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 mb-3">
+                    <div class="feature-box">
+                      <i class="bi bi-check-circle-fill feature-icon"></i>
+                      <span>مواد بناء عالية الجودة</span>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 mb-3">
+                    <div class="feature-box">
+                      <i class="bi bi-check-circle-fill feature-icon"></i>
+                      <span>نظام طاقة مستدام</span>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 mb-3">
+                    <div class="feature-box">
+                      <i class="bi bi-check-circle-fill feature-icon"></i>
+                      <span>تصميم داخلي فاخر</span>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 mb-3">
+                    <div class="feature-box">
+                      <i class="bi bi-check-circle-fill feature-icon"></i>
+                      <span>مساحات خارجية واسعة</span>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 mb-3">
+                    <div class="feature-box">
+                      <i class="bi bi-check-circle-fill feature-icon"></i>
+                      <span>أمان وخصوصية عالية</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column - Project Info -->
+          <div class="col-12 col-lg-4">
+            <div
+              class="project-info-card"
+              data-aos="fade-left"
+              data-aos-delay="500"
+            >
+              <h3 class="info-card-title">معلومات المشروع</h3>
+              <div class="info-item">
+                <i class="bi bi-calendar3 info-icon"></i>
+                <div class="info-content">
+                  <span class="info-label">تاريخ البدء</span>
+                  <span class="info-value" id="projectStartDate"
+                    >2023/01/15</span
+                  >
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="bi bi-calendar-check info-icon"></i>
+                <div class="info-content">
+                  <span class="info-label">تاريخ الانتهاء</span>
+                  <span class="info-value" id="projectEndDate">2024/06/30</span>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="bi bi-building info-icon"></i>
+                <div class="info-content">
+                  <span class="info-label">نوع المشروع</span>
+                  <span class="info-value" id="projectType">سكني</span>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="bi bi-rulers info-icon"></i>
+                <div class="info-content">
+                  <span class="info-label">المساحة</span>
+                  <span class="info-value" id="projectArea">850 متر مربع</span>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="bi bi-geo-alt info-icon"></i>
+                <div class="info-content">
+                  <span class="info-label">الموقع</span>
+                  <span class="info-value" id="projectLocation"
+                    >الرياض، المملكة العربية السعودية</span
+                  >
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="bi bi-people info-icon"></i>
+                <div class="info-content">
+                  <span class="info-label">الحالة</span>
+                  <span class="info-value" id="projectStatus">قيد التنفيذ</span>
+                </div>
+              </div>
+
+              <!-- CTA Button -->
+              <!-- <div class="project-cta mt-4">
+                <a
+                  href="#contact"
+                  class="btn btn-primary w-100 rounded-pill py-2"
+                >
+                  <i class="bi bi-envelope ms-2"></i>
+                  تواصل معنا
+                </a>
+              </div> -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Gallery -->
+        <div
+          class="project-gallery mt-5"
+          data-aos="fade-up"
+          data-aos-delay="600"
+        >
+          <h2 class="section-title mb-4">معرض الصور</h2>
+          <div class="row g-3" id="projectGallery">
+            <!-- Gallery images will be populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+      <div class="container-fluid">
+        <div class="footer-content">
+          <!-- Company Info -->
+          <div class="footer-company" data-aos="fade-up" data-aos-delay="200">
+            <div class="footer-logo">
+              <img src="img/logo.png" alt="Basma Logo" />
+              <!-- <h3 class="footer-logo-title">بسمة للتجارة والتطوير العقاري</h3> -->
+            </div>
+            <p class="company-description">
+              شركة بسمة للتجارة والتطوير العقاري هي شركة تجارية استثمارية رائدة
+              تدير وتشغل الأملاك والأصول والعقارات والرائدة والأكثر نمواً وتتركز
+              أعمالها في الوقت الحالي على إدارة الأملاك والعقار وتطويرها
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/basmaye1/"
+                target="_blank"
+                rel="noopener"
+                class="social-link"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a
+                href="https://x.com/basmaye1"
+                target="_blank"
+                rel="noopener"
+                class="social-link"
+                ><i class="bi bi-twitter"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/basmaye1/"
+                target="_blank"
+                rel="noopener"
+                class="social-link"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a
+                href="https://www.youtube.com/@basmaye1"
+                target="_blank"
+                rel="noopener"
+                class="social-link"
+                ><i class="bi bi-youtube"></i
+              ></a>
+              <a
+                href="https://www.threads.net/@basmaye1"
+                target="_blank"
+                rel="noopener"
+                class="social-link"
+                ><i class="bi bi-threads"></i
+              ></a>
+              <!-- <a href="https://tellonym.me/basmaye1" class="social-link"><i class="bi bi-tellonym"></i></a> -->
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-links" data-aos="fade-up" data-aos-delay="400">
+            <h4>روابط سريعة</h4>
+            <ul>
+              <li><a href="#home">الرئيسية</a></li>
+              <li><a href="#about">من نحن</a></li>
+
+              <li><a href="#projects">مشاريعنا</a></li>
+              <li><a href="#ourTeam">فريق بسمة</a></li>
+              <li><a href="contact.html">تواصل معنا</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="footer-contact" data-aos="fade-up" data-aos-delay="600">
+            <h4>معلومات التواصل</h4>
+            <div class="contact-item">
+              <i class="bi bi-geo-alt"></i>
+              <span>اليمن – حضرموت – المكلا – 40 شقة – أبراج بن محفوظ </span>
+            </div>
+            <div class="contact-item">
+              <i class="bi bi-telephone"></i>
+              <span>05323131 – 323300 - 733570950</span>
+            </div>
+            <div class="contact-item">
+              <i class="bi bi-envelope"></i>
+              <span>awadh@basma-ye.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="bi bi-clock"></i>
+              <span>الأحد - الخميس: 8:00 ص - 4:00 م</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <div class="footer-bottom-content">
+            <p>
+              <span id="current-year"></span> بسمة للتجارة والتطوير العقاري.
+              &copy; جميع الحقوق محفوظة.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Swiper JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/minScript.js"></script>
+    <script src="js/oldScript.js"></script>
+
+    <!-- Project Details JavaScript -->
+    <script>
+      // Project data
+      const projectsData = {
+        1: {
+          title: 'فيلا حديثة',
+          subtitle: 'مشروع معماري فاخر يجمع بين الأناقة والحداثة',
+          mainImage:
+            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          description: `
+          <p>مشروع فيلا حديثة يتميز بتصميم معماري عصري يجمع بين الأناقة والوظيفية. تم تصميم هذا المشروع 
+          بعناية فائقة ليوفر مساحات معيشة مريحة ومبتكرة، مع التركيز على الاستدامة والكفاءة في استخدام الطاقة.</p>
+          <p>يشمل المشروع تصميم داخلي وخارجي متكامل، مع استخدام مواد عالية الجودة وتقنيات بناء حديثة. 
+          تم تخصيص كل مساحة بعناية لتحقيق أقصى استفادة من الإضاءة الطبيعية والتهوية.</p>
+        `,
+          startDate: '2023/01/15',
+          endDate: '2024/06/30',
+          type: 'سكني',
+          area: '850 متر مربع',
+          location: 'الرياض، المملكة العربية السعودية',
+          status: 'قيد التنفيذ',
+          gallery: [
+            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          ],
+        },
+        2: {
+          title: 'مجمع شقق فاخرة',
+          subtitle: 'مجمع سكني راقي يوفر نمط حياة عصري ومريح',
+          mainImage:
+            'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80',
+          description: `
+          <p>مجمع شقق فاخرة يضم وحدات سكنية عصرية مصممة بعناية لتوفير أقصى درجات الراحة والرفاهية. 
+          يتميز المشروع بموقعه الاستراتيجي وتصميمه المعماري المتميز.</p>
+          <p>يشمل المجمع مرافق ترفيهية وخدمات متكاملة، مع تصميم داخلي فاخر ومساحات خارجية واسعة.</p>
+        `,
+          startDate: '2022/09/01',
+          endDate: '2024/12/31',
+          type: 'سكني',
+          area: '5000 متر مربع',
+          location: 'جدة، المملكة العربية السعودية',
+          status: 'قيد التنفيذ',
+          gallery: [
+            'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          ],
+        },
+        3: {
+          title: 'مبنى مكاتب تجارية',
+          subtitle: 'مبنى إداري حديث يوفر بيئة عمل مثالية',
+          mainImage:
+            'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          description: `
+          <p>مبنى مكاتب تجارية مصمم ليوفر بيئة عمل عصرية ومريحة. يتميز بتصميم معماري عصري ومساحات واسعة 
+          مع إضاءة طبيعية ممتازة.</p>
+          <p>يشمل المبنى مرافق متكاملة وخدمات حديثة لضمان راحة الموظفين والزوار.</p>
+        `,
+          startDate: '2023/03/01',
+          endDate: '2025/03/31',
+          type: 'تجاري',
+          area: '3000 متر مربع',
+          location: 'الدمام، المملكة العربية السعودية',
+          status: 'قيد التنفيذ',
+          gallery: [
+            'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          ],
+        },
+        4: {
+          title: 'منزل بيئي مستدام',
+          subtitle: 'تصميم مستدام صديق للبيئة',
+          mainImage:
+            'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          description: `
+          <p>منزل بيئي مستدام يجمع بين التصميم العصري والاستدامة البيئية. يستخدم تقنيات الطاقة المتجددة 
+          ومواد بناء صديقة للبيئة.</p>
+          <p>تم تصميم المشروع ليكون مثالاً على العمارة المستدامة مع الحفاظ على الراحة والجمال.</p>
+        `,
+          startDate: '2023/06/01',
+          endDate: '2024/12/31',
+          type: 'سكني',
+          area: '600 متر مربع',
+          location: 'الرياض، المملكة العربية السعودية',
+          status: 'قيد التنفيذ',
+          gallery: [
+            'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          ],
+        },
+        5: {
+          title: 'مشروع تجديد حضري',
+          subtitle: 'تجديد وتطوير منطقة حضرية',
+          mainImage:
+            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          description: `
+          <p>مشروع تجديد حضري شامل يهدف إلى تطوير وتحسين منطقة حضرية كاملة. يشمل التصميم المعماري 
+          والبنية التحتية والمساحات العامة.</p>
+        `,
+          startDate: '2023/01/01',
+          endDate: '2025/06/30',
+          type: 'حضري',
+          area: '10000 متر مربع',
+          location: 'الرياض، المملكة العربية السعودية',
+          status: 'قيد التنفيذ',
+          gallery: [
+            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          ],
+        },
+        6: {
+          title: 'تصميم منتجع سياحي',
+          subtitle: 'منتجع فاخر يوفر تجربة سياحية استثنائية',
+          mainImage:
+            'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80',
+          description: `
+          <p>تصميم منتجع سياحي فاخر يجمع بين الجمال الطبيعي والتصميم المعماري المتميز. يوفر تجربة 
+          إقامة استثنائية مع مرافق ترفيهية وخدمات فاخرة.</p>
+        `,
+          startDate: '2023/09/01',
+          endDate: '2025/12/31',
+          type: 'سياحي',
+          area: '15000 متر مربع',
+          location: 'الطائف، المملكة العربية السعودية',
+          status: 'قيد التنفيذ',
+          gallery: [
+            'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          ],
+        },
+      };
+
+      // Get project ID from URL
+      function getProjectId() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('id') || '1';
+      }
+
+      // Load project data
+      function loadProject() {
+        const projectId = getProjectId();
+        const project = projectsData[projectId];
+
+        if (!project) {
+          // Default to project 1 if not found
+          const defaultProject = projectsData[1];
+          displayProject(defaultProject);
+          return;
+        }
+
+        displayProject(project);
+      }
+
+      // Display project data
+      function displayProject(project) {
+        document.getElementById('projectTitle').textContent = project.title;
+        document.getElementById('projectSubtitle').textContent =
+          project.subtitle;
+        document.getElementById('projectMainImage').src = project.mainImage;
+        document.getElementById('projectMainImage').alt = project.title;
+        document.getElementById('projectDescription').innerHTML =
+          project.description;
+        document.getElementById('projectStartDate').textContent =
+          project.startDate;
+        document.getElementById('projectEndDate').textContent = project.endDate;
+        document.getElementById('projectType').textContent = project.type;
+        document.getElementById('projectArea').textContent = project.area;
+        document.getElementById('projectLocation').textContent =
+          project.location;
+        document.getElementById('projectStatus').textContent = project.status;
+
+        // Update page title
+        document.title = `${project.title} - شركة بسمة للتطوير العقاري`;
+
+        // Display gallery
+        const galleryContainer = document.getElementById('projectGallery');
+        galleryContainer.innerHTML = '';
+        project.gallery.forEach((image, index) => {
+          const col = document.createElement('div');
+          col.className = 'col-12 col-md-6 col-lg-4';
+          col.innerHTML = `
+          <div class="gallery-item">
+            <img src="${image}" alt="${project.title} - صورة ${
+            index + 1
+          }" class="img-fluid rounded" />
+          </div>
+        `;
+          galleryContainer.appendChild(col);
+        });
+      }
+
+      // Initialize on page load
+      document.addEventListener('DOMContentLoaded', function () {
+        loadProject();
+        AOS.init({
+          duration: 1000,
+          easing: 'ease-in-out-cubic',
+          once: true,
+        });
+      });
+    </script>
+  </body>
+</html>

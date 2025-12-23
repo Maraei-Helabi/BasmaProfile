@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <!-- Splide.js CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تفاصيل الفعالية - شركة بسمة للتطوير العقاري</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/icon.png" />
+    <link rel="apple-touch-icon" href="img/icon.png" />
+
+    <!-- Google Fonts - Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- AOS JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <!-- Brand -->
+        <a
+          class="navbar-brand"
+          href="#"
+          data-aos="fade-right"
+          data-aos-delay="100"
+        >
+          <img src="img/logo.png" alt="BASMA Logo" class="navbar-logo" />
+        </a>
+
+        <!-- Toggle Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <div
+          class="collapse navbar-collapse"
+          id="navbarNav"
+          data-aos="fade-left"
+          data-aos-delay="300"
+        >
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">الرئيسية</a>
+            </li>
+
+            <!-- About Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                aria-expanded="false"
+              >
+                من نحن
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#about">
+                    <i class="bi bi-handshake"></i>
+                    نبذة عن الشركة
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#vision">
+                    <i class="bi bi-eye"></i>
+                    الرؤية والرسالة والأهداف
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#ourTeam">
+                    <i class="bi bi-people"></i>
+                    فريق العمل
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Services Dropdown -->
+            <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false">
+              قطاعات الأعمال
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="#two-images">
+                  <i class="bi bi-building"></i>
+                  العقار
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#projects">
+                  <i class="bi bi-grid-3x3-gap"></i>
+                  إدارة الأصول
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#company-works">
+                  <i class="bi bi-briefcase"></i>
+                  تحارة التجزئة
+                </a>
+              </li>
+              <li></li>
+              <li>
+                <a class="dropdown-item" href="#news">
+                  <i class="bi bi-newspaper"></i>
+                  الرعاية الصحية
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#events">
+                  <i class="bi bi-calendar-event"></i>
+                  التعليم
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#events">
+                  <i class="bi bi-calendar-event"></i>
+                  الضيافة
+                </a>
+              </li>
+            </ul>
+          </li> -->
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                aria-expanded="false"
+              >
+                اعمالنا
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-building"></i>
+                    ابراج بن محفوظ
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-grid-3x3-gap"></i>
+                    مجمع القصر التجاري
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-briefcase"></i>
+                    حاضنة الاعمال
+                  </a>
+                </li>
+                <li></li>
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-newspaper"></i>
+                    القاعات
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-calendar-event"></i>
+                    الضيافة
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-calendar-event"></i>
+                    أعمال أخرى
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-calendar-event"></i>
+                    المساهمة المجتمعية
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#events">الفعاليات</a>
+            </li>
+
+            <!-- Support Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                aria-expanded="false"
+              >
+                الوسائط
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#faq">
+                    <i class="bi bi-question-circle"></i>
+                    معرض الصور
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#contact">
+                    <i class="bi bi-envelope"></i>
+                    معرض الفيديو
+                  </a>
+                </li>
+                <!-- <li>
+                <a class="dropdown-item" href="#support">
+                  <i class="bi bi-chat-dots"></i>
+                  الاصدارات
+                </a>
+              </li> -->
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#news">الأخبار</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#home">تواصل معنا</a>
+            </li>
+          </ul>
+
+          <!-- Language Toggle -->
+          <div class="language-toggle">
+            <button class="lang-btn" data-lang="en" aria-label="English">
+              <span class="lang-text">English</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Event Details Section -->
+    <section class="event-details-section pt-120 pb-70">
+      <div class="container">
+        <!-- Back Button -->
+        <div class="mb-4" data-aos="fade-right" data-aos-delay="100">
+          <a href="index.html#events" class="back-btn">
+            <i class="bi bi-arrow-right"></i>
+            العودة إلى الفعاليات
+          </a>
+        </div>
+
+        <!-- Event Header -->
+        <div
+          class="event-details-header mb-5"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <h1 class="event-details-title" id="eventTitle">
+            وفد يزور مؤسسة العون
+          </h1>
+          <p class="event-details-subtitle" id="eventSubtitle">
+            فعالية مهمة تعزز التعاون والشراكة
+          </p>
+        </div>
+
+        <!-- Main Image -->
+        <div
+          class="event-main-image mb-5"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <img
+            id="eventMainImage"
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Event Main Image"
+            class="img-fluid rounded"
+          />
+        </div>
+
+        <!-- Event Info Grid -->
+        <div class="row mb-5">
+          <!-- Left Column - Event Details -->
+          <div class="col-12 col-lg-8">
+            <div class="event-content" data-aos="fade-up" data-aos-delay="400">
+              <h2 class="section-title mb-4">عن الفعالية</h2>
+              <div id="eventDescription" class="event-description">
+                <p>
+                  وفد من برنامج "العُون" للتنمية والتطوير، قام بزيارة مؤسسة
+                  "العُون" للتنمية والتطوير في المملكة العربية السعودية، حيث
+                  شارك في حفل تكريم وتقدير للمساهمين في برامج التنمية المجتمعية.
+                </p>
+                <p>
+                  شهدت الفعالية حضوراً مميزاً من قادة الأعمال والمهتمين بالتنمية
+                  المستدامة، حيث تم مناقشة سبل التعاون المشترك وتعزيز الشراكة
+                  بين القطاعين العام والخاص في مجال التنمية والتطوير.
+                </p>
+              </div>
+
+              <!-- Event Highlights -->
+              <div class="event-highlights mt-5">
+                <h3 class="section-subtitle mb-4">أبرز ما تم في الفعالية</h3>
+                <div class="row">
+                  <div class="col-12 mb-3">
+                    <div class="highlight-box">
+                      <i class="bi bi-check-circle-fill highlight-icon"></i>
+                      <span>استقبال وفد من برنامج العون للتنمية والتطوير</span>
+                    </div>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <div class="highlight-box">
+                      <i class="bi bi-check-circle-fill highlight-icon"></i>
+                      <span
+                        >حفل تكريم للمساهمين في برامج التنمية المجتمعية</span
+                      >
+                    </div>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <div class="highlight-box">
+                      <i class="bi bi-check-circle-fill highlight-icon"></i>
+                      <span>مناقشة سبل التعاون المشترك بين القطاعات</span>
+                    </div>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <div class="highlight-box">
+                      <i class="bi bi-check-circle-fill highlight-icon"></i>
+                      <span>تعزيز الشراكة بين القطاعين العام والخاص</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column - Event Info -->
+          <div class="col-12 col-lg-4">
+            <div
+              class="event-info-card"
+              data-aos="fade-left"
+              data-aos-delay="500"
+            >
+              <h3 class="info-card-title">معلومات الفعالية</h3>
+              <div class="info-item">
+                <i class="bi bi-calendar3 info-icon"></i>
+                <div class="info-content">
+                  <span class="info-label">التاريخ</span>
+                  <span class="info-value" id="eventDate">2024/03/15</span>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="bi bi-clock info-icon"></i>
+                <div class="info-content">
+                  <span class="info-label">الوقت</span>
+                  <span class="info-value" id="eventTime"
+                    >10:00 ص - 2:00 م</span
+                  >
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="bi bi-geo-alt info-icon"></i>
+                <div class="info-content">
+                  <span class="info-label">الموقع</span>
+                  <span class="info-value" id="eventLocation"
+                    >الرياض، المملكة العربية السعودية</span
+                  >
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="bi bi-people info-icon"></i>
+                <div class="info-content">
+                  <span class="info-label">عدد الحضور</span>
+                  <span class="info-value" id="eventAttendees">150+ مشارك</span>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="bi bi-tag info-icon"></i>
+                <div class="info-content">
+                  <span class="info-label">نوع الفعالية</span>
+                  <span class="info-value" id="eventType">زيارة رسمية</span>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="bi bi-check-circle info-icon"></i>
+                <div class="info-content">
+                  <span class="info-label">الحالة</span>
+                  <span class="info-value" id="eventStatus">تمت بنجاح</span>
+                </div>
+              </div>
+
+              <!-- CTA Button -->
+              <!-- <div class="event-cta mt-4">
+                <a
+                  href="#contact"
+                  class="btn btn-primary w-100 rounded-pill py-2"
+                >
+                  <i class="bi bi-envelope ms-2"></i>
+                  تواصل معنا
+                </a>
+              </div> -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Event Gallery -->
+        <div class="event-gallery mt-5" data-aos="fade-up" data-aos-delay="600">
+          <h2 class="section-title mb-4">معرض الصور</h2>
+          <div class="row g-3" id="eventGallery">
+            <!-- Gallery images will be populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+      <div class="container-fluid">
+        <div class="footer-content">
+          <!-- Company Info -->
+          <div class="footer-company" data-aos="fade-up" data-aos-delay="200">
+            <div class="footer-logo">
+              <img src="img/logo.png" alt="Basma Logo" />
+              <!-- <h3 class="footer-logo-title">بسمة للتجارة والتطوير العقاري</h3> -->
+            </div>
+            <p class="company-description">
+              شركة بسمة للتجارة والتطوير العقاري هي شركة تجارية استثمارية رائدة
+              تدير وتشغل الأملاك والأصول والعقارات والرائدة والأكثر نمواً وتتركز
+              أعمالها في الوقت الحالي على إدارة الأملاك والعقار وتطويرها
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/basmaye1/"
+                target="_blank"
+                rel="noopener"
+                class="social-link"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a
+                href="https://x.com/basmaye1"
+                target="_blank"
+                rel="noopener"
+                class="social-link"
+                ><i class="bi bi-twitter"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/basmaye1/"
+                target="_blank"
+                rel="noopener"
+                class="social-link"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a
+                href="https://www.youtube.com/@basmaye1"
+                target="_blank"
+                rel="noopener"
+                class="social-link"
+                ><i class="bi bi-youtube"></i
+              ></a>
+              <a
+                href="https://www.threads.net/@basmaye1"
+                target="_blank"
+                rel="noopener"
+                class="social-link"
+                ><i class="bi bi-threads"></i
+              ></a>
+              <!-- <a href="https://tellonym.me/basmaye1" class="social-link"><i class="bi bi-tellonym"></i></a> -->
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-links" data-aos="fade-up" data-aos-delay="400">
+            <h4>روابط سريعة</h4>
+            <ul>
+              <li><a href="#home">الرئيسية</a></li>
+              <li><a href="#about">من نحن</a></li>
+
+              <li><a href="#projects">مشاريعنا</a></li>
+              <li><a href="#ourTeam">فريق بسمة</a></li>
+              <li><a href="contact.html">تواصل معنا</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="footer-contact" data-aos="fade-up" data-aos-delay="600">
+            <h4>معلومات التواصل</h4>
+            <div class="contact-item">
+              <i class="bi bi-geo-alt"></i>
+              <span>اليمن – حضرموت – المكلا – 40 شقة – أبراج بن محفوظ </span>
+            </div>
+            <div class="contact-item">
+              <i class="bi bi-telephone"></i>
+              <span>05323131 – 323300 - 733570950</span>
+            </div>
+            <div class="contact-item">
+              <i class="bi bi-envelope"></i>
+              <span>awadh@basma-ye.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="bi bi-clock"></i>
+              <span>الأحد - الخميس: 8:00 ص - 4:00 م</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <div class="footer-bottom-content">
+            <p>
+              <span id="current-year"></span> بسمة للتجارة والتطوير العقاري.
+              &copy; جميع الحقوق محفوظة.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Swiper JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/minScript.js"></script>
+    <script src="js/oldScript.js"></script>
+
+    <!-- Event Details JavaScript -->
+    <script>
+      // Event data
+      const eventsData = {
+        1: {
+          title: 'وفد يزور مؤسسة العون',
+          subtitle: 'فعالية مهمة تعزز التعاون والشراكة',
+          mainImage:
+            'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          description: `
+          <p>وفد من برنامج "العُون" للتنمية والتطوير، قام بزيارة مؤسسة "العُون" للتنمية والتطوير 
+          في المملكة العربية السعودية، حيث شارك في حفل تكريم وتقدير للمساهمين في برامج التنمية المجتمعية.</p>
+          <p>شهدت الفعالية حضوراً مميزاً من قادة الأعمال والمهتمين بالتنمية المستدامة، حيث تم 
+          مناقشة سبل التعاون المشترك وتعزيز الشراكة بين القطاعين العام والخاص في مجال التنمية والتطوير.</p>
+          <p>تم خلال الفعالية توقيع اتفاقيات شراكة استراتيجية تهدف إلى دعم برامج التنمية المجتمعية 
+          وتحقيق أهداف رؤية المملكة 2030 في مجال التنمية المستدامة.</p>
+        `,
+          date: '2024/03/15',
+          time: '10:00 ص - 2:00 م',
+          location: 'الرياض، المملكة العربية السعودية',
+          attendees: '150+ مشارك',
+          type: 'زيارة رسمية',
+          status: 'تمت بنجاح',
+          highlights: [
+            'استقبال وفد من برنامج العون للتنمية والتطوير',
+            'حفل تكريم للمساهمين في برامج التنمية المجتمعية',
+            'مناقشة سبل التعاون المشترك بين القطاعات',
+            'تعزيز الشراكة بين القطاعين العام والخاص',
+            'توقيع اتفاقيات شراكة استراتيجية',
+          ],
+          gallery: [
+            'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          ],
+        },
+        2: {
+          title: 'فعالية التطوير السكني',
+          subtitle: 'نقاش حول مستقبل التطوير السكني في المملكة',
+          mainImage:
+            'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80',
+          description: `
+          <p>فعالية متخصصة في التطوير السكني تجمع بين الخبراء والمطورين العقاريين لمناقشة أحدث 
+          الاتجاهات والتقنيات في مجال التطوير السكني.</p>
+          <p>تم خلال الفعالية عرض مشاريع سكنية مبتكرة ومناقشة التحديات والفرص في قطاع الإسكان، 
+          مع التركيز على الاستدامة والكفاءة في استخدام الموارد.</p>
+        `,
+          date: '2024/04/20',
+          time: '9:00 ص - 4:00 م',
+          location: 'جدة، المملكة العربية السعودية',
+          attendees: '200+ مشارك',
+          type: 'مؤتمر',
+          status: 'تمت بنجاح',
+          highlights: [
+            'عرض مشاريع سكنية مبتكرة',
+            'مناقشة أحدث الاتجاهات في التطوير السكني',
+            'ورش عمل متخصصة',
+            'شبكة تواصل بين الخبراء والمطورين',
+          ],
+          gallery: [
+            'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          ],
+        },
+        3: {
+          title: 'فعالية الضيافة والاستثمار',
+          subtitle: 'لقاء حول فرص الاستثمار في قطاع الضيافة',
+          mainImage:
+            'https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80',
+          description: `
+          <p>فعالية تجمع المستثمرين والخبراء في قطاع الضيافة لمناقشة الفرص الاستثمارية الواعدة 
+          في هذا القطاع المتنامي.</p>
+          <p>تم خلال الفعالية عرض نماذج ناجحة من مشاريع الضيافة ومناقشة أفضل الممارسات في إدارة 
+          وتشغيل المنشآت الفندقية والسياحية.</p>
+        `,
+          date: '2024/05/10',
+          time: '11:00 ص - 3:00 م',
+          location: 'الدمام، المملكة العربية السعودية',
+          attendees: '120+ مشارك',
+          type: 'لقاء استثماري',
+          status: 'تمت بنجاح',
+          highlights: [
+            'عرض فرص استثمارية في قطاع الضيافة',
+            'مناقشة أفضل الممارسات في إدارة الفنادق',
+            'لقاءات B2B بين المستثمرين',
+            'عرض نماذج مشاريع ناجحة',
+          ],
+          gallery: [
+            'https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+          ],
+        },
+      };
+
+      // Get event ID from URL
+      function getEventId() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('id') || '1';
+      }
+
+      // Load event data
+      function loadEvent() {
+        const eventId = getEventId();
+        const event = eventsData[eventId];
+
+        if (!event) {
+          // Default to event 1 if not found
+          const defaultEvent = eventsData[1];
+          displayEvent(defaultEvent);
+          return;
+        }
+
+        displayEvent(event);
+      }
+
+      // Display event data
+      function displayEvent(event) {
+        document.getElementById('eventTitle').textContent = event.title;
+        document.getElementById('eventSubtitle').textContent = event.subtitle;
+        document.getElementById('eventMainImage').src = event.mainImage;
+        document.getElementById('eventMainImage').alt = event.title;
+        document.getElementById('eventDescription').innerHTML =
+          event.description;
+        document.getElementById('eventDate').textContent = event.date;
+        document.getElementById('eventTime').textContent = event.time;
+        document.getElementById('eventLocation').textContent = event.location;
+        document.getElementById('eventAttendees').textContent = event.attendees;
+        document.getElementById('eventType').textContent = event.type;
+        document.getElementById('eventStatus').textContent = event.status;
+
+        // Update page title
+        document.title = `${event.title} - شركة بسمة للتطوير العقاري`;
+
+        // Display highlights
+        const highlightsContainer = document.querySelector(
+          '.event-highlights .row'
+        );
+        if (highlightsContainer && event.highlights) {
+          highlightsContainer.innerHTML = '';
+          event.highlights.forEach((highlight) => {
+            const col = document.createElement('div');
+            col.className = 'col-12 mb-3';
+            col.innerHTML = `
+            <div class="highlight-box">
+              <i class="bi bi-check-circle-fill highlight-icon"></i>
+              <span>${highlight}</span>
+            </div>
+          `;
+            highlightsContainer.appendChild(col);
+          });
+        }
+
+        // Display gallery
+        const galleryContainer = document.getElementById('eventGallery');
+        galleryContainer.innerHTML = '';
+        event.gallery.forEach((image, index) => {
+          const col = document.createElement('div');
+          col.className = 'col-12 col-md-6 col-lg-4';
+          col.innerHTML = `
+          <div class="gallery-item">
+            <img src="${image}" alt="${event.title} - صورة ${
+            index + 1
+          }" class="img-fluid rounded" />
+          </div>
+        `;
+          galleryContainer.appendChild(col);
+        });
+      }
+
+      // Initialize on page load
+      document.addEventListener('DOMContentLoaded', function () {
+        loadEvent();
+        AOS.init({
+          duration: 1000,
+          easing: 'ease-in-out-cubic',
+          once: true,
+        });
+      });
+    </script>
+  </body>
+</html>

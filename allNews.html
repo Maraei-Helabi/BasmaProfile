@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <!-- Splide.js CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>جميع الأخبار - شركة بسمة للتجارة والتطوير العقاري</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/icon.png" />
+    <link rel="apple-touch-icon" href="img/icon.png" />
+
+    <!-- Google Fonts - Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- AOS JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <!-- Brand -->
+        <a
+          class="navbar-brand"
+          href="#"
+          data-aos="fade-right"
+          data-aos-delay="100"
+        >
+          <img src="img/logo.png" alt="BASMA Logo" class="navbar-logo" />
+        </a>
+
+        <!-- Toggle Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <div
+          class="collapse navbar-collapse"
+          id="navbarNav"
+          data-aos="fade-left"
+          data-aos-delay="300"
+        >
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">الرئيسية</a>
+            </li>
+
+            <!-- About Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                aria-expanded="false"
+              >
+                من نحن
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#about">
+                    <i class="bi bi-handshake"></i>
+                    نبذة عن الشركة
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#vision">
+                    <i class="bi bi-eye"></i>
+                    الرؤية والرسالة والأهداف
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#ourTeam">
+                    <i class="bi bi-people"></i>
+                    فريق العمل
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Services Dropdown -->
+            <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false">
+              قطاعات الأعمال
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="#two-images">
+                  <i class="bi bi-building"></i>
+                  العقار
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#projects">
+                  <i class="bi bi-grid-3x3-gap"></i>
+                  إدارة الأصول
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#company-works">
+                  <i class="bi bi-briefcase"></i>
+                  تحارة التجزئة
+                </a>
+              </li>
+              <li></li>
+              <li>
+                <a class="dropdown-item" href="#news">
+                  <i class="bi bi-newspaper"></i>
+                  الرعاية الصحية
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#events">
+                  <i class="bi bi-calendar-event"></i>
+                  التعليم
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#events">
+                  <i class="bi bi-calendar-event"></i>
+                  الضيافة
+                </a>
+              </li>
+            </ul>
+          </li> -->
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                aria-expanded="false"
+              >
+                اعمالنا
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-building"></i>
+                    ابراج بن محفوظ
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-grid-3x3-gap"></i>
+                    مجمع القصر التجاري
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-briefcase"></i>
+                    حاضنة الاعمال
+                  </a>
+                </li>
+                <li></li>
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-newspaper"></i>
+                    القاعات
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-calendar-event"></i>
+                    الضيافة
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-calendar-event"></i>
+                    أعمال أخرى
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-calendar-event"></i>
+                    المساهمة المجتمعية
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#events">الفعاليات</a>
+            </li>
+
+            <!-- Support Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                aria-expanded="false"
+              >
+                الوسائط
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#faq">
+                    <i class="bi bi-question-circle"></i>
+                    معرض الصور
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#contact">
+                    <i class="bi bi-envelope"></i>
+                    معرض الفيديو
+                  </a>
+                </li>
+                <!-- <li>
+                <a class="dropdown-item" href="#support">
+                  <i class="bi bi-chat-dots"></i>
+                  الاصدارات
+                </a>
+              </li> -->
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#news">الأخبار</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#home">تواصل معنا</a>
+            </li>
+          </ul>
+
+          <!-- Language Toggle -->
+          <div class="language-toggle">
+            <button class="lang-btn" data-lang="en" aria-label="English">
+              <span class="lang-text">English</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- All News Section -->
+    <section class="all-news-section pt-120 pb-70">
+      <div class="container">
+        <!-- Back Button -->
+        <div class="mb-4" data-aos="fade-right" data-aos-delay="100">
+          <a href="index.html#news" class="back-btn">
+            <i class="bi bi-arrow-right"></i>
+            العودة إلى الرئيسية
+          </a>
+        </div>
+
+        <!-- Page Header -->
+        <div
+          class="news-page-header mb-5"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <h1 class="news-page-title">جميع الأخبار</h1>
+          <p class="news-page-subtitle">تابع آخر أخبارنا وإنجازاتنا</p>
+        </div>
+
+        <!-- News Grid -->
+        <div class="row g-4" id="newsGrid">
+          <!-- News articles will be populated by JavaScript -->
+        </div>
+
+        <!-- Load More Button -->
+        <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+          <button
+            class="btn btn-primary rounded-pill px-5 py-2"
+            id="loadMoreBtn"
+          >
+            <i class="bi bi-arrow-down ms-2"></i>
+            تحميل المزيد
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+      <div class="container-fluid">
+        <div class="footer-content">
+          <!-- Company Info -->
+          <div class="footer-company" data-aos="fade-up" data-aos-delay="200">
+            <div class="footer-logo">
+              <img src="img/logo.png" alt="Basma Logo" />
+              <!-- <h3 class="footer-logo-title">بسمة للتجارة والتطوير العقاري</h3> -->
+            </div>
+            <p class="company-description">
+              شركة بسمة للتجارة والتطوير العقاري هي شركة تجارية استثمارية رائدة
+              تدير وتشغل الأملاك والأصول والعقارات والرائدة والأكثر نمواً وتتركز
+              أعمالها في الوقت الحالي على إدارة الأملاك والعقار وتطويرها
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/basmaye1/"
+                target="_blank"
+                rel="noopener"
+                class="social-link"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a
+                href="https://x.com/basmaye1"
+                target="_blank"
+                rel="noopener"
+                class="social-link"
+                ><i class="bi bi-twitter"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/basmaye1/"
+                target="_blank"
+                rel="noopener"
+                class="social-link"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a
+                href="https://www.youtube.com/@basmaye1"
+                target="_blank"
+                rel="noopener"
+                class="social-link"
+                ><i class="bi bi-youtube"></i
+              ></a>
+              <a
+                href="https://www.threads.net/@basmaye1"
+                target="_blank"
+                rel="noopener"
+                class="social-link"
+                ><i class="bi bi-threads"></i
+              ></a>
+              <!-- <a href="https://tellonym.me/basmaye1" class="social-link"><i class="bi bi-tellonym"></i></a> -->
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-links" data-aos="fade-up" data-aos-delay="400">
+            <h4>روابط سريعة</h4>
+            <ul>
+              <li><a href="#home">الرئيسية</a></li>
+              <li><a href="#about">من نحن</a></li>
+
+              <li><a href="#projects">مشاريعنا</a></li>
+              <li><a href="#ourTeam">فريق بسمة</a></li>
+              <li><a href="contact.html">تواصل معنا</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="footer-contact" data-aos="fade-up" data-aos-delay="600">
+            <h4>معلومات التواصل</h4>
+            <div class="contact-item">
+              <i class="bi bi-geo-alt"></i>
+              <span>اليمن – حضرموت – المكلا – 40 شقة – أبراج بن محفوظ </span>
+            </div>
+            <div class="contact-item">
+              <i class="bi bi-telephone"></i>
+              <span>05323131 – 323300 - 733570950</span>
+            </div>
+            <div class="contact-item">
+              <i class="bi bi-envelope"></i>
+              <span>awadh@basma-ye.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="bi bi-clock"></i>
+              <span>الأحد - الخميس: 8:00 ص - 4:00 م</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <div class="footer-bottom-content">
+            <p>
+              <span id="current-year"></span> بسمة للتجارة والتطوير العقاري.
+              &copy; جميع الحقوق محفوظة.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Swiper JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/minScript.js"></script>
+    <script src="js/oldScript.js"></script>
+
+    <!-- All News JavaScript -->
+    <script>
+      // News data
+      const allNewsData = [
+        {
+          id: 1,
+          title: 'توقيع إتفاقية شراكة منتدى للأعمال',
+          description:
+            'هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها.',
+          image:
+            'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80',
+          date: '04/04/2024',
+          category: 'شراكات',
+        },
+        {
+          id: 2,
+          title: 'توقيع إتفاقية تعاون وشراكة خلال منتدى الألكسو للأعمال',
+          description:
+            'توقيع اتفاقية تعاون جديدة مع شركاء استراتيجيين لتعزيز حضور الشركة في السوق المحلي والدولي. تشمل الاتفاقية مشاريع مشتركة في مجال التطوير العقاري والبنية التحتية، مع التركيز على الاستدامة والابتكار التكنولوجي.',
+          image:
+            'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          date: '04/04/2024',
+          category: 'شراكات',
+        },
+        {
+          id: 3,
+          title: 'افتتاح مشروع جديد في الرياض',
+          description:
+            'افتتاح مشروع سكني جديد في الرياض بتصميم عصري ومستدام يلبي احتياجات العائلات السعودية. المشروع يتضمن 500 وحدة سكنية مع مرافق ترفيهية وخدمات متكاملة، ويتميز بتقنيات الطاقة الخضراء والتصميم الذكي.',
+          image:
+            'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80',
+          date: '02/04/2024',
+          category: 'مشاريع',
+        },
+        {
+          id: 4,
+          title: 'حصول الشركة على جائزة التميز المعماري',
+          description:
+            'حصول الشركة على جائزة التميز المعماري لعام 2024 تقديراً لجهودها في تطوير مشاريع مستدامة ومبتكرة. الجائزة تثمن التزام الشركة بالمعايير البيئية العالية والتصميم الإبداعي الذي يجمع بين الجمال والوظيفة.',
+          image:
+            'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+          date: '30/03/2024',
+          category: 'جوائز',
+        },
+        {
+          id: 5,
+          title: 'إطلاق برنامج تدريبي جديد للمهندسين',
+          description:
+            'إطلاق برنامج تدريبي متخصص للمهندسين المعماريين يهدف إلى تطوير مهاراتهم وتحديث معارفهم بأحدث التقنيات والاتجاهات في مجال الهندسة المعمارية.',
+          image:
+            'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+          date: '25/03/2024',
+          category: 'تدريب',
+        },
+        {
+          id: 6,
+          title: 'مشاركة في معرض البناء والتشييد',
+          description:
+            'مشاركة الشركة في معرض البناء والتشييد الدولي لعرض أحدث مشاريعها وإنجازاتها، والتعريف بحلولها المبتكرة في مجال التطوير العقاري.',
+          image:
+            'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2053&q=80',
+          date: '20/03/2024',
+          category: 'معارض',
+        },
+      ];
+
+      let displayedCount = 6;
+      const itemsPerPage = 6;
+
+      // Display news articles
+      function displayNews(newsArray) {
+        const newsGrid = document.getElementById('newsGrid');
+        newsGrid.innerHTML = '';
+
+        newsArray.forEach((news, index) => {
+          const col = document.createElement('div');
+          col.className = 'col-12 col-md-6 col-lg-4';
+          col.setAttribute('data-aos', 'fade-up');
+          col.setAttribute('data-aos-delay', (index * 100).toString());
+
+          col.innerHTML = `
+          <article class="news-card">
+            <a href="newsDetails.html?id=${news.id}" class="news-card-link">
+              <div class="news-card-image">
+                <img src="${news.image}" alt="${news.title}" class="img-fluid" />
+                <div class="news-card-overlay"></div>
+              </div>
+              <div class="news-card-content">
+                <div class="news-card-meta">
+                  <span class="news-card-date">
+                    <i class="bi bi-calendar3"></i>
+                    ${news.date}
+                  </span>
+                  <span class="news-card-category">${news.category}</span>
+                </div>
+                <h3 class="news-card-title">${news.title}</h3>
+                <p class="news-card-description">${news.description}</p>
+                <div class="news-card-read-more">
+                  <span>اقرأ المزيد</span>
+                  <i class="bi bi-arrow-left"></i>
+                </div>
+              </div>
+            </a>
+          </article>
+        `;
+          newsGrid.appendChild(col);
+        });
+      }
+
+      // Load more news
+      function loadMoreNews() {
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (displayedCount >= allNewsData.length) {
+          loadMoreBtn.style.display = 'none';
+          return;
+        }
+
+        const nextNews = allNewsData.slice(
+          displayedCount,
+          displayedCount + itemsPerPage
+        );
+        nextNews.forEach((news, index) => {
+          const col = document.createElement('div');
+          col.className = 'col-12 col-md-6 col-lg-4';
+          col.setAttribute('data-aos', 'fade-up');
+          col.setAttribute('data-aos-delay', (index * 100).toString());
+
+          col.innerHTML = `
+          <article class="news-card">
+            <a href="newsDetails.html?id=${news.id}" class="news-card-link">
+              <div class="news-card-image">
+                <img src="${news.image}" alt="${news.title}" class="img-fluid" />
+                <div class="news-card-overlay"></div>
+              </div>
+              <div class="news-card-content">
+                <div class="news-card-meta">
+                  <span class="news-card-date">
+                    <i class="bi bi-calendar3"></i>
+                    ${news.date}
+                  </span>
+                  <span class="news-card-category">${news.category}</span>
+                </div>
+                <h3 class="news-card-title">${news.title}</h3>
+                <p class="news-card-description">${news.description}</p>
+                <div class="news-card-read-more">
+                  <span>اقرأ المزيد</span>
+                  <i class="bi bi-arrow-left"></i>
+                </div>
+              </div>
+            </a>
+          </article>
+        `;
+          document.getElementById('newsGrid').appendChild(col);
+        });
+
+        displayedCount += nextNews.length;
+        if (displayedCount >= allNewsData.length) {
+          loadMoreBtn.style.display = 'none';
+        }
+
+        AOS.refresh();
+      }
+
+      // Initialize on page load
+      document.addEventListener('DOMContentLoaded', function () {
+        displayNews(allNewsData.slice(0, itemsPerPage));
+
+        document
+          .getElementById('loadMoreBtn')
+          .addEventListener('click', loadMoreNews);
+
+        AOS.init({
+          duration: 1000,
+          easing: 'ease-in-out-cubic',
+          once: true,
+        });
+      });
+    </script>
+  </body>
+</html>

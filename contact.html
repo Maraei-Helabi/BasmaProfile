@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <!-- Splide.js CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تواصل معنا - شركة بسمة للتطوير العقاري</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/icon.png" />
+    <link rel="apple-touch-icon" href="img/icon.png" />
+
+    <!-- Google Fonts - Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- AOS JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <!-- Brand -->
+        <a
+          class="navbar-brand"
+          href="index.html"
+          data-aos="fade-right"
+          data-aos-delay="100"
+        >
+          <img src="img/logo.png" alt="BASMA Logo" class="navbar-logo" />
+        </a>
+
+        <!-- Toggle Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <div
+          class="collapse navbar-collapse"
+          id="navbarNav"
+          data-aos="fade-left"
+          data-aos-delay="300"
+        >
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">الرئيسية</a>
+            </li>
+
+            <!-- About Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                aria-expanded="false"
+              >
+                من نحن
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="index.html#about">
+                    <i class="bi bi-handshake"></i>
+                    نبذة عن الشركة
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="index.html#vision">
+                    <i class="bi bi-eye"></i>
+                    الرؤية والرسالة والأهداف
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="index.html#ourTeam">
+                    <i class="bi bi-people"></i>
+                    فريق العمل
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                aria-expanded="false"
+              >
+                اعمالنا
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-building"></i>
+                    ابراج بن محفوظ
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-grid-3x3-gap"></i>
+                    مجمع القصر التجاري
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-briefcase"></i>
+                    حاضنة الاعمال
+                  </a>
+                </li>
+                <li></li>
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-newspaper"></i>
+                    القاعات
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-calendar-event"></i>
+                    الضيافة
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-calendar-event"></i>
+                    أعمال أخرى
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="ourWorks.html">
+                    <i class="bi bi-calendar-event"></i>
+                    المساهمة المجتمعية
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#events">الفعاليات</a>
+            </li>
+
+            <!-- Support Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                aria-expanded="false"
+              >
+                الوسائط
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#faq">
+                    <i class="bi bi-question-circle"></i>
+                    معرض الصور
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#contact">
+                    <i class="bi bi-envelope"></i>
+                    معرض الفيديو
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="allNews.html">الأخبار</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="contact.html">تواصل معنا</a>
+            </li>
+          </ul>
+
+          <!-- Language Toggle -->
+          <div class="language-toggle">
+            <button class="lang-btn" data-lang="en" aria-label="English">
+              <span class="lang-text">English</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-section pt-120 pb-70">
+      <div class="container">
+        <!-- Page Header -->
+        <div
+          class="contact-page-header text-center mb-5"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <h1 class="contact-page-title">تواصل معنا</h1>
+          <p class="contact-page-subtitle">
+            نحن هنا للإجابة على جميع استفساراتك ومساعدتك في تحقيق رؤيتك
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Contact Form -->
+          <div class="col-12 col-lg-7">
+            <div
+              class="contact-form-wrapper"
+              data-aos="fade-right"
+              data-aos-delay="300"
+            >
+              <!-- <h2 class="section-title mb-4">أرسل لنا رسالة</h2> -->
+              <form class="contact-form" id="contactForm">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="name" class="form-label">الاسم الكامل</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        name="name"
+                        placeholder="أدخل اسمك الكامل"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="email" class="form-label"
+                        >البريد الإلكتروني</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        placeholder="example@email.com"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="phone" class="form-label">رقم الهاتف</label>
+                      <input
+                        type="tel"
+                        class="form-control"
+                        id="phone"
+                        name="phone"
+                        placeholder="+966 50 123 4567"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="subject" class="form-label">الموضوع</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="subject"
+                        name="subject"
+                        placeholder="موضوع الرسالة"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="message" class="form-label">الرسالة</label>
+                      <textarea
+                        class="form-control"
+                        id="message"
+                        name="message"
+                        rows="6"
+                        placeholder="اكتب رسالتك هنا..."
+                        required
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <button
+                      type="submit"
+                      class="btn btn-primary rounded-pill px-5 py-2"
+                    >
+                      <i class="bi bi-send ms-2"></i>
+                      إرسال الرسالة
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="col-12 col-lg-5">
+            <div
+              class="contact-info-wrapper"
+              data-aos="fade-left"
+              data-aos-delay="400"
+            >
+              <!-- <h2 class="section-title mb-4">معلومات التواصل</h2> -->
+
+              <div class="contact-info-card glass-card">
+                <div class="contact-info-item">
+                  <div class="contact-info-icon">
+                    <i class="bi bi-geo-alt-fill"></i>
+                  </div>
+                  <div class="contact-info-content">
+                    <h4 class="contact-info-label">العنوان</h4>
+                    <p class="contact-info-value">
+                      الرياض، المملكة العربية السعودية
+                    </p>
+                  </div>
+                </div>
+
+                <div class="contact-info-item">
+                  <div class="contact-info-icon">
+                    <i class="bi bi-telephone-fill"></i>
+                  </div>
+                  <div class="contact-info-content">
+                    <h4 class="contact-info-label">الهاتف</h4>
+                    <p class="contact-info-value">
+                      <a href="tel:+966501234567">+966 50 123 4567</a>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="contact-info-item">
+                  <div class="contact-info-icon">
+                    <i class="bi bi-envelope-fill"></i>
+                  </div>
+                  <div class="contact-info-content">
+                    <h4 class="contact-info-label">البريد الإلكتروني</h4>
+                    <p class="contact-info-value">
+                      <a href="mailto:info@basma-arch.com"
+                        >info@basma-arch.com</a
+                      >
+                    </p>
+                  </div>
+                </div>
+
+                <div class="contact-info-item">
+                  <div class="contact-info-icon">
+                    <i class="bi bi-clock-fill"></i>
+                  </div>
+                  <div class="contact-info-content">
+                    <h4 class="contact-info-label">ساعات العمل</h4>
+                    <p class="contact-info-value">
+                      الأحد - الخميس: 8:00 ص - 6:00 م
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Social Media -->
+              <div class="contact-social mt-4">
+                <h3 class="section-subtitle mb-3">تابعنا على</h3>
+                <div class="social-links-contact">
+                  <a
+                    href="#"
+                    class="social-link-contact facebook"
+                    aria-label="Facebook"
+                  >
+                    <i class="bi bi-facebook"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="social-link-contact twitter"
+                    aria-label="Twitter"
+                  >
+                    <i class="bi bi-twitter"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="social-link-contact instagram"
+                    aria-label="Instagram"
+                  >
+                    <i class="bi bi-instagram"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="social-link-contact linkedin"
+                    aria-label="LinkedIn"
+                  >
+                    <i class="bi bi-linkedin"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="social-link-contact whatsapp"
+                    aria-label="WhatsApp"
+                  >
+                    <i class="bi bi-whatsapp"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="contact-map mt-5" data-aos="fade-up" data-aos-delay="500">
+          <h2 class="section-title mb-4">موقعنا</h2>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.1234567890123!2d46.6753!3d24.7136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQyJzQ5LjAiTiA0NsKwNDAnMzEuMSJF!5e0!3m2!1sar!2ssa!4v1234567890123!5m2!1sar!2ssa"
+              width="100%"
+              height="450"
+              style="border: 0; border-radius: 20px"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+  <footer class="footer-section">
+    <div class="container-fluid">
+      <div class="footer-content">
+        <!-- Company Info -->
+        <div class="footer-company" data-aos="fade-up" data-aos-delay="200">
+          <div class="footer-logo">
+            <img
+              src="img/logo.png"
+              alt="Basma Logo" />
+            <!-- <h3 class="footer-logo-title">بسمة للتجارة والتطوير العقاري</h3> -->
+          </div>
+          <p class="company-description">شركة بسمة للتجارة والتطوير العقاري هي شركة تجارية استثمارية رائدة تدير وتشغل الأملاك والأصول والعقارات والرائدة والأكثر نمواً وتتركز أعمالها في الوقت الحالي على إدارة الأملاك والعقار وتطويرها
+          </p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/basmaye1/" target="_blank" rel="noopener" class="social-link"><i class="bi bi-facebook"></i></a>
+            <a href="https://x.com/basmaye1" target="_blank" rel="noopener" class="social-link"><i class="bi bi-twitter"></i></a>
+            <a href="https://www.instagram.com/basmaye1/" target="_blank" rel="noopener" class="social-link"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/@basmaye1" target="_blank" rel="noopener" class="social-link"><i class="bi bi-youtube"></i></a>
+            <a href="https://www.threads.net/@basmaye1" target="_blank" rel="noopener" class="social-link"><i class="bi bi-threads"></i></a>
+            <!-- <a href="https://tellonym.me/basmaye1" class="social-link"><i class="bi bi-tellonym"></i></a> -->
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-links" data-aos="fade-up" data-aos-delay="400">
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#about">من نحن</a></li>
+
+            <li><a href="#projects">مشاريعنا</a></li>
+            <li><a href="#ourTeam">فريق بسمة</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-contact" data-aos="fade-up" data-aos-delay="600">
+          <h4>معلومات التواصل</h4>
+          <div class="contact-item">
+            <i class="bi bi-geo-alt"></i>
+            <span>اليمن – حضرموت – المكلا – 40 شقة – أبراج بن محفوظ </span>
+          </div>
+          <div class="contact-item">
+            <i class="bi bi-telephone"></i>
+            <span>05323131 – 323300 - 733570950</span>
+          </div>
+          <div class="contact-item">
+            <i class="bi bi-envelope"></i>
+            <span>awadh@basma-ye.com</span>
+          </div>
+          <div class="contact-item">
+            <i class="bi bi-clock"></i>
+            <span>الأحد - الخميس: 8:00 ص - 4:00 م</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p><span id="current-year"></span> بسمة للتجارة والتطوير العقاري. &copy; جميع الحقوق محفوظة.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Swiper JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/minScript.js"></script>
+    <script src="js/oldScript.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const contactForm = document.getElementById('contactForm');
+
+        if (contactForm) {
+          contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = {
+              name: document.getElementById('name').value,
+              email: document.getElementById('email').value,
+              phone: document.getElementById('phone').value,
+              subject: document.getElementById('subject').value,
+              message: document.getElementById('message').value,
+            };
+
+            // Here you would typically send the data to a server
+            // For now, we'll just show a success message
+            alert('شكراً لك! تم إرسال رسالتك بنجاح. سنتواصل معك قريباً.');
+
+            // Reset form
+            contactForm.reset();
+          });
+        }
+
+        // Initialize AOS
+        AOS.init({
+          duration: 1000,
+          easing: 'ease-in-out-cubic',
+          once: true,
+        });
+      });
+    </script>
+  </body>
+</html>

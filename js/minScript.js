@@ -484,4 +484,31 @@ document.addEventListener('DOMContentLoaded', function () {
       videoIframe.src = '';
     });
   }
+
+  // Team member video hover play/pause
+  const teamMemberVideos = document.querySelectorAll('.team-member-video');
+  teamMemberVideos.forEach((video) => {
+    // Ensure video is paused on load and shows first frame
+    video.pause();
+    video.currentTime = 0;
+
+    // Load metadata to show first frame
+    video.load();
+
+    const memberImage = video.closest('.member-image');
+    if (memberImage) {
+      memberImage.addEventListener('mouseenter', function () {
+        // Change preload to auto for smooth playback
+        video.preload = 'auto';
+        video.play().catch((error) => {
+          console.log('Video play failed:', error);
+        });
+      });
+
+      memberImage.addEventListener('mouseleave', function () {
+        video.pause();
+        video.currentTime = 0; // Reset to beginning
+      });
+    }
+  });
 });
